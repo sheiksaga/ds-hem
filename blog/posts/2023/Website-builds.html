@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- support browser themeing -->
+    <meta name="theme-color" content="#002f80">
+    <meta name="msapplication-navbutton-color" content="#002f80">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#002f80">
+    <!-- title -->
+    <title>Design Saga Blog - What is this?</title>
+    <!-- favicon -->
+    <link rel="icon" type="image/x-icon" href="/assets/img/favicon.ico">
+    <!-- custom styles -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/blog/assets/css/blog.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Overpass">
+    <!-- Remix icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <!-- tracker -->
+    <script src="https://cdn.counter.dev/script.js" data-id="3cb77df7-73cd-45aa-8bf7-017b05919873" data-utcoffset="1"></script>
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- quicklinks -->
+    <script src="https://unpkg.com/quicklink@2.3.0/dist/quicklink.umd.js"></script>
+    <!-- meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+    <!--MD formatting-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+</head>
+
+<body>
+    <!-- js scripts -->
+    <script src="/assets/js/main.js"></script>
+    <script src="/blog/assets/js/fetch.js"></script>
+    <!-- header -->
+    <header class="ds-header" id="header">
+        <div class="blog-ref">
+            <a href="/blog/index.html">
+                <img class="logo-header" src="/assets/img/design-saga-blue.svg" alt="logo">
+                <p class="log-sub">BLOG</p>
+            </a>
+        </div>
+            <div class="menu">
+            <ul class="nav-links">
+                <li class="list-item"><a href="/index.html" class="hover-link">Main</a></li>
+            </ul>
+            <button class="theme-toggle" id="theme-toggle-btn">
+                <i class="ri-sun-line sun-icon"></i>
+                <i class="ri-moon-line moon-icon"></i>
+            </button>
+        </div>
+    </header>
+
+
+        <h1 id="what-is-this-title">Website Builds</h1> <br>
+        <div id="breadcrumbs"></div>
+
+    <!-- Spacer -->
+       <pre class="spacer"></pre>
+
+<p>Hey there! In my last post, I mentioned that I was using <a href="https://getpublii.com/">Publii</a><sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup> to publish my posts, storing them on <a href="https://github.com/">GitHub</a> and deploying them with <a href="https://www.cloudflare.com/">Cloudflare Pages</a>. I had a few reasons for doing this:</p>
+<ul class="posts">
+<li>First off, I wanted to cut down on the hosting costs for my blog<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>. That’s why I decided to make it public on GitHub and deploy it with Cloudflare<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>.</li>
+<li>I also wanted to move away from WordPress and use a headless CMS where I had complete control over my posts.</li>
+<li>I really like writing in Markdown!</li>
+<li>And last but not least, I wanted full control over everything on my site - from the design to the formatting.</li>
+</ul>
+<p>At first, everything was going great. But then I started having trouble with the theming. Publii uses a theming format called Handlebars<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup> and its own taxonomy for posts. And even though I had Publii and GitHub all set up, I still felt like I didn’t have as much control over my site as I wanted. Don’t get me wrong - Publii is great if you just want to write posts and publish them without worrying about how they’ll look. But I wanted more.</p>
+<p>So I decided to start over from scratch. I got <a href="https://code.visualstudio.com/">VS Code</a> (which is amazing, by the way) and started with a basic HTML5 template. I’ll write more about how I built the site in a future post.</p>
+<p>As of 25/03/2023, here’s where things stand:</p>
+<p><img src="/blog/assets/img/2023/homepage_250323.png" class="blog-img" alt="view of homepage as on 25.03.23"></p>
+<p>There are still a few things missing (like the dark mode toggle not working quite right) and some other fixes I need to make. But for the most part, everything is working great.</p>
+<p>I’m still storing the site on GitHub Pages and deploying it with Cloudflare. But now, I have complete control over how my blog looks and feels. It takes a little longer to publish a post (since I write in Markdown and then have to convert it to HTML), but it’s worth it. All in all, I’m really happy with how everything turned out!</p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>Publii is a offline CMS. Think WordPress for blogging, but stored on your computer. <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>The blog was hosted on a VPS on <a href="https://contabo.com/en">Contabo</a>. Contabo was great, but too much for simple blogging. <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p>The choice of Cloudflare was a convenience one. I use it as my DNS manager, so less sites to keep track of. But really, any CDN service with a free option would do the trick (Like <a href="https://www.netlify.com/">Netlify</a>, or <a href="https://vercel.com/">Vercel</a>). <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p>Handlebars isn't a difficult theming language. I just didn’t want to add more systems to my site and make things more complicated than they needed to be <a href="#fnref4" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+        
+    <!-- back to top button -->
+    <button id="back-to-top">↩︎</button>
+
+    <!-- footer -->
+    <footer class="footer">
+        <div >
+            Built in GBG with VS Code and lots of Love <br>
+            Sangeeth G, <script>document.write(new Date().getFullYear())</script>
+        </div>
+    </footer>
+
+    <!-- breadcrumbs -->
+    <script src="/blog/assets/js/breadcrumbs.js"></script> 
+    
+    </body>
+    </html>
