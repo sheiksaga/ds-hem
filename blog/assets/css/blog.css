@@ -1,0 +1,154 @@
+h1{
+    padding-top: 15rem;
+    padding-bottom: 5rem;
+}
+p{
+    padding-right: 5rem;
+    padding-bottom: 1rem;
+}
+
+/* intro */
+.intro{
+    margin-top: 15rem;
+    margin-bottom: 5rem;
+    font-size: x-large;
+}
+
+/* list styling */
+.f2023{
+    font-size: large;
+}
+a.f2023{
+    text-decoration: none;
+    position: relative;
+    color: hsl(218, 100%, 20%);
+}
+a.f2023::before{
+        content: '';
+        background-color: hsl(218, 100%, 80%);
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 0.6rem;
+        z-index: -1;
+        transition: all .3s ease-in-out;
+}
+a.f2023:hover::before{
+    bottom: 0;
+    height: 0.3rem;
+}
+li.nobullet{
+    list-style: none;  
+}
+
+/* BLOG SUPPORT */
+.blog-ref a {
+    display: inline-block;
+    margin-right: 1rem;
+    vertical-align: middle;
+    color:hsl(218, 100%, 30%);
+    text-decoration: none;
+  }
+.blog-ref img {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 2rem;
+  }
+.blog-ref p.log-sub {
+    display: inline-block;
+    vertical-align: -5rem;
+    margin-left: -5rem;
+  }
+.blog-img{
+    max-width: 80%;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+.footnotes{
+    padding-top: 2rem;
+    margin-left: 2rem;
+}
+.posts {
+    margin-left: 5rem;
+    padding-bottom: 2rem;
+}
+
+/* filters */
+.super{
+    vertical-align: 1rem;
+    font-size: small;
+    margin-left: 1rem;
+    color: black;
+}
+
+.sub-web{
+    vertical-align: -1rem;
+    font-size: small;
+    margin-left: -5rem;
+    background-color: hsl(135, 100%, 95%);
+    color: hsl(135, 100%, 25%);
+    padding: 0.25rem;
+}
+
+.filter-button{
+    font-family: inherit;
+    border: none;
+    background-color: hsl(239, 80%, 90%);
+    color: hsl(239, 100%, 10%);
+    padding: 0.25rem 1rem;
+}
+
+.selected{
+    background-color: hsl(239, 100%, 65%);
+    color: hsl(239, 100%, 95%);
+    box-shadow: inset 0rem 0rem 0rem 0.15rem  black;
+}
+
+.filter{
+    padding-bottom: 5rem;
+}
+
+/* dark mode fixes */
+.dark-mode .f2023{
+    color: hsl(218, 100%, 95%);
+}
+.dark-mode a.f2023::before{
+    background-color: hsl(218, 100%, 30%);
+}
+.dark-mode a{
+    color: yellowgreen;
+}
+
+.dark-mode .super{
+    color: antiquewhite;
+}
+
+/* #media queries */
+@media screen and (min-width: 1200px) {
+ p{
+    padding: 1rem;
+ }
+ .blog-img{
+    max-width: 100%;
+}
+}
+
+@media screen and (max-width: 768px) {
+    p{
+        padding: 1rem;
+     }
+     .blog-img{
+        max-width: 100%;
+    }
+    .posts{
+        margin-left: 5rem;
+        padding-bottom: 1rem;
+    }
+}
+
+@media screen and (min-width: 767px) and (max-width: 1023px) {
+    body{
+        padding: 5rem;
+    }
+}
