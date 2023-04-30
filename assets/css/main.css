@@ -250,6 +250,13 @@ body.dark-mode{
     vertical-align: -0.25rem;
     animation: rotate 5000ms 5 linear;
 }
+img.refresh-icon{
+        height: 1.5rem;
+        width: auto;
+        background: url("/assets/img/refresh.svg");
+        vertical-align: -0.25rem;
+        animation: rotate 5000ms 5 linear;
+}
 
 @keyframes morph {
     0% {
