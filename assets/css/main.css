@@ -239,7 +239,7 @@ body.dark-mode{
 
 .refresh-icon{
     height: 1.5rem;
-    width: auto;
+    width: 1.5rem;
     background: url("/assets/img/refresh.svg");
     vertical-align: -0.25rem;
     animation: rotate 5000ms 5 linear;
