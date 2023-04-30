@@ -1,5 +1,5 @@
 //fetch 2023 list
-$.get("posts/2023/2023.html", function(data) {
+$.get("posts/2023/index.html", function(data) {
     $("#2023").html(data);
 });
 
