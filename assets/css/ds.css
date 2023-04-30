@@ -1,5 +1,5 @@
 h1{
-    font-family: overpass, Arial, Helvetica, sans-serif;
+    font-family: 'Overpass', Arial, Helvetica, sans-serif;
 }
 
 h2{
@@ -28,7 +28,6 @@ h3{
 
 .hi{
     font-size: 72px;
-    font-weight: bold;
     background: linear-gradient(90deg, hsl(218, 100%, 80%) 0%, hsl(218, 100%, 25%) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -39,7 +38,7 @@ h3{
 }
 
 .like-display{
-    background: linear-gradient(90deg, hsl(218, 100%, 50%) 0%, hsl(218, 100%, 25%) 100%);
+    background: linear-gradient(90deg, hsl(0, 13%, 28%) 0%, hsl(0, 0%, 0%) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -67,7 +66,7 @@ h3{
        inset 4px 4px hsl(79, 100%, 80%),
        inset 5px 5px hsl(79, 100%, 80%),
        0px 8px 32px 0 hsla(79, 100%, 80%, 0.3);
-    color: hsl(79, 100%, 5%);
+    color: hsl(79, 100%, 15%);
 }
 .container2{
     background-color: hsl(255, 100%, 90%);
@@ -168,6 +167,13 @@ a.hover-link-o:hover::before{
 
 a.f2023{
     text-decoration: none;
+    color: hsl(26, 100%, 15%);
+    background: linear-gradient(104deg, hsla(26, 100%, 80%, 0) 0.9%, hsla(26, 100%, 80%, 1.25) 2.4%, hsla(26, 100%, 80%, 0.5) 5.8%, hsla(26, 100%, 80%, 0.1) 93%, hsla(26, 100%, 80%, 0.1) 96%, hsla(26, 100%, 80%, 0) 98%), linear-gradient(183deg, hsla(26, 100%, 80%, 0) 0%, hsla(26, 100%, 80%, 0.3) 7.9%, hsla(26, 100%, 80%, 0) 15%);
+    padding: 0.6em 13.7px;
+     -webkit-box-decoration-break: clone;
+    margin: 0;
+    border-radius: 7.5px;
+    text-shadow: -12px 12px 9.8px hsla(26, 100%, 80%, 0.7), 21px -18.1px 7.3px rgba(255, 255, 255,1), -18.1px -27.3px 30px rgba(255, 255, 255,1);
 }
 
 /* #dark theme */
@@ -253,9 +259,10 @@ a.f2023{
         background-color: hsl(4, 100%, 15%);
 }
 
-a.f2023{
-    color: white;
+.dark-mode a.f2023{
+    filter: invert(1);
 }
+
 
 /* #media queries */
 @media screen and (min-width: 1200px) {

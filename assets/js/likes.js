@@ -1,6 +1,6 @@
 $(document).ready(function() {
     var facts = [
-      "puppies", "cats", "books", "tv shows", "websites", "the latest LLM", "games", "sports", "hobbies"
+      "whether aliens like pizza", "The beauty of a perfectly brewed cup of coffee", "The magic of a well-written book", "why pineapples on pizza became socially accepted", "websites", "the latest LLM", "jabberwockys", "invisbile electric sheep", "how to construct the perfect pun"
     ];
   
     function newFact() {
@@ -12,8 +12,8 @@ $(document).ready(function() {
   });
 
   $.get("/blog/posts/2023/index.html", function(data) {
-    // Get the last <li> element and find the <a> tag inside it
-    var lastLink = $(data).find('li:last').find('a');
+    // Get the first <li> element and find the <a> tag inside it
+    var firstLink = $(data).find('li:first').find('a');
     // Set the HTML of #2023 to the last link
-    $("#2023").html(lastLink);
+    $("#2023").html(firstLink);
 });

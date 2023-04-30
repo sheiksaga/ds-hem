@@ -13,20 +13,13 @@
     <!-- favicon -->
     <link rel="icon" type="image/x-icon" href="/assets/img/favicon.ico">
     <!-- custom styles -->
-    <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="stylesheet" href="/assets/css/ds.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Overpass">
-    <!-- Remix icons -->
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/styles.css">
     <!-- tracker -->
     <script src="https://cdn.counter.dev/script.js" data-id="3cb77df7-73cd-45aa-8bf7-017b05919873" data-utcoffset="1"></script>
     <!-- script -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
     <!-- quicklinks -->
     <script src="https://unpkg.com/quicklink@2.3.0/dist/quicklink.umd.js"></script>
-
     <!-- meta tags -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
@@ -47,18 +40,20 @@
                 <li class="list-item"><a href="./blog/index.html" class="hover-link">blog</a></li>
             </ul>
             <button class="theme-toggle" id="theme-toggle-btn">
-                <i class="ri-sun-line sun-icon"></i>
-                <i class="ri-moon-line moon-icon"></i>
+                <img src="/assets/img/sun-line.svg" alt="sun icon" class="sun-icon">
+                <img src="/assets/img/moon-line.svg" alt="moon-icon" class="moon-icon">
             </button>
         </div>
     </header>
 
     <!-- hero -->
     <section class="hero">
+        <img class="sun-trials"></img>
         <h1><span class="hi">Hi!</span>&emsp;&emsp;&emsp;
         <span class="hero_emoji">^_^</span></h1> <br> <br>
     <div class="hero-text">Welcome to my site. My name is Sangeeth and I spend time designing things.
-        If you're in need of some seriously impressive bespoke design work, or just want to shoot the breeze about something you like (such as <span class="like-display" id="likeDisplay"></span>), I'm your person.<br><br>
+        If you're in need of some seriously impressive bespoke design work, or just want to shoot the breeze about something you like (such as <span class="like-display" id="likeDisplay"></span> <button onclick="location.reload()"><img src="/assets/img/refresh-line.svg" alt="refresh icon" class="refresh-icon"></button>)
+        , I'm your person.<br><br>
         If you're wondering why the site is called Design Saga, I'm sure I can tell you someday. Over coffee. Overlooking a nice vista (such as a mountain). Preferably with snacks nearby. 
     </div>
     

@@ -27,6 +27,7 @@ $(document).ready(function() {
     $('#theme-toggle-btn').on('click', function() {
       $('body').toggleClass('dark-mode');
       localStorage.setItem('dark-mode', $('body').hasClass('dark-mode'));
+      $(this).toggleClass('clicked');
     });
 });
 

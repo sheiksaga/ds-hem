@@ -12,7 +12,7 @@
    --gap: 2rem;
    --margin-sm: 2rem;
    --margin-md: 3rem;
-   --font-family: Syne, verdana, geneva, tahoma, sans-serif;
+   --font-family: 'Syne', verdana, geneva, tahoma, sans-serif;
 }
 
 /* base styles */
@@ -70,6 +70,8 @@ a.hover-link:hover::before{
 
 button{
     cursor: pointer;
+    border: none;
+    background-color: transparent;
 }
 
 section {
@@ -83,14 +85,6 @@ section {
    display: flex;
    justify-content: center;
    align-items: center;
-}
-
-.sun-icon{
-    display: none;
-}
-
-.light-theme .moon-icon{
-    display: block;
 }
 
 .theme-toggle{
@@ -185,12 +179,14 @@ body.dark-mode{
     color: var(--font-dark);
 }
 
-.dark-mode .sun-icon{
+.dark-mode .moon-icon{
     display: block;
+    filter: invert(0.85);
 }
 
-.dark-mode .moon-icon{
+.dark-mode .sun-icon{
     display: none;
+    animation: morph 1s forwards;
 }
 
 .dark-mode .theme-toggle{
@@ -220,9 +216,69 @@ body.dark-mode{
     filter: invert(65%);
 }
 
-/* morph button */
+.dark-mode .refresh-icon{
+    filter: invert(0.65);
+}
 
+/* sun, moon, refresh and morph button (and other SVG code)*/
+.sun-icon{
+    background: url("/assets/img/sun-line.svg");
+    height: 2.5rem;
+    width: auto;
+    animation: rotate-hover 3s linear 0s infinite;
+    animation-play-state: paused;
+    transition: all 0.3s ease-in-out;
+}
+
+.sun-icon:hover{
+    animation-play-state: running;
+}
+
+.moon-icon{
+    display: none;
+    background: url("/assets/img/moon-line.svg");
+    height: 2.5rem;
+    width: auto;
+    transition: all 0.3s ease-in-out;
+    animation: morph 3s linear 0s ;
+}
+
+.refresh-icon{
+    height: 1.5rem;
+    width: auto;
+    background: url("/assets/img/refresh.svg");
+    vertical-align: -0.25rem;
+    animation: rotate 5000ms 5 linear;
+}
+
+@keyframes morph {
+    0% {
+        transform: rotate(0deg);
+      }
+      50% {
+        transform: rotate(180deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+  }
+
+  .theme-toggle.clicked .sun-icon {
+    animation: morph 0.4s ease-in-out;
+  }
   
+  .theme-toggle .moon-icon {
+    animation: morph 0.4s ease-in-out;
+  }
+
+@keyframes rotate-hover {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(359deg);
+    }
+}
 
 /* media queries */
 @media screen and (min-width: 1024px) {
