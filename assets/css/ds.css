@@ -19,6 +19,7 @@ h3{
     padding-right: 5rem;
     margin-bottom: 10rem;
     padding-top: 5rem;
+    max-width: 1024px;
 }
 
 .hero_emoji{
@@ -31,10 +32,12 @@ h3{
     background: linear-gradient(90deg, hsl(218, 100%, 80%) 0%, hsl(218, 100%, 25%) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    max-width: 1024px;
 }
 
 .hero-text{
     padding: 2rem 1rem 2rem 0rem;
+    max-width: 1024px;
 }
 
 .like-display{
@@ -277,6 +280,7 @@ a.f2023{
     }
     .hero-text{
         padding-right: 1rem;
+        max-width: 768px;
     }
     .box{
         padding: 1.5rem;
