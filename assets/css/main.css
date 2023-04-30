@@ -68,12 +68,6 @@ a.hover-link:hover::before{
     height: 0.3rem;
 }
 
-.button{
-    cursor: pointer;
-    border: none;
-    background-color: transparent;
-}
-
 section {
     display: flexbox;
 }
@@ -249,13 +243,7 @@ body.dark-mode{
     background: url("/assets/img/refresh.svg");
     vertical-align: -0.25rem;
     animation: rotate 5000ms 5 linear;
-}
-img.refresh-icon{
-        height: 1.5rem;
-        width: auto;
-        background: url("/assets/img/refresh.svg");
-        vertical-align: -0.25rem;
-        animation: rotate 5000ms 5 linear;
+    cursor: pointer;
 }
 
 @keyframes morph {
@@ -277,6 +265,15 @@ img.refresh-icon{
   .theme-toggle .moon-icon {
     animation: morph 0.4s ease-in-out;
   }
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(359deg);
+    }
+}
 
 @keyframes rotate-hover {
     from {
