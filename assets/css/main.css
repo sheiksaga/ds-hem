@@ -68,7 +68,7 @@ a.hover-link:hover::before{
     height: 0.3rem;
 }
 
-button{
+.button{
     cursor: pointer;
     border: none;
     background-color: transparent;
