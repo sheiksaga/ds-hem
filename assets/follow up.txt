@@ -1,2 +1,0 @@
-For prefers-color-scheme dark toggle
-https://stackoverflow.com/questions/56300132/how-to-override-css-prefers-color-scheme-setting

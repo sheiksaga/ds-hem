@@ -88,6 +88,7 @@ section {
     border: none;
     background-color: transparent;
     font-size: var(--font-size-lg);
+    cursor: pointer;
 }
 
 .spacer{

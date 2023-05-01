@@ -75,34 +75,19 @@ li.nobullet{
 }
 
 body p a{
-    color: hsl(26, 100%, 15%);
-    background: linear-gradient(104deg, hsla(26, 100%, 80%, 0) 0.9%, hsla(26, 100%, 80%, 1.25) 2.4%, hsla(26, 100%, 80%, 0.5) 5.8%, hsla(26, 100%, 80%, 0.1) 93%, hsla(26, 100%, 80%, 0.1) 96%, hsla(26, 100%, 80%, 0) 98%), linear-gradient(183deg, hsla(26, 100%, 80%, 0) 0%, hsla(26, 100%, 80%, 0.3) 7.9%, hsla(26, 100%, 80%, 0) 15%);
-    padding: 0.5rem 0.5rem;
-     -webkit-box-decoration-break: clone;
-    margin: 0;
-    text-shadow: -12px 12px 9.8px hsla(26, 100%, 80%, 0.7), 21px -18.1px 7.3px rgba(255, 255, 255,1), -18.1px -27.3px 30px rgba(255, 255, 255,1);
+    text-decoration: underline;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:hsl(216, 100%,10%);
+    transition: color 275ms ease;
+    }
+
+a#fnref1,a#fnref2,a#fnref3,a#fnref4,a#fnref5{
+    background: none;
+    text-decoration: none;
+    font-family: 'Syne', Arial, Helvetica, sans-serif;
+    color: hsl(216, 100%,10%);
 }
 
-a#fnref1{
-    background: none;
-    text-decoration: none;
-}
-a#fnref2{
-    background: none;
-    text-decoration: none;
-}
-a#fnref3{
-    background: none;
-    text-decoration: none;
-}
-a#fnref4{
-    background: none;
-    text-decoration: none;
-}
-a#fnref5{
-    background: none;
-    text-decoration: none;
-}
 a.footnote-backref{
     background: none;
     text-decoration: none;
@@ -157,14 +142,16 @@ a.footnote-backref{
 
 body.dark-mode p a{
     filter: invert(0.65);
-    padding: 0.5rem 0.5rem;
-     -webkit-box-decoration-break: clone;
     margin: 0;
     text-shadow: none;
 }
 
 .dark-mode a p.log-sub{
-    color: #a69374;
+    color: hsl(37, 22%, 55%);
+}
+
+.dark-mode a#fnref1,a#fnref2,a#fnref3,a#fnref4,a#fnref5{
+    color: hsl(37, 22%, 55%);
 }
 
 .dark-mode .breadcrumbs a{

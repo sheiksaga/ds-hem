@@ -169,15 +169,10 @@ a.hover-link-o:hover::before{
 }
 
 a.f2023{
-    text-decoration: none;
-    color: hsl(26, 100%, 15%);
-    background: linear-gradient(104deg, hsla(26, 100%, 80%, 0) 0.9%, hsla(26, 100%, 80%, 1.25) 2.4%, hsla(26, 100%, 80%, 0.5) 5.8%, hsla(26, 100%, 80%, 0.1) 93%, hsla(26, 100%, 80%, 0.1) 96%, hsla(26, 100%, 80%, 0) 98%), linear-gradient(183deg, hsla(26, 100%, 80%, 0) 0%, hsla(26, 100%, 80%, 0.3) 7.9%, hsla(26, 100%, 80%, 0) 15%);
-    padding: 0.6em 13.7px;
-     -webkit-box-decoration-break: clone;
-    margin: 0;
-    border-radius: 7.5px;
-    text-shadow: -12px 12px 9.8px hsla(26, 100%, 80%, 0.7), 21px -18.1px 7.3px rgba(255, 255, 255,1), -18.1px -27.3px 30px rgba(255, 255, 255,1);
-}
+    text-decoration: underline;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: hsl(26, 50%, 20%);
+    }
 
 /* #dark theme */
 .dark-mode .hi{
