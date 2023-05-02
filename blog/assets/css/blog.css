@@ -2,6 +2,15 @@ h1{
     padding-top: 15rem;
     padding-bottom: 5rem;
 }
+
+h2{
+    padding: 5rem 0rem 2rem 0rem;
+}
+
+h3{
+    padding: 5rem 0rem 1rem 0rem;
+}
+
 p{
     padding-right: 5rem;
     padding-bottom: 1rem;
@@ -110,6 +119,19 @@ a.footnote-backref{
     padding: 0.25rem;
 }
 
+.sub-gen{
+    vertical-align: -1rem;
+    font-size: small;
+    margin-left: -5rem;
+    background-color: hsl(44, 100%, 95%);
+    color: hsl(44, 100%, 20%);
+    padding: 0.25rem;
+}
+
+.second{
+    margin-left: 0.5rem;
+}
+
 .filter-button{
     font-family: inherit;
     border: none;
@@ -156,6 +178,30 @@ body.dark-mode p a{
 
 .dark-mode .breadcrumbs a{
     filter: invert(1);
+}
+
+/* code */
+pre code {
+	color: var(gray);
+	tab-size: 4;
+}
+
+code {
+	font-family: var("SF Mono", Monaco, Menlo, Consolas, "Ubuntu Mono", "Liberation Mono", "DejaVu Sans Mono", "Courier New", monospace);
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre {
+	background-color: hsl(0, 0%, 79%);
+    color: hsl(0, 0%, 0%);
+    padding: 2rem;
+    overflow: auto;
+    margin: 2rem 0rem;
 }
 
 /* #media queries */

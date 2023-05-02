@@ -1,8 +1,8 @@
 :root{
-   --font-light: hsl(218, 100%, 30%);
+   --font-light: hsl(211, 82%, 18%);
    --font-dark: hsl(218, 100%, 95%);
-   --bg-light:hsl(218, 58%, 95%); 
-   --bg-dark:hsl(218, 58%, 5%);
+   --bg-light:hsl(218, 58%, 80%); 
+   --bg-dark:hsl(218, 58%, 20%);
    --font-size-xsm: 1rem;
    --font-size-sm: 1.3rem;
    --font-size-md: 1.6rem;
@@ -53,7 +53,7 @@ a.hover-link{
 
 a.hover-link::before{
         content: '';
-        background-color: hsl(218, 100%, 80%);
+        background-color: hsl(218, 80%, 70%);
         position: absolute;
         left: 0;
         bottom: 0;
@@ -238,14 +238,7 @@ body.dark-mode{
     animation: morph 3s linear 0s ;
 }
 
-.refresh-icon{
-    height: 1.5rem;
-    width: 1.5rem;
-    background: url("/assets/img/refresh.svg");
-    vertical-align: -0.25rem;
-    animation: rotate 5000ms 5 linear;
-    cursor: pointer;
-}
+
 
 img.refresh-icon{
     height: 1.5rem;

@@ -25,6 +25,7 @@ $(document).ready(function() {
         $(".list-of-posts li:has(." + tag + ")").show();
       });
     });
+
     // Add click event to toggle button selection
     $(".filter-button").click(function() {
       $(this).toggleClass("selected");

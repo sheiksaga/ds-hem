@@ -1,6 +1,6 @@
 $(document).ready(function() {
     var facts = [
-      "whether aliens like pizza", "The beauty of a perfectly brewed cup of coffee", "The magic of a well-written book", "why pineapples on pizza became socially accepted", "websites", "the latest LLM", "jabberwockys", "invisbile electric sheep", "how to construct the perfect pun"
+      "whether aliens like pizza", "the beauty of a perfectly brewed cup of coffee", "the magic of a well-written book", "why pineapples on pizza became socially accepted", "websites", "the latest LLM", "jabberwockys", "invisbile electric sheep", "how to construct the perfect pun"
     ];
   
     function newFact() {

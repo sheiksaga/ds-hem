@@ -3,7 +3,7 @@ h1{
 }
 
 h2{
-    background: linear-gradient(90deg, hsl(218, 100%, 50%) 0%, hsl(218, 100%, 15%) 100%);
+    background: linear-gradient(90deg, hsl(233, 100%, 2%) 0%, hsl(0, 15%, 60%) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-family: overpass, Arial, Helvetica, sans-serif;
@@ -29,7 +29,7 @@ h3{
 
 .hi{
     font-size: 72px;
-    background: linear-gradient(90deg, hsl(218, 100%, 80%) 0%, hsl(218, 100%, 25%) 100%);
+    background: linear-gradient(90deg, hsl(0, 0%, 0%) 0%, hsl(218, 100%, 25%) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     max-width: 1024px;
@@ -41,74 +41,74 @@ h3{
 }
 
 .like-display{
-    background: linear-gradient(90deg, hsl(0, 13%, 28%) 0%, hsl(0, 0%, 0%) 100%);
+    background: linear-gradient(90deg, hsl(246, 83%, 15%) 0%, hsl(246, 83%, 34%) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .box{
-    background-color: hsl(218, 100%, 90%);
+    background-color: hsl(218, 100%, 70%);
     padding: 5rem;
     margin-bottom: 10rem;
     box-shadow:  
-        -1px 1px hsl(218, 100%, 80%),
-		-2px 2px hsl(218, 100%, 80%),
-		-3px 3px hsl(218, 100%, 80%),
-		-4px 4px hsl(218, 100%, 80%),
-		-5px 5px hsl(218, 100%, 80%);
+        -1px 1px hsl(218, 100%, 40%),
+		-2px 2px hsl(218, 100%, 40%),
+		-3px 3px hsl(218, 100%, 40%),
+		-4px 4px hsl(218, 100%, 40%),
+		-5px 5px hsl(218, 100%, 40%);
 }
 
 .container1{
-    background-color: hsl(79, 100%, 95%);
+    background-color: hsl(79, 100%, 85%);
     padding: 5rem 10rem 5rem 5rem;
     margin-top: 5rem;
     box-shadow:  
-       inset 1px 1px hsl(79, 100%, 80%),
-       inset 2px 2px hsl(79, 100%, 80%),
-       inset 3px 3px hsl(79, 100%, 80%),
-       inset 4px 4px hsl(79, 100%, 80%),
-       inset 5px 5px hsl(79, 100%, 80%),
+       inset 1px 1px hsl(79, 73%, 16%),
+       inset 2px 2px hsl(79, 73%, 16%),
+       inset 3px 3px hsl(79, 73%, 16%),
+       inset 4px 4px hsl(79, 73%, 16%),
+       inset 5px 5px hsl(79, 73%, 16%),
        0px 8px 32px 0 hsla(79, 100%, 80%, 0.3);
-    color: hsl(79, 100%, 15%);
+    color: hsl(84, 32%, 18%);
 }
 .container2{
-    background-color: hsl(255, 100%, 90%);
+    background-color: hsl(255, 100%, 85%);
     padding: 5rem 10rem 5rem 5rem;
     margin-top: 5rem;
     box-shadow:  
-       inset 1px 1px hsl(255, 100%, 80%),
-       inset 2px 2px hsl(255, 100%, 80%),
-       inset 3px 3px hsl(255, 100%, 80%),
-       inset 4px 4px hsl(255, 100%, 80%),
-       inset 5px 5px hsl(255, 100%, 80%),
+       inset 1px 1px hsl(255, 100%, 60%),
+       inset 2px 2px hsl(255, 100%, 60%),
+       inset 3px 3px hsl(255, 100%, 60%),
+       inset 4px 4px hsl(255, 100%, 60%),
+       inset 5px 5px hsl(255, 100%, 60%),
        0px 8px 32px 0 hsla(255, 100%, 80%, 0.3);
-    color: hsl(255, 100%, 30%);
+    color: hsl(255, 82%, 11%);
 }
 .container3{
-    background-color: hsl(324, 100%, 95%);
+    background-color: hsl(324, 100%, 85%);
     padding: 5rem 10rem 5rem 5rem;
     margin-top: 5rem;
     box-shadow:  
-       inset 1px 1px hsl(324, 100%, 80%),
-       inset 2px 2px hsl(324, 100%, 80%),
-       inset 3px 3px hsl(324, 100%, 80%),
-       inset 4px 4px hsl(324, 100%, 80%),
-       inset 5px 5px hsl(324, 100%, 80%),
+       inset 1px 1px hsl(324, 47%, 34%),
+       inset 2px 2px hsl(324, 47%, 34%),
+       inset 3px 3px hsl(324, 47%, 34%),
+       inset 4px 4px hsl(324, 47%, 34%),
+       inset 5px 5px hsl(324, 47%, 34%),
        0px 8px 32px 0 hsla(324, 100%, 80%, 0.3);
-    color: hsl(324, 100%, 30%);
+    color: hsl(323, 100%, 10%);
 }
 .container4{
-    background-color: hsl(26, 100%, 95%);
+    background-color: hsl(26, 100%, 85%);
     padding: 5rem 10rem 5rem 5rem;
     margin-top: 5rem;
     box-shadow:  
-       inset 1px 1px hsl(26, 100%, 80%),
-       inset 2px 2px hsl(26, 100%, 80%),
-       inset 3px 3px hsl(26, 100%, 80%),
-       inset 4px 4px hsl(26, 100%, 80%),
-       inset 5px 5px hsl(26, 100%, 80%),
+       inset 1px 1px hsl(26, 100%, 40%),
+       inset 2px 2px hsl(26, 100%, 40%),
+       inset 3px 3px hsl(26, 100%, 40%),
+       inset 4px 4px hsl(26, 100%, 40%),
+       inset 5px 5px hsl(26, 100%, 40%),
        0px 8px 32px 0 hsla(26, 100%, 80%, 0.3);
-    color: hsl(26, 100%, 30%);
+    color: hsl(25, 100%, 15%);
 }
 .portfolio{
     background-color: hsl(218, 100%, 90%);
@@ -146,9 +146,10 @@ li.bullets.devanagari{
 }
 
 a.hover-link-o{
-    text-decoration: none;
+    text-decoration: underline;
+    font-weight: bold;
     position: relative;
-    color: hsl(4, 100%, 30%);
+    color: inherit;
 }
 
 a.hover-link-o::before{
@@ -174,6 +175,15 @@ a.f2023{
     color: hsl(26, 50%, 20%);
     }
 
+.refresh-icon{
+        height: 1.5rem;
+        width: 1.5rem;
+        background: url("/assets/img/refresh.svg");
+        vertical-align: -0.25rem;
+        animation: rotate 5000ms 5 linear;
+        cursor: pointer;
+    }
+
 /* #dark theme */
 .dark-mode .hi{
     background: linear-gradient(90deg, hsl(218, 100%, 80%) 0%, hsl(218, 100%, 75%) 100%);
@@ -182,85 +192,10 @@ a.f2023{
 }
 
 .dark-mode .like-display{
-    background: linear-gradient(90deg, hsl(218, 100%, 70%) 0%, hsl(218, 100%, 75%) 100%);
+    background: linear-gradient(90deg, hsl(218, 78%, 85%) 0%, hsl(218, 100%, 75%) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-
-.dark-mode .box{
-    background-color: hsl(218, 100%, 15%);
-    box-shadow:  
-        -1px 1px hsl(218, 100%, 20%),
-		-2px 2px hsl(218, 100%, 20%),
-		-3px 3px hsl(218, 100%, 20%),
-		-4px 4px hsl(218, 100%, 20%),
-		-5px 5px hsl(218, 100%, 20%);
-}
-
-.dark-mode h2{
-    background: linear-gradient(90deg, hsl(218, 100%, 65%) 0%, hsl(218, 100%, 90%) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-
-.dark-mode .container1{
-    background-color: hsl(79, 50%, 15%);
-    box-shadow:  
-       inset 1px 1px hsl(79, 100%, 5%),
-       inset 2px 2px hsl(79, 100%, 5%),
-       inset 3px 3px hsl(79, 100%, 5%),
-       inset 4px 4px hsl(79, 100%, 5%),
-       inset 5px 5px hsl(79, 100%, 5%),
-       0px 8px 32px 0 hsla(79, 100%, 20%, 0.3);
-    color: hsl(79, 100%, 80%);
-}
-.dark-mode .container2{
-    background-color: hsl(255, 50%, 20%);
-    box-shadow:  
-       inset 1px 1px hsl(255, 100%, 10%),
-       inset 2px 2px hsl(255, 100%, 10%),
-       inset 3px 3px hsl(255, 100%, 10%),
-       inset 4px 4px hsl(255, 100%, 10%),
-       inset 5px 5px hsl(255, 100%, 10%),
-       0px 8px 32px 0 hsla(255, 100%, 20%, 0.3);
-    color: hsl(255, 100%, 90%);
-}
-.dark-mode .container3{
-    background-color: hsl(324, 50%, 20%);
-    box-shadow:  
-       inset 1px 1px hsl(324, 100%, 10%),
-       inset 2px 2px hsl(324, 100%, 10%),
-       inset 3px 3px hsl(324, 100%, 10%),
-       inset 4px 4px hsl(324, 100%, 10%),
-       inset 5px 5px hsl(324, 100%, 10%),
-       0px 8px 32px 0 hsla(324, 100%, 20%, 0.3);
-    color: hsl(324, 100%, 90%);
-}
-.dark-mode .container4{
-    background-color: hsl(26, 50%, 20%);
-    box-shadow:  
-       inset 1px 1px hsl(26, 100%, 10%),
-       inset 2px 2px hsl(26, 100%, 10%),
-       inset 3px 3px hsl(26, 100%, 10%),
-       inset 4px 4px hsl(26, 100%, 10%),
-       inset 5px 5px hsl(26, 100%, 10%),
-       0px 8px 32px 0 hsla(26, 100%, 20%, 0.3);
-    color: hsl(26, 100%, 90%);
-}
-
-.dark-mode a.hover-link-o{
-    color: hsl(4, 50%, 70%);
-}
-
-.dark-mode a.hover-link-o::before{
-        background-color: hsl(4, 100%, 15%);
-}
-
-.dark-mode a.f2023{
-    filter: invert(1);
-}
-
 
 /* #media queries */
 @media screen and (min-width: 1200px) {
