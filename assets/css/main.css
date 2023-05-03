@@ -1,7 +1,7 @@
 :root{
    --font-light: hsl(211, 82%, 18%);
    --font-dark: hsl(218, 100%, 95%);
-   --bg-light:hsl(218, 58%, 80%); 
+   --bg-light:hsl(0, 0%, 100%); 
    --bg-dark:hsl(218, 58%, 20%);
    --font-size-xsm: 1rem;
    --font-size-sm: 1.3rem;
