@@ -46,26 +46,10 @@ body{
 }
 
 a.hover-link{
-    text-decoration: none;
     position: relative;
     color: hsl(218, 100%, 20%);
-}
-
-a.hover-link::before{
-        content: '';
-        background-color: hsl(218, 80%, 70%);
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        height: 0.6rem;
-        z-index: -1;
-        transition: all .3s ease-in-out;
-}
-
-a.hover-link:hover::before{
-    bottom: 0;
-    height: 0.3rem;
+    font-family: 'Syne', sans-serif;
+    font-weight: normal;
 }
 
 section {

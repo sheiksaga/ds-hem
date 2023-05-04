@@ -16,6 +16,12 @@ p{
     padding-bottom: 1rem;
 }
 
+body ul li a{
+    color: black;
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
 /* intro */
 .intro{
     margin-top: 15rem;
@@ -178,6 +184,10 @@ body.dark-mode p a{
 
 .dark-mode .breadcrumbs a{
     filter: invert(1);
+}
+
+.dark-mode body li a{
+    filter: invert(0.65);
 }
 
 /* code */
