@@ -47,6 +47,7 @@ body{
 
 a.hover-link{
     position: relative;
+    font-style: normal;
     color: hsl(218, 100%, 20%);
     font-family: 'Syne', sans-serif;
     font-weight: normal;

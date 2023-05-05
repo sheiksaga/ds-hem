@@ -1,54 +1,47 @@
-//back to top
-$(document).ready(function(){
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > $(this).height() * 0.4) {
-            $('#back-to-top').fadeIn();
-        } else {
-            $('#back-to-top').fadeOut();
-        }
-    });
-
-    $('#back-to-top').click(function () {
-        $("html, body").animate({
-            scrollTop: 0
-        }, 600);
-        return false;
-    });
-});
-
-//dark mode
-$(document).ready(function() {
-    // check if user prefers dark mode
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches || localStorage.getItem('dark-mode') === 'true') {
-        $('body').addClass('dark-mode');
+// Helper function to toggle back-to-top visibility
+function toggleBackToTopVisibility() {
+    if ($(window).scrollTop() > $(window).height() * 0.4) {
+      $('#back-to-top').fadeIn();
+    } else {
+      $('#back-to-top').fadeOut();
     }
-
-    // listen for click events on the button
-    $('#theme-toggle-btn').on('click', function() {
-        $('body').toggleClass('dark-mode');
-        localStorage.setItem('dark-mode', $('body').hasClass('dark-mode').toString());
-    });
-});
-
-
+  }
   
-//fetch likes
-$(document).ready(function() {
+  // Helper function to handle theme-toggle-btn click
+  function toggleDarkMode() {
+    $('body').toggleClass('dark-mode');
+    localStorage.setItem('dark-mode', $('body').hasClass('dark-mode').toString());
+  }
+  
+  // Helper function to display a new fact
+  function newFact() {
     var facts = [
       "whether aliens like pizza", "the beauty of a perfectly brewed cup of coffee", "the magic of a well-written book", "why pineapples on pizza became socially accepted", "websites", "the latest LLM", "jabberwockys", "invisbile electric sheep", "how to construct the perfect pun"
     ];
+    var randomFact = Math.floor(Math.random() * facts.length);
+    $('#likeDisplay').text(facts[randomFact]);
+  }
   
-    function newFact() {
-      var randomFact = Math.floor(Math.random() * facts.length);
-      $('#likeDisplay').text(facts[randomFact]);
+  $(document).ready(function() {
+    // Back to top functionality
+    $(window).scroll(toggleBackToTopVisibility);
+    $('#back-to-top').click(function() {
+      $("html, body").animate({ scrollTop: 0 }, 600);
+      return false;
+    });
+  
+    // Dark mode functionality
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches || localStorage.getItem('dark-mode') === 'true') {
+      $('body').addClass('dark-mode');
     }
+    $('#theme-toggle-btn').on('click', toggleDarkMode);
   
+    // Fetch likes functionality
     newFact();
+  
+    $.get("/blog/posts/2023/index.html", function(data) {
+      var firstLink = $(data).find('li:first').find('a');
+      $("#2023").html(firstLink);
+    });
   });
-
-  $.get("/blog/posts/2023/index.html", function(data) {
-    // Get the first <li> element and find the <a> tag inside it
-    var firstLink = $(data).find('li:first').find('a');
-    // Set the HTML of #2023 to the last link
-    $("#2023").html(firstLink);
-});
+  

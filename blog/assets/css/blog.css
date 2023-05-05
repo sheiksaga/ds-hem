@@ -18,9 +18,11 @@ p{
 
 body ul li a{
     color: black;
-    font-weight: bold;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: italic;
+    font-family: 'Syne';
+    font-weight:normal ;
 }
+
 
 /* intro */
 .intro{
@@ -34,25 +36,10 @@ body ul li a{
     font-size: large;
 }
 a.f2023{
-    text-decoration: none;
     position: relative;
     color: hsl(218, 100%, 20%);
 }
-a.f2023::before{
-        content: '';
-        background-color: hsl(218, 100%, 80%);
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        height: 0.6rem;
-        z-index: -1;
-        transition: all .3s ease-in-out;
-}
-a.f2023:hover::before{
-    bottom: 0;
-    height: 0.3rem;
-}
+
 li.nobullet{
     list-style: none;  
 }
@@ -91,9 +78,9 @@ li.nobullet{
 
 body p a{
     text-decoration: underline;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color:hsl(216, 100%,10%);
     transition: color 275ms ease;
+    font-style: italic;
     }
 
 a#fnref1,a#fnref2,a#fnref3,a#fnref4,a#fnref5{
@@ -169,25 +156,25 @@ a.footnote-backref{
 }
 
 body.dark-mode p a{
-    filter: invert(0.65);
+    color: white;
     margin: 0;
     text-shadow: none;
 }
 
 .dark-mode a p.log-sub{
-    color: hsl(37, 22%, 55%);
+    color: white;
 }
 
 .dark-mode a#fnref1,a#fnref2,a#fnref3,a#fnref4,a#fnref5{
-    color: hsl(37, 22%, 55%);
+    color: white;
 }
 
 .dark-mode .breadcrumbs a{
     filter: invert(1);
 }
 
-.dark-mode body li a{
-    filter: invert(0.65);
+.dark-mode ul li a{
+    color: white;
 }
 
 /* code */
