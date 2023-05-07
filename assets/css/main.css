@@ -153,6 +153,13 @@ section {
     color: var(--font-light);
 }
 
+.active-link{
+    text-decoration: none;
+    background-color: hsl(195, 53%, 79%);
+    padding: 0rem 1rem;
+}
+
+
 /* dark theme */
 body.dark-mode{
     background-color: var(--bg-dark);
@@ -198,6 +205,10 @@ body.dark-mode{
 
 .dark-mode .refresh-icon{
     filter: invert(0.65);
+}
+
+.dark-mode .active-link {
+    background-color: #3F5EFB;
 }
 
 /* sun, moon, refresh and morph button (and other SVG code)*/
