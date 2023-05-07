@@ -52,21 +52,21 @@ $(document).ready(function () {
       $(this).toggleClass("selected");
   });
 
-  // Breadcrumbs
-  var url = window.location.href;
-  var segments = url.split('/');
-  segments.shift();
-  segments.pop();
-  var breadcrumbs = [];
+//   // Breadcrumbs
+//   var url = window.location.href;
+//    var segments = url.split('/');
+//    segments.shift();
+//    segments.pop();
+//    var breadcrumbs = [];
 
-  $.each(segments, function (index, segment) {
-      var title = segment.replace(/-/g, ' ').toUpperCase();
-      var link = '/' + segments.slice(0, index + 1).join('/') + '/';
-      var crumb = '<a href="' + link + '">' + title + '</a>';
-      breadcrumbs.push(crumb);
-  });
+//    $.each(segments, function (index, segment) {
+//        var title = segment.replace(/-/g, ' ').toUpperCase();
+//        var link = '/' + segments.slice(0, index + 1).join('/') + '/';
+//        var crumb = '<a href="' + link + '">' + title + '</a>';
+//        breadcrumbs.push(crumb);
+//    });
 
-  var separator = '<span> > </span>';
-  var breadcrumbHtml = '<div class="breadcrumbs">' + breadcrumbs.join(separator) + '</div>';
-  $('body').append(breadcrumbHtml);
-});
+//    var separator = '<span> > </span>';
+//    var breadcrumbHtml = '<div class="breadcrumbs">' + breadcrumbs.join(separator) + '</div>';
+//    $('body').append(breadcrumbHtml);
+ });
