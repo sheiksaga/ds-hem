@@ -7,11 +7,11 @@ function toggleBackToTopVisibility() {
     }
   }
   
-  // Helper function to handle theme-toggle-btn click
-  function toggleDarkMode() {
-    $('body').toggleClass('dark-mode');
-    localStorage.setItem('dark-mode', $('body').hasClass('dark-mode').toString());
-  }
+  // // Helper function to handle theme-toggle-btn click
+  // function toggleDarkMode() {
+  //   $('body').toggleClass('dark-mode');
+  //   localStorage.setItem('dark-mode', $('body').hasClass('dark-mode').toString());
+  // }
   
   // Helper function to display a new fact
   function newFact() {
@@ -30,11 +30,11 @@ function toggleBackToTopVisibility() {
       return false;
     });
   
-    // Dark mode functionality
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches || localStorage.getItem('dark-mode') === 'true') {
-      $('body').addClass('dark-mode');
-    }
-    $('#theme-toggle-btn').on('click', toggleDarkMode);
+    // // Dark mode functionality
+    // if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches || localStorage.getItem('dark-mode') === 'true') {
+    //   $('body').addClass('dark-mode');
+    // }
+    // $('#theme-toggle-btn').on('click', toggleDarkMode);
   
     // Fetch likes functionality
     newFact();
