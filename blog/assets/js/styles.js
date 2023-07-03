@@ -15,15 +15,15 @@ $(document).ready(function () {
       return false;
   });
 
-  // Dark mode
-  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches || localStorage.getItem('dark-mode') === 'true') {
-      $('body').addClass('dark-mode');
-  }
+//   // Dark mode
+//   if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches || localStorage.getItem('dark-mode') === 'true') {
+//       $('body').addClass('dark-mode');
+//   }
 
-  $('#theme-toggle-btn').on('click', function () {
-      $('body').toggleClass('dark-mode');
-      localStorage.setItem('dark-mode', $('body').hasClass('dark-mode').toString());
-  });
+//   $('#theme-toggle-btn').on('click', function () {
+//       $('body').toggleClass('dark-mode');
+//       localStorage.setItem('dark-mode', $('body').hasClass('dark-mode').toString());
+//   });
 
   // Fetch 2023 list
   $.get("posts/2023/index.html", function (data) {
