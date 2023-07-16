@@ -30,28 +30,6 @@ $(document).ready(function () {
       $("#2023").html(data);
   });
 
-  // Filter buttons
-  $(".list-of-posts li").show();
-  $(".filter-button").click(function () {
-      var selectedTags = $(".filter-button.selected").map(function () {
-          return $(this).data("tag");
-      }).get();
-
-      if (selectedTags.length === 0) {
-          $(".list-of-posts li").show();
-          return;
-      }
-
-      $(".list-of-posts li").hide();
-      selectedTags.forEach(function (tag) {
-          $(".list-of-posts li:has(." + tag + ")").show();
-      });
-  });
-
-  $(".filter-button").click(function () {
-      $(this).toggleClass("selected");
-  });
-
 //   // Breadcrumbs
 //   var url = window.location.href;
 //    var segments = url.split('/');
