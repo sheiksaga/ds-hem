@@ -66,28 +66,6 @@ section {
    align-items: center;
 }
 
-.theme-toggle{
-    display: flex;
-    align-items: center;
-    gap: var(--gap);
-    border: none;
-    background-color: transparent;
-    font-size: var(--font-size-lg);
-    cursor: pointer;
-}
-
-.spacer{
-    padding: var(--gap);
-}
-
-.center{
-    padding: 5rem;
-    margin-top: 5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .ds-header{
     display: flex;
     flex-direction: row;
@@ -146,94 +124,11 @@ section {
     margin: 5rem 0rem;
 }
 
-.theme-toggle{
-    display: flex;
-    padding-bottom: 1rem;
-    padding-left: 1rem;
-    color: var(--font-light);
-}
-
 .active-link{
     text-decoration: none;
     background-color: hsl(195, 53%, 79%);
     padding: 0rem 1rem;
 }
-
-
-/* dark theme */
-body.dark-mode{
-    background-color: var(--bg-dark);
-    color: var(--font-dark);
-}
-
-.dark-mode .moon-icon{
-    display: block;
-    filter: invert(0.85);
-}
-
-.dark-mode .sun-icon{
-    display: none;
-    animation: morph 1s forwards;
-}
-
-.dark-mode .theme-toggle{
-    color: var(--font-dark);
-}
-
-.dark-mode a.hover-link{
-    color: hsl(218, 100%, 90%);
-}
-
-.dark-mode a.hover-link::before{
-        background-color: hsl(218, 100%, 80%);
-}
-
-.dark-mode #back-to-top {
-    background-color: hsla(0, 0%, 0%, 0.37);
-    color: var(--font-dark);
-    box-shadow: 0.3rem 0.3rem 0.6rem hsla(215, 23%, 21%, 0.557), -0.2rem -0.2rem 0.5rem hsla(224, 55%, 16%, 0.589);
-    cursor: pointer;
-}
-
-.dark-mode #back-to-top:hover {
-    background-color: rgba(193, 199, 228, 0.582);
-}
-
-.dark-mode .logo-header{
-    filter: invert(65%);
-}
-
-.dark-mode .refresh-icon{
-    filter: invert(0.65);
-}
-
-.dark-mode .active-link {
-    background-color: #3F5EFB;
-}
-
-/* sun, moon, refresh and morph button (and other SVG code)*/
-.sun-icon{
-    background: url("/assets/img/sun-line.svg");
-    height: 2.5rem;
-    width: auto;
-    animation: rotate-hover 3s linear 0s infinite;
-    animation-play-state: paused;
-    transition: all 0.3s ease-in-out;
-}
-
-.sun-icon:hover{
-    animation-play-state: running;
-}
-
-.moon-icon{
-    display: none;
-    background: url("/assets/img/moon-line.svg");
-    height: 2.5rem;
-    width: auto;
-    transition: all 0.3s ease-in-out;
-    animation: morph 3s linear 0s ;
-}
-
 
 
 img.refresh-icon{
@@ -243,44 +138,6 @@ img.refresh-icon{
     vertical-align: -0.25rem;
     animation: rotate 5000ms 5 linear;
     cursor: pointer;
-}
-
-@keyframes morph {
-    0% {
-        transform: rotate(0deg);
-      }
-      50% {
-        transform: rotate(180deg);
-      }
-      100% {
-        transform: rotate(360deg);
-      }
-  }
-
-  .theme-toggle.clicked .sun-icon {
-    animation: morph 0.4s ease-in-out;
-  }
-  
-  .theme-toggle .moon-icon {
-    animation: morph 0.4s ease-in-out;
-  }
-
-@keyframes rotate {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(359deg);
-    }
-}
-
-@keyframes rotate-hover {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(359deg);
-    }
 }
 
 /* media queries */

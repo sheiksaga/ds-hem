@@ -144,40 +144,6 @@ a.footnote-backref{
     padding-bottom: 5rem;
 }
 
-/* dark mode fixes */
-.dark-mode .f2023{
-    color: hsl(218, 100%, 95%);
-}
-.dark-mode a.f2023::before{
-    background-color: hsl(218, 100%, 30%);
-}
-
-.dark-mode .super{
-    color: antiquewhite;
-}
-
-body.dark-mode p a{
-    color: white;
-    margin: 0;
-    text-shadow: none;
-}
-
-.dark-mode a p.log-sub{
-    color: white;
-}
-
-.dark-mode a#fnref1,a#fnref2,a#fnref3,a#fnref4,a#fnref5{
-    color: white;
-}
-
-.dark-mode .breadcrumbs a{
-    filter: invert(1);
-}
-
-.dark-mode ul li a{
-    color: white;
-}
-
 /* code */
 pre code {
 	color: var(gray);
