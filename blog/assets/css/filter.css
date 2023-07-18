@@ -33,3 +33,10 @@ input[type="radio"] {
 [value="general"]:checked ~ .posts .post:not([data-category~="general"]) {
   display: none;
 }
+
+[value="all"]:checked ~ .filters [for="all"],
+[value="web design"]:checked ~ .filters [for="web_design"],
+[value="general"]:checked ~ .filters [for="general"] {
+  background: hsl(211, 83%, 90%);
+    color: hsl(211, 83%, 5%);
+}
