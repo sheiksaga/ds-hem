@@ -1,0 +1,35 @@
+input[type="radio"] {
+    display: none;
+  }
+
+.filters * {
+    display: inline-block;
+  }
+
+.filters label {
+    padding: 0.5rem 1rem;
+    margin-bottom: 0.25rem;
+    line-height: normal;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+.filters label:hover {
+    background: hsl(211, 83%, 90%);
+    color: hsl(211, 83%, 5%);
+}
+
+.posts .post {
+    list-style-type: none;
+    margin-left: -2rem;
+}
+ 
+
+[value="All"]:checked ~ .posts [data-category] {
+    display: block;
+}
+
+[value="web design"]:checked ~ .posts .post:not([data-category~="web_design"]),
+[value="general"]:checked ~ .posts .post:not([data-category~="general"]) {
+  display: none;
+}

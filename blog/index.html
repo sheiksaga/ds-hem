@@ -38,10 +38,6 @@
                 <li class="list-item"><a href="/index.html" class="hover-link">HOME</a></li>
                     <li class="list-item"><a href="/blog/index.html" class="hover-link active-link">BLOG</a></li>
             </ul>
-            <!-- <button class="theme-toggle" id="theme-toggle-btn">
-                <img src="/assets/img/sun-line.svg" alt="sun icon" class="sun-icon">
-                <img src="/assets/img/moon-line.svg" alt="moon-icon" class="moon-icon">
-            </button> -->
         </div>
     </header>
 
@@ -51,10 +47,36 @@
         Now, go read a post. 
     </section>
 
+    <!-- filter -->
+    <input type="radio" id="all" name="categories" value="all" checked>
+    <input type="radio" id="web_design" name="categories" value="web design">
+    <input type="radio" id="general" name="categories" value="general">
+
+    <ol class="filters">
+        filters: &nbsp;
+        <li>
+            <label for="all">all</label>
+        </li>
+        /
+        <li>
+            <label for="web_design">web design</label>
+        </li>
+        /
+        <li>
+            <label for="general">general</label>
+        </li>
+    </ol>
+
+     
+
     <!-- posts, year sorted -->
     <div class="posts">
         <h2>2023</h2>
-        <div id="2023" class="css-2023"></div>
+        <ul class="list-of-posts">
+            <li class="post" data-category="web_design general"><a href="/blog/posts/2023/As of 01 May.html">As of 01 May</a><span class="super">01-05-23</span><span class="sub-web">web design</span></li>
+            <li class="post" data-category="general"><a href="/blog/posts/2023/Website-builds.html">Website Builds </a><span class="super">25-03-23</span><span class="sub-web">web design</span></li>
+            <li class="post" data-category="general"><a href="/blog/posts/2023/what-is-this.html">What is this? </a><span class="super">14-03-23</span><span class="sub-gen">general</span></li>
+        </ul>
     </div>
    
     <!-- back to top button -->
