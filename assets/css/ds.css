@@ -139,7 +139,7 @@ h3{
 
 
 span.email b {
-	display: none;
+	display: none !important;
 }
 
 
