@@ -138,6 +138,11 @@ h3{
     }
 
 
+span.email b {
+	display: none !important;
+}
+
+
 /* #media queries */
 @media screen and (min-width: 1200px) {
         .hero{
