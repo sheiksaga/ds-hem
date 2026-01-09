@@ -1,3 +1,27 @@
+// Theme management
+function initTheme() {
+  // Check for saved theme preference or default to system preference
+  const savedTheme = localStorage.getItem('theme');
+  const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+  if (savedTheme) {
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  } else if (systemPrefersDark) {
+    document.documentElement.setAttribute('data-theme', 'dark');
+  }
+}
+
+function toggleTheme() {
+  const currentTheme = document.documentElement.getAttribute('data-theme');
+  const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+  document.documentElement.setAttribute('data-theme', newTheme);
+  localStorage.setItem('theme', newTheme);
+}
+
+// Note: Theme is already initialized inline in HTML to prevent FOUC
+// This script now just provides the toggleTheme function
+
 // Helper function to toggle back-to-top visibility
 function toggleBackToTopVisibility() {
     if ($(window).scrollTop() > $(window).height() * 0.4) {
@@ -7,7 +31,7 @@ function toggleBackToTopVisibility() {
     }
   }
 
-  
+
   // Helper function to display a new fact
   function newFact() {
     var facts = [
@@ -16,21 +40,22 @@ function toggleBackToTopVisibility() {
     var randomFact = Math.floor(Math.random() * facts.length);
     $('#likeDisplay').text(facts[randomFact]);
   }
-  
+
   $(document).ready(function() {
+    // Theme toggle functionality
+    $('#theme-toggle-btn').click(function() {
+      toggleTheme();
+    });
+
     // Back to top functionality
     $(window).scroll(toggleBackToTopVisibility);
     $('#back-to-top').click(function() {
       $("html, body").animate({ scrollTop: 0 }, 600);
       return false;
     });
-  
+
 
     newFact();
-  
-    $.get("/blog/posts/2023/index.html", function(data) {
-      var firstLink = $(data).find('li:first').find('a');
-      $("#2023").html(firstLink);
-    });
+
   });
   

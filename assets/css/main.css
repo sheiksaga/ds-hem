@@ -13,14 +13,47 @@
    --margin-sm: 2rem;
    --margin-md: 3rem;
    --font-family: 'Syne', verdana, geneva, tahoma, sans-serif;
+   --header-bg: #ffffff;
+   --header-border: #e0e0e0;
+   --hero-gradient-start: #000000;
+   --hero-gradient-end: #002f80;
+   --h2-gradient-start: #000818;
+   --h2-gradient-end: #999999;
+   --like-gradient-start: #150f3f;
+   --like-gradient-end: #3a2db3;
+   --footer-text: #000000;
+   --link-color: #002f80;
 }
+
+[data-theme="dark"] {
+  --font-light: hsl(218, 100%, 95%);
+  --font-dark: hsl(211, 82%, 18%);
+  --bg-light: hsl(218, 58%, 20%);
+  --bg-dark: hsl(0, 0%, 100%);
+  --header-bg: #1f1f2e;
+  --header-border: #2a2a3a;
+  --hero-gradient-start: #ffffff;
+  --hero-gradient-end: #8ab4ff;
+  --h2-gradient-start: #f0f0ff;
+  --h2-gradient-end: #a0a0b0;
+  --like-gradient-start: #b0a0ff;
+  --like-gradient-end: #d0c0ff;
+  --footer-text: #c0c0c0;
+  --link-color: #6a8fff;
+}
+
+
 
 /* base styles */
 *{
    box-sizing: border-box;
    padding: 0;
-   transition: all 0.3s ease-in-out;
    margin: 0;
+}
+
+/* Add transitions only to elements that need them */
+a, button {
+   transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
 html{
@@ -28,7 +61,9 @@ html{
    scroll-behavior: smooth;
 }
 
-body{
+/* Page transition animations */
+body {
+   animation: fadeIn 0.5s ease-in-out;
    font-family: var(--font-family);
    font-size: var(--font-size-md);
    background-color: var(--bg-light);
@@ -39,19 +74,27 @@ body{
    margin: auto;
    max-width: 1024px;
    word-break: break-word;
-   display:flex; 
-   flex-direction:column; 
+   display:flex;
+   flex-direction:column;
    justify-content:center;
    line-height: 2.8rem;
 }
 
-a.hover-link{
-    position: relative;
-    font-style: normal;
-    color: hsl(218, 100%, 20%);
-    font-family: 'Syne', sans-serif;
-    font-weight: normal;
+[data-theme="dark"] body {
+   background-color: var(--bg-light);
+   color: var(--font-dark);
 }
+
+a{
+    color: hsl(218, 100%, 20%);
+    text-decoration: none;
+}
+
+[data-theme="dark"] a {
+    color: #b0c0ff;
+}
+
+
 
 section {
     display: flexbox;
@@ -78,9 +121,8 @@ section {
 .menu{
     display: flex;
     justify-content: end;
-    align-items: end;
+    align-items: center;
     text-transform: uppercase;
-    vertical-align: middle;
 }
 
 .nav-links{
@@ -90,8 +132,48 @@ section {
 
 .list-item{
     display: inline-block;
+    padding: 0rem;
+    font-size: var(--font-size-md);
+}
+
+.list-item a{
     padding: 1rem;
-    font-size: var(--font-size-lg);
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    margin-left: 1rem;
+    display: flex;
+    align-items: center;
+    color: hsl(218, 100%, 20%);
+    transition: transform 0.3s ease-in-out;
+}
+
+[data-theme="dark"] .theme-toggle {
+    color: #e0e0e0;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+}
+
+.theme-toggle svg {
+    display: block;
+}
+
+.theme-toggle .moon-icon {
+    display: none;
+}
+
+[data-theme="dark"] .theme-toggle .sun-icon {
+    display: none;
+}
+
+[data-theme="dark"] .theme-toggle .moon-icon {
+    display: block;
 }
 
 #back-to-top {
@@ -116,6 +198,15 @@ section {
     background-color: rgba(193, 199, 228, 0.582);
 }
 
+[data-theme="dark"] #back-to-top {
+    background-color: hsla(218, 58%, 20%, 0.37);
+    color: var(--font-dark);
+}
+
+[data-theme="dark"] #back-to-top:hover {
+    background-color: hsla(218, 58%, 30%, 0.5);
+}
+
 .footer{
     background: linear-gradient(90deg, #FC466B 0%, #3F5EFB 100%);
     -webkit-background-clip: text;
@@ -125,9 +216,12 @@ section {
 }
 
 .active-link{
-    text-decoration: none;
     background-color: hsl(195, 53%, 79%);
-    padding: 0rem 1rem;
+    padding: 1rem;
+}
+
+[data-theme="dark"] .active-link {
+    background-color: hsl(218, 60%, 40%);
 }
 
 
@@ -152,24 +246,15 @@ img.refresh-icon{
 
 @media screen and (max-width: 768px) {
     body{
-        padding: 3rem;
+        padding: 1rem;
     }
     .ds-header{
         padding-right: 1rem;
-    }
-    .list-item{
-        font-size: var(--font-size-md);
-    }
-    h1{
-        padding-top: 5rem;
-    }
-    .intro{
-        margin-top: 5rem;
     }
 }
 
 @media screen and (min-width: 767px) and (max-width: 1023px) {
     body{
-        padding: 5rem;
+        padding: 2rem;
     }
 }

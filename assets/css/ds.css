@@ -1,3 +1,5 @@
+
+
 li{
     list-style-type: "// ";
     margin-left: 2rem;
@@ -8,34 +10,40 @@ h1{
 }
 
 h2{
-    background: linear-gradient(90deg, hsl(233, 100%, 2%) 0%, hsl(0, 15%, 60%) 100%);
+    background: linear-gradient(90deg, var(--h2-gradient-start) 0%, var(--h2-gradient-end) 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-family: overpass, Arial, Helvetica, sans-serif;
+    font-family: 'Overpass', Arial, Helvetica, sans-serif;
 }
 
 h3{
-    font-family: overpass;
+    font-family: 'Overpass', Arial, Helvetica, sans-serif;
 }
 
 .hero{
     min-height: 20vh;
-    margin-top: 10rem;
+    margin-top: 8rem;
     padding-right: 5rem;
     margin-bottom: 10rem;
-    padding-top: 5rem;
+    padding-top: 3rem;
     max-width: 1024px;
 }
 
 .hero_emoji{
     font-size: var(--font-size-xxl);
     margin-left: -1rem;
+    background: linear-gradient(90deg, var(--hero-gradient-start) 0%, var(--hero-gradient-end) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .hi{
     font-size: 72px;
-    background: linear-gradient(90deg, hsl(0, 0%, 0%) 0%, hsl(218, 100%, 25%) 100%);
+    background: linear-gradient(90deg, var(--hero-gradient-start) 0%, var(--hero-gradient-end) 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     max-width: 1024px;
 }
@@ -45,9 +53,14 @@ h3{
     max-width: 1024px;
 }
 
+[data-theme="dark"] .hero-text {
+    color: #ffffff;
+}
+
 .like-display{
-    background: linear-gradient(90deg, hsl(246, 83%, 15%) 0%, hsl(246, 83%, 34%) 100%);
+    background: linear-gradient(90deg, var(--like-gradient-start) 0%, var(--like-gradient-end) 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -55,7 +68,7 @@ h3{
     background-color: hsl(218, 100%, 70%);
     padding: 5rem;
     margin-bottom: 10rem;
-    box-shadow:  
+    box-shadow:
         -1px 1px hsl(218, 100%, 40%),
 		-2px 2px hsl(218, 100%, 40%),
 		-3px 3px hsl(218, 100%, 40%),
@@ -63,11 +76,21 @@ h3{
 		-5px 5px hsl(218, 100%, 40%);
 }
 
+[data-theme="dark"] .box {
+    background-color: hsl(218, 60%, 30%);
+    box-shadow:
+        -1px 1px hsl(218, 60%, 20%),
+		-2px 2px hsl(218, 60%, 20%),
+		-3px 3px hsl(218, 60%, 20%),
+		-4px 4px hsl(218, 60%, 20%),
+		-5px 5px hsl(218, 60%, 20%);
+}
+
 .container1{
     background-color: hsl(79, 100%, 85%);
     padding: 5rem 10rem 5rem 5rem;
     margin-top: 5rem;
-    box-shadow:  
+    box-shadow:
        inset 1px 1px hsl(79, 73%, 16%),
        inset 2px 2px hsl(79, 73%, 16%),
        inset 3px 3px hsl(79, 73%, 16%),
@@ -76,11 +99,23 @@ h3{
        0px 8px 32px 0 hsla(79, 100%, 80%, 0.3);
     color: hsl(84, 32%, 18%);
 }
+
+[data-theme="dark"] .container1 {
+    background-color: hsl(79, 60%, 25%);
+    box-shadow:
+       inset 1px 1px hsl(79, 60%, 15%),
+       inset 2px 2px hsl(79, 60%, 15%),
+       inset 3px 3px hsl(79, 60%, 15%),
+       inset 4px 4px hsl(79, 60%, 15%),
+       inset 5px 5px hsl(79, 60%, 15%),
+       0px 8px 32px 0 hsla(79, 60%, 40%, 0.3);
+    color: hsl(79, 50%, 85%);
+}
 .container2{
     background-color: hsl(255, 100%, 85%);
     padding: 5rem 10rem 5rem 5rem;
     margin-top: 5rem;
-    box-shadow:  
+    box-shadow:
        inset 1px 1px hsl(255, 100%, 60%),
        inset 2px 2px hsl(255, 100%, 60%),
        inset 3px 3px hsl(255, 100%, 60%),
@@ -89,11 +124,23 @@ h3{
        0px 8px 32px 0 hsla(255, 100%, 80%, 0.3);
     color: hsl(255, 82%, 11%);
 }
+
+[data-theme="dark"] .container2 {
+    background-color: hsl(255, 60%, 25%);
+    box-shadow:
+       inset 1px 1px hsl(255, 60%, 15%),
+       inset 2px 2px hsl(255, 60%, 15%),
+       inset 3px 3px hsl(255, 60%, 15%),
+       inset 4px 4px hsl(255, 60%, 15%),
+       inset 5px 5px hsl(255, 60%, 15%),
+       0px 8px 32px 0 hsla(255, 60%, 40%, 0.3);
+    color: hsl(255, 50%, 85%);
+}
 .container3{
     background-color: hsl(324, 100%, 85%);
     padding: 5rem 10rem 5rem 5rem;
     margin-top: 5rem;
-    box-shadow:  
+    box-shadow:
        inset 1px 1px hsl(324, 47%, 34%),
        inset 2px 2px hsl(324, 47%, 34%),
        inset 3px 3px hsl(324, 47%, 34%),
@@ -102,11 +149,23 @@ h3{
        0px 8px 32px 0 hsla(324, 100%, 80%, 0.3);
     color: hsl(323, 100%, 10%);
 }
+
+[data-theme="dark"] .container3 {
+    background-color: hsl(324, 60%, 25%);
+    box-shadow:
+       inset 1px 1px hsl(324, 60%, 15%),
+       inset 2px 2px hsl(324, 60%, 15%),
+       inset 3px 3px hsl(324, 60%, 15%),
+       inset 4px 4px hsl(324, 60%, 15%),
+       inset 5px 5px hsl(324, 60%, 15%),
+       0px 8px 32px 0 hsla(324, 60%, 40%, 0.3);
+    color: hsl(324, 50%, 85%);
+}
 .container4{
     background-color: hsl(26, 100%, 85%);
     padding: 5rem 10rem 5rem 5rem;
     margin-top: 5rem;
-    box-shadow:  
+    box-shadow:
        inset 1px 1px hsl(26, 100%, 40%),
        inset 2px 2px hsl(26, 100%, 40%),
        inset 3px 3px hsl(26, 100%, 40%),
@@ -114,6 +173,18 @@ h3{
        inset 5px 5px hsl(26, 100%, 40%),
        0px 8px 32px 0 hsla(26, 100%, 80%, 0.3);
     color: hsl(25, 100%, 15%);
+}
+
+[data-theme="dark"] .container4 {
+    background-color: hsl(26, 60%, 25%);
+    box-shadow:
+       inset 1px 1px hsl(26, 60%, 15%),
+       inset 2px 2px hsl(26, 60%, 15%),
+       inset 3px 3px hsl(26, 60%, 15%),
+       inset 4px 4px hsl(26, 60%, 15%),
+       inset 5px 5px hsl(26, 60%, 15%),
+       0px 8px 32px 0 hsla(26, 60%, 40%, 0.3);
+    color: hsl(26, 50%, 85%);
 }
 .portfolio{
     background-color: hsl(218, 100%, 90%);
@@ -124,6 +195,11 @@ h3{
     border-color: hsla(218, 100%, 80%);
 }
 
+[data-theme="dark"] .portfolio {
+    background-color: hsl(218, 60%, 20%);
+    border-color: hsla(218, 60%, 40%);
+}
+
 .listspace{
     padding-left: 2rem;
 }
@@ -131,11 +207,21 @@ h3{
 .refresh-icon{
         height: 1.5rem;
         width: 1.5rem;
-        background: url("/assets/img/refresh.svg");
+        background: url("../img/refresh.svg");
         vertical-align: -0.25rem;
         animation: rotate 5000ms 5 linear;
         cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+        filter: brightness(0.3);
     }
+
+.refresh-icon:hover{
+        transform: rotate(180deg);
+    }
+
+[data-theme="dark"] .refresh-icon {
+    filter: invert(1);
+}
 
 
 span.email b {
@@ -173,3 +259,5 @@ span.email b {
         list-style-position: outside;
     }
 }
+
+

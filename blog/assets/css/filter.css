@@ -6,6 +6,10 @@ input[type="radio"] {
     display: inline-block;
   }
 
+[data-theme="dark"] .filters {
+    color: #ffffff;
+}
+
 .filters label {
     padding: 0.5rem 1rem;
     margin-bottom: 0.25rem;
@@ -17,6 +21,11 @@ input[type="radio"] {
 .filters label:hover {
     background: hsl(211, 83%, 90%);
     color: hsl(211, 83%, 5%);
+}
+
+[data-theme="dark"] .filters label:hover {
+    background: hsl(211, 60%, 30%);
+    color: #ffffff;
 }
 
 .posts .post {
@@ -39,4 +48,11 @@ input[type="radio"] {
 [value="general"]:checked ~ .filters [for="general"] {
   background: hsl(211, 83%, 90%);
     color: hsl(211, 83%, 5%);
+}
+
+[data-theme="dark"] [value="all"]:checked ~ .filters [for="all"],
+[data-theme="dark"] [value="web design"]:checked ~ .filters [for="web_design"],
+[data-theme="dark"] [value="general"]:checked ~ .filters [for="general"] {
+    background: hsl(211, 60%, 30%);
+    color: #ffffff;
 }

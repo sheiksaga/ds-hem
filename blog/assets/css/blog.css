@@ -1,39 +1,47 @@
 h1{
-    padding-top: 15rem;
-    padding-bottom: 5rem;
+    padding-top: 5rem;
+    padding-bottom: 2rem;
 }
 
 h2{
-    padding: 5rem 0rem 2rem 0rem;
+    padding: 2rem 0rem;
 }
 
 h3{
-    padding: 5rem 0rem 1rem 0rem;
+    padding: 1rem 0rem;
 }
 
 p{
-    padding-right: 5rem;
+    padding-right: 0rem;
     padding-bottom: 1rem;
     font-family: Inter;
     letter-spacing: .03em;
 }
 
 body ul li a{
-    color: black;
+    color: hsl(218, 100%, 20%);
     font-weight:normal ;
 }
 
+[data-theme="dark"] body ul li a {
+    color: #b0c0ff;
+}
+
 ul {
-    list-style-type:"// ";
+    list-style-type: "// ";
     padding-left: 2rem;
 }
 
 
 /* intro */
 .intro{
-    margin-top: 15rem;
-    margin-bottom: 5rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
     font-size: x-large;
+}
+
+[data-theme="dark"] .intro {
+    color: #ffffff;
 }
 
 /* list styling */
@@ -43,6 +51,10 @@ ul {
 a.f2023{
     position: relative;
     color: hsl(218, 100%, 20%);
+}
+
+[data-theme="dark"] a.f2023 {
+    color: #b0c0ff;
 }
 
 li.nobullet{
@@ -58,6 +70,10 @@ li.nobullet{
     color:hsl(218, 100%, 30%);
     text-decoration: none;
   }
+
+[data-theme="dark"] .blog-ref a {
+    color: #b0c0ff;
+}
 .blog-ref img {
     display: inline-block;
     vertical-align: middle;
@@ -65,21 +81,21 @@ li.nobullet{
   }
 .blog-ref p.log-sub {
     display: inline-block;
-    vertical-align: -5rem;
-    margin-left: -5rem;
+    vertical-align: -2rem;
+    margin-left: -6rem;
   }
 .blog-img{
-    max-width: 80%;
+    max-width: 100%;
     padding-top: 2rem;
     padding-bottom: 2rem;
 }
 .footnotes{
-    padding-top: 2rem;
+    padding-top: 0rem;
     margin-left: 2rem;
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-xsm);
 }
 .posts {
-    padding-bottom: 2rem;
+    padding-bottom: 0rem;
 }
 
 body p a{
@@ -88,11 +104,23 @@ body p a{
     transition: color 275ms ease;
     }
 
+[data-theme="dark"] body p a {
+    color: #a0c0ff;
+}
+
 a#fnref1,a#fnref2,a#fnref3,a#fnref4,a#fnref5{
     background: none;
     text-decoration: none;
     font-family: 'Syne', Arial, Helvetica, sans-serif;
     color: hsl(216, 100%,10%);
+}
+
+[data-theme="dark"] a#fnref1,
+[data-theme="dark"] a#fnref2,
+[data-theme="dark"] a#fnref3,
+[data-theme="dark"] a#fnref4,
+[data-theme="dark"] a#fnref5 {
+    color: #a0c0ff;
 }
 
 a.footnote-backref{
@@ -104,26 +132,40 @@ a.footnote-backref{
 .super{
     vertical-align: 1rem;
     font-size: small;
-    margin-left: 1rem;
-    color: black;
+    margin-left: 2rem;
+    color: hsl(0, 0%, 40%);
+}
+
+[data-theme="dark"] .super {
+    color: #c0c0c0;
 }
 
 .sub-web{
     vertical-align: -1rem;
     font-size: small;
-    margin-left: -5rem;
+    margin-left: -6rem;
     background-color: hsl(135, 100%, 95%);
     color: hsl(135, 100%, 25%);
     padding: 0.25rem;
 }
 
+[data-theme="dark"] .sub-web {
+    background-color: hsl(135, 50%, 25%);
+    color: #a0e0a0;
+}
+
 .sub-gen{
     vertical-align: -1rem;
     font-size: small;
-    margin-left: -5rem;
+    margin-left: -6rem;
     background-color: hsl(44, 100%, 95%);
     color: hsl(44, 100%, 20%);
     padding: 0.25rem;
+}
+
+[data-theme="dark"] .sub-gen {
+    background-color: hsl(44, 50%, 25%);
+    color: #f0d0a0;
 }
 
 .second{
@@ -138,28 +180,42 @@ a.footnote-backref{
     padding: 0.25rem 1rem;
 }
 
+[data-theme="dark"] .filter-button {
+    background-color: hsl(239, 40%, 30%);
+    color: #d0d0ff;
+}
+
 .selected{
     background-color: hsl(239, 100%, 65%);
     color: hsl(239, 100%, 95%);
     box-shadow: inset 0rem 0rem 0rem 0.15rem  black;
 }
 
+[data-theme="dark"] .selected {
+    background-color: hsl(239, 60%, 50%);
+    color: #ffffff;
+    box-shadow: inset 0rem 0rem 0rem 0.15rem #ffffff;
+}
+
 .filter{
-    padding-bottom: 5rem;
+    padding-bottom: 2rem;
 }
 
 /* code */
 pre code {
-	color: var(gray);
+	color: hsl(0, 0%, 50%);
 	tab-size: 4;
 }
 
 code {
-	font-family: var("SF Mono", Monaco, Menlo, Consolas, "Ubuntu Mono", "Liberation Mono", "DejaVu Sans Mono", "Courier New", monospace);
+	font-family: "SF Mono", Monaco, Menlo, Consolas, "Ubuntu Mono", "Liberation Mono", "DejaVu Sans Mono", "Courier New", monospace;
 	font-size: 1em;
 	line-height: 1.357em;
 }
 
+[data-theme="dark"] code {
+    color: #e0e0e0;
+}
 
 pre {
 	background-color: hsl(0, 0%, 79%);
@@ -170,30 +226,7 @@ pre {
     white-space: pre-wrap;
 }
 
-/* #media queries */
-@media screen and (min-width: 1200px) {
- p{
-    padding: 1rem;
- }
- .blog-img{
-    max-width: 100%;
-}
-}
-
-@media screen and (max-width: 768px) {
-    p{
-        padding: 1rem;
-     }
-     .blog-img{
-        max-width: 100%;
-    }
-    .posts{
-        padding-bottom: 1rem;
-    }
-}
-
-@media screen and (min-width: 767px) and (max-width: 1023px) {
-    body{
-        padding: 5rem;
-    }
+[data-theme="dark"] pre {
+    background-color: hsl(220, 20%, 20%);
+    color: #e0e0e0;
 }
