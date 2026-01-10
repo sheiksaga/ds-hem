@@ -6,7 +6,7 @@ category: general
 
 Two years without updates. What?!
 
-In my defense, a lot has happened[^1]. The most important update is that I am now the proud human of Nilo, a wonderful Labradoodle who has taken over my life in the best way possible. He's intelligent, ridiculously fluffy, and has more energy than I've ever had in my entire existence combined.
+In my defense, a lot has happened [^1]. The most important update is that I am now the proud human of Nilo, a wonderful Labradoodle who has taken over my life in the best way possible. He's intelligent, ridiculously fluffy, and has more energy than I've ever had in my entire existence combined.
 
 Writing this while he's asleep at my feet, which I'm told is a very Labradoodle thing to do.
 

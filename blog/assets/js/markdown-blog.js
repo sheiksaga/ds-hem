@@ -12,6 +12,16 @@
         cacheEnabled: true
     };
 
+    // Escape HTML attribute values
+    function escapeHtmlAttribute(text) {
+        return text
+            .replace(/&/g, '&amp;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;');
+    }
+
     // Custom footnotes pre-processor
     function processFootnotes(markdown) {
         // Extract footnote definitions
@@ -35,7 +45,7 @@
             if (text) {
                 const refNum = footnoteIndex++;
                 footnotesHtml.push(`<li id="fn-${refNum}">${text} <a href="#fnref-${refNum}" class="footnote-backref">↩︎</a></li>`);
-                return `<sup id="fnref-${refNum}"><a href="#fn-${refNum}" data-footnote="${text}">${refNum}</a></sup>`;
+                return `<sup id="fnref-${refNum}"><a href="#fn-${refNum}" data-footnote="${escapeHtmlAttribute(text)}">${refNum}</a></sup>`;
             }
             return refMatch;
         });
