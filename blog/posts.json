@@ -1,6 +1,14 @@
 {
   "posts": [
     {
+      "slug": "back-in-the-saddle",
+      "title": "Back in the saddle",
+      "date": "2026-01-10",
+      "category": "general",
+      "file": "./posts/2026/Back in the saddle.md",
+      "year": "2026"
+    },
+    {
       "slug": "as-of-01-may",
       "title": "As of 01 May",
       "date": "2023-05-01",

@@ -21,9 +21,10 @@
 
         while ((match = defRegex.exec(markdown)) !== null) {
             footnoteDefs[match[1]] = match[2].trim();
-            // Remove the definition from the content
-            markdown = markdown.replace(match[0], '');
         }
+
+        // Remove all footnote definitions from the content
+        markdown = markdown.replace(defRegex, '');
 
         // Replace footnote references with superscript links
         let footnoteIndex = 1;
