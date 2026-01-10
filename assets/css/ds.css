@@ -37,6 +37,11 @@ h3{
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    will-change: opacity, transform;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
 }
 
 .hi{
@@ -46,11 +51,17 @@ h3{
     background-clip: text;
     -webkit-text-fill-color: transparent;
     max-width: 1024px;
+    will-change: opacity, transform;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
 }
 
 .hero-text{
     padding: 2rem 1rem 2rem 0rem;
     max-width: 1024px;
+    will-change: opacity, transform;
 }
 
 [data-theme="dark"] .hero-text {
@@ -98,6 +109,7 @@ h3{
        inset 5px 5px hsl(79, 73%, 16%),
        0px 8px 32px 0 hsla(79, 100%, 80%, 0.3);
     color: hsl(84, 32%, 18%);
+    will-change: opacity, transform;
 }
 
 [data-theme="dark"] .container1 {
@@ -123,6 +135,7 @@ h3{
        inset 5px 5px hsl(255, 100%, 60%),
        0px 8px 32px 0 hsla(255, 100%, 80%, 0.3);
     color: hsl(255, 82%, 11%);
+    will-change: opacity, transform;
 }
 
 [data-theme="dark"] .container2 {
@@ -148,6 +161,7 @@ h3{
        inset 5px 5px hsl(324, 47%, 34%),
        0px 8px 32px 0 hsla(324, 100%, 80%, 0.3);
     color: hsl(323, 100%, 10%);
+    will-change: opacity, transform;
 }
 
 [data-theme="dark"] .container3 {
@@ -173,6 +187,7 @@ h3{
        inset 5px 5px hsl(26, 100%, 40%),
        0px 8px 32px 0 hsla(26, 100%, 80%, 0.3);
     color: hsl(25, 100%, 15%);
+    will-change: opacity, transform;
 }
 
 [data-theme="dark"] .container4 {

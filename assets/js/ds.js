@@ -1,25 +1,43 @@
 // Function to randomly select and display a "like"
 function displayRandomLike() {
   const likes = [
-    "long walks on the beach",
-    "the smell of rain",
+    "the jabberwocky",
+    "something about LLMs",
     "a good book",
-    "a warm cup of coffee",
-    "a sunny day",
-    "a starry night",
+    "why tea is superior to coffee on a hot day",
+    "rains are a good thing when warm, actually",
     "a crackling fireplace",
-    "a home-cooked meal",
-    "a good laugh",
-    "a long hug"
+    "the fact that nothing beats a good home-cooked meal",
+    "the smell of old books",
+    "the buzz of a sleeping city",
+    "why runny egg yolks are better",
+    "creating a very good pun"
   ];
   const likeDisplay = document.getElementById("likeDisplay");
-  const randomIndex = Math.floor(Math.random() * likes.length);
-  likeDisplay.textContent = likes[randomIndex];
+  if (likeDisplay) {
+    const randomIndex = Math.floor(Math.random() * likes.length);
+    likeDisplay.textContent = likes[randomIndex];
+  }
 }
 
-// Display a random "like" when the page loads
-displayRandomLike();
+// Wait for DOM to be ready before running
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', function() {
+    displayRandomLike();
 
-// Refresh the "like" when the refresh icon is clicked
-const refreshIcon = document.querySelector(".refresh-icon");
-refreshIcon.addEventListener("click", displayRandomLike);
+    // Refresh the "like" when the refresh icon is clicked
+    const refreshIcon = document.querySelector(".refresh-icon");
+    if (refreshIcon) {
+      refreshIcon.addEventListener("click", displayRandomLike);
+    }
+  });
+} else {
+  // DOM is already ready
+  displayRandomLike();
+
+  // Refresh the "like" when the refresh icon is clicked
+  const refreshIcon = document.querySelector(".refresh-icon");
+  if (refreshIcon) {
+    refreshIcon.addEventListener("click", displayRandomLike);
+  }
+}
