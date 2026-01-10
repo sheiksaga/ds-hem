@@ -140,8 +140,6 @@
                 }
             }
         );
-
-        console.log('GSAP scroll animations initialized');
     }
 
     // Initialize on DOM ready

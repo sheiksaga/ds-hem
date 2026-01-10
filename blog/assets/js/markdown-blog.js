@@ -403,15 +403,28 @@
         }
 
         // Show post content, hide index
-        if (postContent) postContent.style.display = 'block';
-        if (blogIndex) blogIndex.style.display = 'none';
+        if (postContent) {
+            postContent.style.display = 'block';
+            postContent.classList.remove('hidden');
+        }
+        if (blogIndex) {
+            blogIndex.style.display = 'none';
+            blogIndex.classList.add('hidden');
+        }
 
         // Hide intro and filters when viewing a post
-        if (introSection) introSection.style.display = 'none';
-        if (filtersSection) filtersSection.style.display = 'none';
+        if (introSection) {
+            introSection.style.display = 'none';
+            introSection.classList.add('hidden');
+        }
+        if (filtersSection) {
+            filtersSection.style.display = 'none';
+            filtersSection.classList.add('hidden');
+        }
         // Hide filter radio inputs
         filterInputs.forEach(input => {
             input.style.display = 'none';
+            input.classList.add('hidden');
         });
 
         hideLoading();
@@ -447,13 +460,17 @@
 
     // Show blog index
     function showIndex() {
-        if (postContent) postContent.style.display = 'none';
+        if (postContent) {
+            postContent.style.display = 'none';
+            postContent.classList.add('hidden');
+        }
         if (blogIndex) {
             // Start with fade-in state
             blogIndex.classList.add('fade-in');
 
             // Show the index
             blogIndex.style.display = 'block';
+            blogIndex.classList.remove('hidden');
 
             // Trigger reflow and remove fade-in class
             void blogIndex.offsetWidth;
@@ -465,14 +482,22 @@
         // Hide breadcrumbs
         if (breadcrumbsEl) {
             breadcrumbsEl.style.display = 'none';
+            breadcrumbsEl.classList.add('hidden');
         }
 
         // Show intro and filters again
-        if (introSection) introSection.style.display = 'block';
-        if (filtersSection) filtersSection.style.display = 'block';
+        if (introSection) {
+            introSection.style.display = 'block';
+            introSection.classList.remove('hidden');
+        }
+        if (filtersSection) {
+            filtersSection.style.display = 'block';
+            filtersSection.classList.remove('hidden');
+        }
         // Show filter radio inputs
         filterInputs.forEach(input => {
             input.style.display = '';
+            input.classList.remove('hidden');
         });
 
         hideLoading();
@@ -484,7 +509,7 @@
 
         // If we're currently viewing a post and hash is an internal anchor
         // Don't redirect to index - let browser handle anchor navigation
-        if (postContent && postContent.style.display === 'block' &&
+        if (postContent && !postContent.classList.contains('hidden') &&
             hash && hash !== '#' && hash !== '' && hash !== '#blog' &&
             !hash.match(/^#post\/(\d{4})\/([^/]+)$/)) {
             // Internal anchor link within current post - do nothing
@@ -514,30 +539,23 @@
     // Initialize the blog
     async function init() {
         try {
-            console.log('[Markdown Blog] Starting initialization...');
-
             // Check if required libraries are loaded
             if (typeof marked === 'undefined') {
                 throw new Error('marked.js library not loaded');
             }
-            console.log('[Markdown Blog] marked.js is loaded');
 
             if (typeof jsyaml === 'undefined') {
                 throw new Error('js-yaml library not loaded');
             }
-            console.log('[Markdown Blog] js-yaml is loaded');
 
             // Load posts manifest
             showLoading();
             await loadManifest();
-            console.log('[Markdown Blog] Posts loaded:', postsData.posts.length);
 
             // Build index
             const indexHtml = buildIndex(postsData.posts);
-            console.log('[Markdown Blog] Index HTML generated, length:', indexHtml.length);
             if (blogIndex) {
                 blogIndex.innerHTML = indexHtml;
-                console.log('[Markdown Blog] Blog index updated');
             }
 
             // Trigger filter after index is built
@@ -581,7 +599,6 @@
             window.addEventListener('hashchange', handleHash);
 
             hideLoading();
-            console.log('Markdown Blog initialized successfully');
 
         } catch (e) {
             showError(e.message);

@@ -11,7 +11,6 @@ h1{
 
 h2{
     background: linear-gradient(90deg, var(--h2-gradient-start) 0%, var(--h2-gradient-end) 100%);
-    -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     font-family: 'Overpass', Arial, Helvetica, sans-serif;
@@ -34,7 +33,6 @@ h3{
     font-size: var(--font-size-xxl);
     margin-left: -1rem;
     background: linear-gradient(90deg, var(--hero-gradient-start) 0%, var(--hero-gradient-end) 100%);
-    -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     will-change: opacity, transform;
@@ -47,7 +45,6 @@ h3{
 .hi{
     font-size: 72px;
     background: linear-gradient(90deg, var(--hero-gradient-start) 0%, var(--hero-gradient-end) 100%);
-    -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     max-width: 1024px;
@@ -70,7 +67,6 @@ h3{
 
 .like-display{
     background: linear-gradient(90deg, var(--like-gradient-start) 0%, var(--like-gradient-end) 100%);
-    -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }

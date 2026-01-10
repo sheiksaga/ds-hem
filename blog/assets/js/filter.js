@@ -1,20 +1,22 @@
 // Function to filter the posts based on the selected category
 function filterPosts() {
   const selectedCategory = document.querySelector('input[name="categories"]:checked');
-  const posts = document.querySelectorAll(".post");
+  const postElements = document.querySelectorAll(".post");
 
   // If no posts exist yet (blog not loaded), return
-  if (!posts || posts.length === 0) {
+  if (!postElements || postElements.length === 0) {
     return;
   }
 
   const category = selectedCategory ? selectedCategory.value : 'all';
 
-  posts.forEach(post => {
+  postElements.forEach(post => {
     if (category === "all" || post.dataset.category === category) {
-      post.style.display = "list-item";
+      post.classList.add('visible');
+      post.classList.remove('hidden');
     } else {
-      post.style.display = "none";
+      post.classList.add('hidden');
+      post.classList.remove('visible');
     }
   });
 }

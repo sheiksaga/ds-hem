@@ -1,7 +1,7 @@
 :root{
    --font-light: hsl(211, 82%, 18%);
    --font-dark: hsl(218, 100%, 95%);
-   --bg-light:hsl(0, 0%, 100%); 
+   --bg-light:hsl(0, 0%, 100%);
    --bg-dark:hsl(218, 58%, 20%);
    --font-size-xsm: 1rem;
    --font-size-sm: 1.3rem;
@@ -23,6 +23,10 @@
    --like-gradient-end: #3a2db3;
    --footer-text: #000000;
    --link-color: #002f80;
+   --color-primary-light: hsl(218, 100%, 20%);
+   --color-primary-dark: #b0c0ff;
+   --color-border-light: #e0e0e0;
+   --color-text-muted: #c0c0c0;
 }
 
 [data-theme="dark"] {
@@ -82,7 +86,7 @@ body {
 
 [data-theme="dark"] body {
    background-color: var(--bg-light);
-   color: var(--font-dark);
+   color: var(--font-light);
 }
 
 a{
@@ -296,7 +300,6 @@ section {
 
 .footer{
     background: linear-gradient(90deg, #FC466B 0%, #3F5EFB 100%);
-    -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     margin: 5rem 0rem;

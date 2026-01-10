@@ -189,8 +189,6 @@
                 }
             );
         }
-
-        console.log('GSAP blog scroll animations initialized');
     }
 
     // Initialize on DOM ready

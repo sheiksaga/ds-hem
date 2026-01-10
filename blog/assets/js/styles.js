@@ -1,16 +1,4 @@
 // Theme management
-function initTheme() {
-  // Check for saved theme preference or default to system preference
-  const savedTheme = localStorage.getItem('theme');
-  const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-  if (savedTheme) {
-    document.documentElement.setAttribute('data-theme', savedTheme);
-  } else if (systemPrefersDark) {
-    document.documentElement.setAttribute('data-theme', 'dark');
-  }
-}
-
 function toggleTheme() {
   const currentTheme = document.documentElement.getAttribute('data-theme');
   const newTheme = currentTheme === 'dark' ? 'light' : 'dark';

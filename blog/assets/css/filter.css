@@ -7,6 +7,7 @@ input[type="radio"] {
     display: flex;
     gap: 0.5rem;
     align-items: center;
+    margin-bottom: 5rem;
 }
 
 [data-theme="dark"] .filters {
@@ -83,4 +84,13 @@ input[type="radio"] {
 [data-theme="dark"] [value="general"]:checked ~ .filters [for="general"] {
     color: #ffffff;
     font-weight: 500;
+}
+
+/* Post visibility classes for JavaScript filtering */
+.post.hidden {
+    display: none;
+}
+
+.post.visible {
+    display: list-item;
 }
