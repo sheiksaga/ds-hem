@@ -2,12 +2,38 @@ input[type="radio"] {
     display: none;
   }
 
-.filters * {
-    display: inline-block;
-  }
+.filters {
+    position: relative;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
 
 [data-theme="dark"] .filters {
     color: #ffffff;
+}
+
+.filters * {
+    display: inline-block;
+}
+
+/* Sliding indicator for filters */
+.filter-indicator {
+    position: absolute;
+    height: 100%;
+    background: hsl(211, 83%, 90%);
+    pointer-events: none;
+    z-index: 0;
+    transition: background 0.3s ease;
+}
+
+[data-theme="dark"] .filter-indicator {
+    background: hsl(211, 60%, 30%);
+}
+
+.filters li {
+    position: relative;
+    z-index: 1;
 }
 
 .filters label {
@@ -16,15 +42,16 @@ input[type="radio"] {
     line-height: normal;
     cursor: pointer;
     transition: all 0.3s;
-  }
+    position: relative;
+    display: inline-block;
+}
 
+/* Remove hover background since indicator handles it */
 .filters label:hover {
-    background: hsl(211, 83%, 90%);
     color: hsl(211, 83%, 5%);
 }
 
 [data-theme="dark"] .filters label:hover {
-    background: hsl(211, 60%, 30%);
     color: #ffffff;
 }
 
@@ -43,16 +70,17 @@ input[type="radio"] {
   display: none;
 }
 
+/* Checked state styling - text color only since indicator handles background */
 [value="all"]:checked ~ .filters [for="all"],
-[value="web design"]:checked ~ .filters [for="web_design"],
+[value="web_design"]:checked ~ .filters [for="web_design"],
 [value="general"]:checked ~ .filters [for="general"] {
-  background: hsl(211, 83%, 90%);
     color: hsl(211, 83%, 5%);
+    font-weight: 500;
 }
 
 [data-theme="dark"] [value="all"]:checked ~ .filters [for="all"],
-[data-theme="dark"] [value="web design"]:checked ~ .filters [for="web_design"],
+[data-theme="dark"] [value="web_design"]:checked ~ .filters [for="web_design"],
 [data-theme="dark"] [value="general"]:checked ~ .filters [for="general"] {
-    background: hsl(211, 60%, 30%);
     color: #ffffff;
+    font-weight: 500;
 }

@@ -1,0 +1,28 @@
+{
+  "posts": [
+    {
+      "slug": "as-of-01-may",
+      "title": "As of 01 May",
+      "date": "2023-05-01",
+      "category": "web_design",
+      "file": "./posts/2023/As of 01 May.md",
+      "year": "2023"
+    },
+    {
+      "slug": "website-builds",
+      "title": "Website Builds",
+      "date": "2023-03-25",
+      "category": "web_design",
+      "file": "./posts/2023/Website-builds.md",
+      "year": "2023"
+    },
+    {
+      "slug": "what-is-this",
+      "title": "What is this?",
+      "date": "2023-03-14",
+      "category": "general",
+      "file": "./posts/2023/what-is-this.md",
+      "year": "2023"
+    }
+  ]
+}

@@ -33,11 +33,27 @@
     <link rel="stylesheet" href="../assets/css/main.css">
     <link rel="stylesheet" href="./assets/css/filter.css">
     <link rel="stylesheet" href="./assets/css/blog.css">
+    <!-- Markdown and YAML parsers -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
     <!-- GSAP for scroll animations -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <!-- tracker -->
-    <script src="https://cdn.counter.dev/script.js" data-id="3cb77df7-73cd-45aa-8bf7-017b05919873" data-utcoffset="1"></script>
+    <!-- tracker (non-critical) -->
+    <script>
+        // Load analytics script asynchronously with error handling
+        (function() {
+            const script = document.createElement('script');
+            script.src = 'https://cdn.counter.dev/script.js';
+            script.setAttribute('data-id', '3cb77df7-73cd-45aa-8bf7-017b05919873');
+            script.setAttribute('data-utcoffset', '1');
+            script.async = true;
+            script.onerror = function() {
+                console.warn('Counter.dev analytics failed to load (non-critical)');
+            };
+            document.head.appendChild(script);
+        })();
+    </script>
     <!-- jquery -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <!-- quicklinks -->
@@ -62,11 +78,6 @@
 </head>
 
 <body>
-    <!-- js scripts -->
-    <script src="./assets/js/styles.js"></script>
-    <script src="./assets/js/filter.js"></script>
-    <!-- scroll animations -->
-    <script src="./assets/js/blog-scroll-animations.js"></script>
     <!-- header -->
     <header class="ds-header" id="header">
             <div class="blog-ref">
@@ -76,6 +87,7 @@
             </div>
             <div class="menu">
             <ul class="nav-links">
+                <div class="nav-indicator"></div>
                 <li class="list-item"><a href="../index.html">HOME</a></li>
                     <li class="list-item"><a href="./index.html" class="active-link">BLOG</a></li>
             </ul>
@@ -94,6 +106,8 @@
                 <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                 </svg>
+                <span class="star star-1">★</span>
+                <span class="star star-2">★</span>
             </button>
         </div>
     </header>
@@ -106,10 +120,11 @@
 
     <!-- filter -->
     <input type="radio" id="all" name="categories" value="all" checked>
-    <input type="radio" id="web_design" name="categories" value="web design">
+    <input type="radio" id="web_design" name="categories" value="web_design">
     <input type="radio" id="general" name="categories" value="general">
 
     <ol class="filters">
+        <div class="filter-indicator"></div>
         filters: &nbsp;
         <li>
             <label for="all">all</label>
@@ -124,18 +139,16 @@
         </li>
     </ol>
 
-     
-
-    <!-- posts, year sorted -->
-    <div class="posts">
-        <h2>2023</h2>
-        <ul class="list-of-posts">
-            <li class="post" data-category="web_design"><a href="./posts/2023/As of 01 May.html">As of 01 May</a><span class="super">01-05-23</span><span class="sub-web">web design</span></li>
-            <li class="post" data-category="web_design"><a href="./posts/2023/Website-builds.html">Website Builds </a><span class="super">25-03-23</span><span class="sub-web">web design</span></li>
-            <li class="post" data-category="general"><a href="./posts/2023/what-is-this.html">What is this? </a><span class="super">14-03-23</span><span class="sub-gen">general</span></li>
-        </ul>
+    <!-- Dynamic blog containers -->
+    <div id="blog-index"></div>
+    <div id="post-content" style="display:none;">
+        <button id="back-to-blog" class="back-button">← Back to Blog</button>
+        <nav class="breadcrumbs" id="breadcrumbs"></nav>
+        <article id="post-article"></article>
     </div>
-   
+    <div id="loading" class="loading-spinner" style="display:none;">Loading...</div>
+    <div id="error" class="error-message" style="display:none;"></div>
+
     <!-- back to top button -->
     <button id="back-to-top">↩︎</button>
 
@@ -146,6 +159,18 @@
             Sangeeth G, 2026
         </div>
     </footer>
+
+    <!-- js scripts (loaded at end for DOM ready access) -->
+    <script src="./assets/js/styles.js"></script>
+    <script src="./assets/js/filter.js"></script>
+    <!-- scroll animations -->
+    <script src="./assets/js/blog-scroll-animations.js"></script>
+    <!-- markdown blog engine (must load after filter.js) -->
+    <script src="./assets/js/markdown-blog.js"></script>
+    <!-- magnetic navigation -->
+    <script src="../assets/js/nav-magnetic.js"></script>
+    <!-- magnetic filter hover effect -->
+    <script src="./assets/js/filter-magnetic.js"></script>
 
 </body>
 </html>
