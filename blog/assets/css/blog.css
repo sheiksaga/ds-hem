@@ -1,3 +1,19 @@
+/* Scroll Progress Indicator */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--hero-gradient-start), var(--hero-gradient-end));
+    z-index: 9999;
+    transition: width 0.1s ease-out;
+}
+
+[data-theme="dark"] .scroll-progress {
+    background: linear-gradient(90deg, #ffffff, #8ab4ff);
+}
+
 h1{
     padding-top: 1rem;
     padding-bottom: 2rem;

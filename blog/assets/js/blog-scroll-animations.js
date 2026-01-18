@@ -189,6 +189,55 @@
                 }
             );
         }
+
+        // ========== SCROLL PROGRESS INDICATOR ==========
+
+        gsap.to('.scroll-progress', {
+            width: '100%',
+            ease: 'none',
+            scrollTrigger: {
+                trigger: 'body',
+                start: 'top top',
+                end: 'bottom bottom',
+                scrub: 0.3
+            }
+        });
+
+        // ========== PAGE TRANSITION ANIMATIONS ==========
+
+        // Page exit animation - fade out when clicking links
+        document.querySelectorAll('a[href]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+
+                // Skip: hash links, target="_blank", external links, javascript links
+                if (href.startsWith('#') ||
+                    this.target === '_blank' ||
+                    this.hostname !== window.location.hostname ||
+                    href.startsWith('javascript:')) {
+                    return;
+                }
+
+                e.preventDefault();
+                const destination = this.href;
+
+                // Smooth fade out
+                gsap.to('body', {
+                    opacity: 0,
+                    duration: 0.5,
+                    ease: "power2.inOut",
+                    onComplete: function() {
+                        window.location.href = destination;
+                    }
+                });
+            });
+        });
+
+        // Page enter animation - fade in on load (smoother, longer)
+        gsap.fromTo('body',
+            { opacity: 0 },
+            { opacity: 1, duration: 0.6, ease: "power2.out", delay: 0.05 }
+        );
     }
 
     // Initialize on DOM ready

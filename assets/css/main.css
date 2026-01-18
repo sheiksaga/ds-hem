@@ -65,9 +65,8 @@ html{
    scroll-behavior: smooth;
 }
 
-/* Page transition animations */
+/* Page transition animations handled by GSAP */
 body {
-   animation: fadeIn 0.5s ease-in-out;
    font-family: var(--font-family);
    font-size: var(--font-size-md);
    background-color: var(--bg-light);
@@ -213,7 +212,7 @@ section {
     font-size: 10px;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    transition: opacity 0.3s ease;
     color: #e0e0e0;
     z-index: 10;
 }
@@ -223,33 +222,18 @@ section {
     right: -2px;
 }
 
-.theme-toggle .star-2 {
-    bottom: -2px;
-    left: -2px;
-}
-
-/* Show stars on hover in dark mode */
-[data-theme="dark"] .theme-toggle:hover .star {
+/* Show star in dark mode and continuously rotate */
+[data-theme="dark"] .theme-toggle .star-1 {
     opacity: 1;
-    animation: twinkle 1s ease-in-out infinite;
+    animation: rotate-star 1s linear infinite;
 }
 
-.theme-toggle .star-1:hover {
-    animation-delay: 0s;
-}
-
-.theme-toggle .star-2:hover {
-    animation-delay: 0.5s;
-}
-
-@keyframes twinkle {
-    0%, 100% {
-        transform: scale(1) rotate(0deg);
-        opacity: 1;
+@keyframes rotate-star {
+    from {
+        transform: rotate(0deg);
     }
-    50% {
-        transform: scale(1.3) rotate(180deg);
-        opacity: 0.6;
+    to {
+        transform: rotate(360deg);
     }
 }
 
