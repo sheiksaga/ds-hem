@@ -19,6 +19,11 @@ function filterPosts() {
       post.classList.remove('visible');
     }
   });
+
+  // Refresh ScrollTrigger to update scroll progress bar for new page height
+  if (typeof ScrollTrigger !== 'undefined') {
+    ScrollTrigger.refresh();
+  }
 }
 
 // Wait for DOM to be ready before accessing elements

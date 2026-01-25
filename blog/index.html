@@ -9,7 +9,14 @@
     <meta name="msapplication-navbutton-color" content="#002f80">
     <meta name="apple-mobile-web-app-status-bar-style" content="#002f80">
     <!-- title -->
-    <title>Design Saga - Conscious Design | Home</title>
+    <title>Design Saga - Blog | Design Thoughts & Tutorials</title>
+    <!-- meta description for SEO -->
+    <meta name="description" content="Blog by Sangeeth Gandhi - Thoughts on web design, development, tutorials, and random musings about design, technology, and creative problem-solving.">
+    <!-- Open Graph tags for social sharing -->
+    <meta property="og:title" content="Design Saga - Blog">
+    <meta property="og:description" content="Design thoughts, tutorials, and creative musings by Sangeeth Gandhi">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://designsaga.com/blog">
     <!-- favicon -->
     <link rel="icon" type="image/x-icon" href="../assets/img/favicon.ico">
     <!-- custom styles -->
@@ -33,16 +40,14 @@
     <link rel="stylesheet" href="../assets/css/main.css">
     <link rel="stylesheet" href="./assets/css/filter.css">
     <link rel="stylesheet" href="./assets/css/blog.css">
-    <!-- Markdown and YAML parsers -->
+    <!-- Markdown and YAML parsers (needed immediately for blog, no defer) -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
     <!-- GSAP for scroll animations -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <!-- jquery -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
     <!-- quicklinks -->
-    <script src="https://unpkg.com/quicklink@2.3.0/dist/quicklink.umd.js"></script>
+    <script src="https://unpkg.com/quicklink@2.3.0/dist/quicklink.umd.js" defer></script>
     <script>
       // Only initialize Quicklink if NOT on file:// protocol
       if (window.location.protocol !== 'file:') {
@@ -63,6 +68,8 @@
 </head>
 
 <body>
+    <!-- skip navigation link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <!-- scroll progress indicator -->
     <div class="scroll-progress"></div>
     <!-- header -->
@@ -100,7 +107,7 @@
     </header>
 
     <!-- hero -->
-    <section class="intro">
+    <section class="intro" id="main-content">
         You have found the blog. congratulations! <br>
         Now, go read a post. 
     </section>

@@ -7,28 +7,39 @@ function toggleTheme() {
   localStorage.setItem('theme', newTheme);
 }
 
-// Note: Theme is already initialized inline in HTML to prevent FOUC
-// This script now just provides the toggleTheme function
+// Initialize when DOM is ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', init);
+} else {
+  init();
+}
 
-$(document).ready(function () {
+function init() {
   // Theme toggle functionality
-  $('#theme-toggle-btn').click(function() {
-    toggleTheme();
-  });
+  const themeToggleBtn = document.getElementById('theme-toggle-btn');
+  if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', toggleTheme);
+  }
 
-  // Back to top
-  $(window).scroll(function () {
-      if ($(this).scrollTop() > $(this).height() * 0.4) {
-          $('#back-to-top').fadeIn();
+  // Back to top functionality
+  const backToTop = document.getElementById('back-to-top');
+  if (backToTop) {
+    backToTop.style.display = 'block';
+    backToTop.style.opacity = '0';
+    backToTop.style.transition = 'opacity 0.3s ease-in-out';
+
+    // Toggle visibility on scroll
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > window.innerHeight * 0.4) {
+        backToTop.style.opacity = '1';
       } else {
-          $('#back-to-top').fadeOut();
+        backToTop.style.opacity = '0';
       }
-  });
+    });
 
-  $('#back-to-top').click(function () {
-      $("html, body").animate({
-          scrollTop: 0
-      }, 600);
-      return false;
-  });
- });
+    // Smooth scroll to top on click
+    backToTop.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+}

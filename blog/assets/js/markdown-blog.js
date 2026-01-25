@@ -412,6 +412,11 @@
             blogIndex.classList.add('hidden');
         }
 
+        // Refresh ScrollTrigger to update scroll progress bar for new content height
+        if (typeof ScrollTrigger !== 'undefined') {
+            ScrollTrigger.refresh();
+        }
+
         // Hide intro and filters when viewing a post
         if (introSection) {
             introSection.style.display = 'none';
@@ -499,6 +504,11 @@
             input.style.display = '';
             input.classList.remove('hidden');
         });
+
+        // Refresh ScrollTrigger to update scroll progress bar for index page height
+        if (typeof ScrollTrigger !== 'undefined') {
+            ScrollTrigger.refresh();
+        }
 
         hideLoading();
     }

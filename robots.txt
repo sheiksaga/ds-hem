@@ -1,3 +1,11 @@
-User-Agent: *
+# robots.txt for Design Saga
+
+User-agent: *
 Allow: /
 
+# Disallow certain directories if needed
+# Disallow: /private/
+# Disallow: /temp/
+
+# Sitemap location
+Sitemap: https://designsaga.com/sitemap.xml
