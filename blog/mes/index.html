@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- support browser themeing -->
+    <meta name="theme-color" content="#002f80">
+    <meta name="msapplication-navbutton-color" content="#002f80">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#002f80">
+    <!-- title -->
+    <title>MES - My Everything Search | Design Saga</title>
+    <!-- meta description for SEO -->
+    <meta name="description" content="MES (My Everything Search) - a small Windows launcher by Sangeeth Gandhi. Alt+Space to find any file on your PC instantly, with a calculator, weather, currency conversion and an optional on-device AI built in.">
+    <!-- Open Graph tags for social sharing -->
+    <meta property="og:title" content="MES - My Everything Search">
+    <meta property="og:description" content="A small Windows launcher. Alt+Space, type, done.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sheiksaga.github.io/ds-hem/blog/mes/">
+    <!-- favicon -->
+    <link rel="icon" type="image/x-icon" href="../../assets/img/favicon.ico">
+    <!-- Load fonts directly -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne&family=Inter:wght@400&display=swap" rel="stylesheet">
+
+    <!-- Initialize theme immediately to prevent FOUC -->
+    <script>
+      (function() {
+        const savedTheme = localStorage.getItem('theme');
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+        if (theme === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      })();
+    </script>
+    <!-- reuse the blog's styles -->
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/blog.css">
+</head>
+
+<body>
+    <!-- skip navigation link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <!-- header -->
+    <header class="ds-header" id="header">
+            <div class="blog-ref">
+                <a href="../index.html">
+                    <img class="logo-header" src="../../assets/img/design-saga-blue.svg" alt="logo">
+                </a>
+            </div>
+            <div class="menu">
+            <ul class="nav-links">
+                <div class="nav-indicator"></div>
+                <li class="list-item"><a href="../../index.html">HOME</a></li>
+                    <li class="list-item"><a href="../index.html">BLOG</a></li>
+            </ul>
+            <button class="theme-toggle" id="theme-toggle-btn" aria-label="Toggle dark mode">
+                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+                <span class="star star-1">★</span>
+                <span class="star star-2">★</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- content, borrowing the blog post styling -->
+    <div id="post-content">
+        <article id="post-article" class="fade-in" style="opacity:1" >
+            <h1 id="main-content">MES — My Everything Search</h1>
+
+            <p>I made a thing. It's a little Windows launcher that sits in your system tray.
+            You press <strong>Alt + Space</strong>, type, and it finds any file on your PC before
+            you finish typing. That's it. That's the app.</p>
+
+            <p>Why? Because Windows search is slow and I got tired of waiting for it.
+            <a href="https://www.voidtools.com/" rel="noopener">Everything</a> (the search engine
+            MES is built on) is absurdly fast, but I wanted it one keystroke away, with a few
+            extra tricks bolted on. So I built the launcher I wanted to use every day.</p>
+
+            <h2>What it does</h2>
+            <ul>
+                <li>Type anything → instant file search across your whole PC.</li>
+                <li><code>= 15% of 340</code> → inline calculator, Enter to copy.</li>
+                <li><code>w</code> or <code>w London -3day</code> → weather, right there.</li>
+                <li><code>fx 100 USD EUR</code> → currency conversion with live ECB rates.</li>
+                <li><code>r spotify</code> → find and launch installed apps.</li>
+                <li><code>/largest</code> → the 50 biggest files hogging your disk.</li>
+                <li><code>/ai find invoices from last month</code> → plain-English file search,
+                    running entirely on your own machine. No cloud, no account, no subscription.
+                    (Only in the MES AI build.)</li>
+            </ul>
+
+            <p>There's also a plugin system — one JavaScript file gets you your own
+            <code>/command</code>. Because of course I couldn't stop myself.</p>
+
+            <h2>What it doesn't do</h2>
+            <p>Track you, phone home, ask for your email, show you a pricing page, or nag you
+            to upgrade. The AI bit runs locally via a bundled llama-server and a small model you
+            download once in settings. Nothing leaves your machine.</p>
+
+            <h2>Want it?</h2>
+            <p>Soon. I'm putting the finishing touches on the installer and will host it here
+            shortly — free to use, with a tip jar if you feel like buying me a coffee.
+            Check back in a bit.</p>
+
+            <p><em>Built with Tauri, React and stubbornness. Runs on Windows.</em></p>
+        </article>
+    </div>
+
+    <!-- footer -->
+    <footer class="footer">
+        <div >
+            Built in GBG with VS Code and lots of Love <br>
+            Sangeeth G, 2026
+        </div>
+    </footer>
+
+    <!-- theme toggle + shared behaviour -->
+    <script src="../assets/js/styles.js"></script>
+    <!-- magnetic navigation -->
+    <script src="../../assets/js/nav-magnetic.js"></script>
+</body>
+</html>

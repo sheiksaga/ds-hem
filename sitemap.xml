@@ -16,6 +16,14 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- MES landing page -->
+  <url>
+    <loc>https://designsaga.com/blog/mes/</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- Blog Posts -->
   <url>
     <loc>https://designsaga.com/blog/#back-in-the-saddle</loc>
