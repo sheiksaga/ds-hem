@@ -38,6 +38,24 @@
     <!-- reuse the blog's styles -->
     <link rel="stylesheet" href="../../assets/css/main.css">
     <link rel="stylesheet" href="../assets/css/blog.css">
+
+    <!-- MES post: screenshot framing -->
+    <style>
+      #post-article figure.shot { margin: 2rem 0; }
+      #post-article figure.shot img {
+        margin: 0; display: block; width: 100%;
+        box-shadow: 0 10px 34px rgba(0, 0, 0, 0.22);
+      }
+      #post-article figure.shot figcaption {
+        margin-top: 0.8rem; text-align: center; font-style: italic;
+        font-size: var(--font-size-sm); opacity: 0.72;
+      }
+      #post-article .shot-grid {
+        display: grid; gap: 2rem; margin: 2rem 0;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      }
+      #post-article .shot-grid figure.shot { margin: 0; }
+    </style>
 </head>
 
 <body>
@@ -92,23 +110,59 @@
 
             <p>I am aware other launchers exist, but this one is mine.</p>
 
+            <figure class="shot">
+                <img src="img/search.png" width="690" height="720" loading="lazy"
+                     alt="MES searching for &quot;report&quot; — matching apps listed at the top, files with their paths, sizes and dates below.">
+                <figcaption>Alt + Space, type, donezo.</figcaption>
+            </figure>
+
             <h2>What it does</h2>
             <ul>
                 <li>Type anything → instant file search. Thanks once again to <a href="https://www.voidtools.com/" rel="noopener">Everything</a> by David Carpenter.</li>
-                <li><code>= 15% of 340</code> → inline calculator, Enter to copy.</li>
-                <li><code>w</code> or <code>w Gothenburg -3day</code> → weather, very nice.</li>
-                <li><code>fx 100 USD EUR</code> → currency conversion with live ECB rates.</li>
+                <li><code>= 15/100 * 340</code> → inline calculator, Enter to copy.</li>
+                <li><code>w</code> or <code>w Gothenburg -3day</code> → weather, very nice. (WIP, there are bugs yet) (from <a href="https://wttr.in/" rel="noopener">wttr.in</a>)</li>
+                <li><code>fx 100 USD EUR</code> → currency conversion with live ECB rates. (from <a href="https://frankfurter.dev/" rel="noopener">frankfurter.app</a>)</li>
                 <li><code>r steam</code> → find and launch installed apps.</li>
+                <li><code>c</code> or <code>/clip</code> (or just press ↓ on an empty box) → your Windows
+                    clipboard history. Enter to paste it straight back where you were, Delete to forget it.</li>
                 <li><code>/largest</code> → the 50 biggest files hogging your disk.</li>
                 <li><code>/ai find invoices from last month</code> → plain-English file search,
                     running entirely on your own machine. If you don't like AI that's fine. It never activates unless you explicitly install it</li>
             </ul>
 
-            <p>There's also a plugin system — one JavaScript file gets you your own
+            <p>There's also a plugin system (using Javascript) to add your own
             <code>/command</code>.</p>
 
+            <div class="shot-grid">
+                <figure class="shot">
+                    <img src="img/calculator.png" width="690" height="155" loading="lazy"
+                         alt="MES calculator: = 15/100 * 340 evaluates to 51.">
+                    <figcaption><code>=</code> — a calculator that follows you around.</figcaption>
+                </figure>
+                <figure class="shot">
+                    <img src="img/currency.png" width="690" height="155" loading="lazy"
+                         alt="MES currency conversion: 100 USD equals 87.78 EUR at live ECB rates.">
+                    <figcaption><code>fx</code> — live currency conversion.</figcaption>
+                </figure>
+                <figure class="shot">
+                    <img src="img/weather.png" width="690" height="155" loading="lazy"
+                         alt="MES weather: 17 degrees and sunny in Sundbyberg, Sweden.">
+                    <figcaption><code>w</code> — weather, wherever you are.</figcaption>
+                </figure>
+                <figure class="shot">
+                    <img src="img/clipboard.png" width="690" height="512" loading="lazy"
+                         alt="MES clipboard history showing recently copied snippets of text.">
+                    <figcaption><code>/clip</code> — everything you've copied.</figcaption>
+                </figure>
+                <figure class="shot">
+                    <img src="img/largest.png" width="690" height="540" loading="lazy"
+                         alt="MES /largest listing the biggest files on disk, from hiberfil.sys at 12.7 GB down.">
+                    <figcaption><code>/largest</code> — find what's eating your disk.</figcaption>
+                </figure>
+            </div>
+
             <h2>What it doesn't do</h2>
-            <p>It doesn't do a lot of things. But that's okay.</p>
+            <p>It doesn't do a lot of things.</p>
 
             <h2>Want to try it out?</h2>
             <p>Soon. I'm putting the finishing touches on the installer and will host it here
