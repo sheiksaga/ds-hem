@@ -48,11 +48,14 @@ input[type="radio"] {
 }
  
 
-[value="All"]:checked ~ .posts [data-category] {
+[value="all"]:checked ~ .posts .post {
     display: block;
 }
 
-[value="web design"]:checked ~ .posts .post:not([data-category~="web_design"]),
+[value="web_design"]:checked ~ .posts .post:not([data-category~="web_design"]) {
+  display: none;
+}
+
 [value="general"]:checked ~ .posts .post:not([data-category~="general"]) {
   display: none;
 }

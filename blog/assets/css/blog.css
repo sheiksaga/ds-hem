@@ -41,7 +41,7 @@ body ul li a{
 
 
 
-ul {
+ul:not(.nav-links) {
     list-style-type: "// ";
     padding-left: 2rem;
 }
@@ -75,7 +75,6 @@ li.nobullet{
 /* BLOG SUPPORT */
 .blog-ref a {
     display: inline-block;
-    margin-right: 1rem;
     vertical-align: middle;
     color: #000000;
     text-decoration: none;
@@ -85,7 +84,6 @@ li.nobullet{
 .blog-ref img {
     display: inline-block;
     vertical-align: middle;
-    margin-right: 2rem;
   }
 .blog-ref p.log-sub {
     display: inline-block;
@@ -110,6 +108,7 @@ li.nobullet{
 }
 
 /* Footnote reference links */
+.blog-post-body sup[id^="fnref"] a,
 #post-article sup[id^="fnref"] a {
     position: relative;
     display: inline-block;
@@ -124,6 +123,7 @@ li.nobullet{
 
 
 
+.blog-post-body sup[id^="fnref"] a:hover,
 #post-article sup[id^="fnref"] a:hover {
     color: #000000;
 }
@@ -131,6 +131,7 @@ li.nobullet{
 
 
 /* Footnote tooltip content */
+.blog-post-body sup[id^="fnref"] a::after,
 #post-article sup[id^="fnref"] a::after {
     content: attr(data-footnote);
     position: absolute;
@@ -157,12 +158,14 @@ li.nobullet{
 
 
 /* Show tooltip on hover */
+.blog-post-body sup[id^="fnref"] a:hover::after,
 #post-article sup[id^="fnref"] a:hover::after {
     opacity: 1;
     visibility: visible;
 }
 
 /* Footnote section at bottom */
+.blog-post-body .footnotes,
 #post-article .footnotes {
     margin-top: 3rem;
     padding-top: 2rem;
@@ -171,11 +174,13 @@ li.nobullet{
 
 
 
+.blog-post-body .footnotes ol,
 #post-article .footnotes ol {
     padding-left: 1.5rem;
     margin: 0;
 }
 
+.blog-post-body .footnotes li,
 #post-article .footnotes li {
     margin-bottom: 0.75rem;
     line-height: 1.6;
@@ -185,12 +190,14 @@ li.nobullet{
 
 
 
+.blog-post-body .footnotes li p,
 #post-article .footnotes li p {
     margin: 0;
     display: inline;
 }
 
 /* Footnote back reference */
+.blog-post-body .footnote-backref,
 #post-article .footnote-backref {
     text-decoration: none;
     color: #000000;
@@ -201,6 +208,7 @@ li.nobullet{
 
 
 
+.blog-post-body .footnote-backref:hover,
 #post-article .footnote-backref:hover {
     opacity: 1;
 }
@@ -309,6 +317,7 @@ pre {
 /* ========== MARKDOWN CONTENT STYLING ========== */
 
 /* Post article container */
+.blog-post-article,
 #post-article {
     max-width: 100%;
     padding: 2rem 0;
@@ -325,6 +334,8 @@ pre {
     transform: translateY(20px);
 }
 
+.blog-post-article h1,
+.blog-post-body h1,
 #post-article h1 {
     margin-bottom: 1rem;
     color: #000000;
@@ -332,6 +343,7 @@ pre {
 
 
 
+.blog-post-body h2,
 #post-article h2 {
     margin-top: 2rem;
     margin-bottom: 1rem;
@@ -341,6 +353,7 @@ pre {
 
 
 
+.blog-post-body h3,
 #post-article h3 {
     margin-top: 1.5rem;
     margin-bottom: 0.75rem;
@@ -349,6 +362,7 @@ pre {
 
 
 
+.blog-post-body p,
 #post-article p {
     margin-bottom: 1.5rem;
     line-height: inherit;
@@ -357,12 +371,14 @@ pre {
 
 
 
+.blog-post-body li,
 #post-article li {
     color: #000000;
 }
 
 
 
+.blog-post-body code,
 #post-article code {
     background: rgba(0,0,0,0.05);
     padding: 0.2rem 0.4rem;
@@ -374,6 +390,7 @@ pre {
 
 
 
+.blog-post-body pre,
 #post-article pre {
     background: rgba(0,0,0,0.05);
     padding: 1rem;
@@ -385,11 +402,13 @@ pre {
 
 
 
+.blog-post-body pre code,
 #post-article pre code {
     background: none;
     padding: 0;
 }
 
+.blog-post-body strong,
 #post-article strong {
     font-weight: 700;
     color: #000000;
@@ -397,10 +416,12 @@ pre {
 
 
 
+.blog-post-body em,
 #post-article em {
     font-style: italic;
 }
 
+.blog-post-body img,
 #post-article img {
     max-width: 100%;
     height: auto;
@@ -408,11 +429,14 @@ pre {
     margin: 1.5rem 0;
 }
 
+.blog-post-body ul,
+.blog-post-body ol,
 #post-article ul,
 #post-article ol {
     margin-bottom: 1.5rem;
 }
 
+.blog-post-body blockquote,
 #post-article blockquote {
     border-left: 4px solid #000000;
     padding-left: 1rem;
@@ -423,11 +447,13 @@ pre {
 
 
 
+.blog-post-body a,
 #post-article a {
     color: #000000;
     text-decoration: underline;
 }
 
+.blog-post-body a:hover,
 #post-article a:hover {
     color: #000000;
 }
@@ -436,6 +462,7 @@ pre {
 
 
 
+.blog-post-body hr,
 #post-article hr {
     border: none;
     border-top: 2px solid hsl(0, 0%, 90%);

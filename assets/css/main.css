@@ -117,81 +117,35 @@ section {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+    gap: 2rem;
     padding-block: 3rem;
     padding-bottom: 4rem;
 }
 
 .menu{
-    display: flex;
-    justify-content: end;
-    align-items: center;
     text-transform: uppercase;
 }
 
 .nav-links{
     list-style-type: none;
     display: flex;
-    position: relative;
-}
-
-/* Sliding indicator for magnetic hover effect */
-.nav-indicator {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 100%;
-    background: #ffff00;
-    pointer-events: none;
-    z-index: -1;
-}
-
-.list-item{
-    display: inline-block;
-    padding: 0rem;
-    font-size: var(--font-size-md);
-}
-
-.list-item a{
-    padding: 1rem;
+    padding-left: 0;
+    gap: 1rem;
 }
 
 .logo-header {
-    width: 100%;
-    max-width: 8rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 8rem;
+    height: 8rem;
+    display: block;
 }
 
-#back-to-top {
-    display: none;
-    position: fixed;
-    bottom: 2rem;
-    right: 1rem;
-    z-index: 99;
-    font-size: var(--font-size-md);
-    background-color: hsla(0, 0%, 100%, 0.37);
-    color: var(--font-light);
-    border: none;
-    box-shadow: 0.3rem 0.3rem 0.6rem #bec8d68e, -0.2rem -0.2rem 0.5rem rgba(190, 202, 236, 0.589);
-    cursor: pointer;
-    padding: 1rem 2rem;
-    backdrop-filter: blur(16.5px);
-     -webkit-backdrop-filter: blur(16.5px);
-}
-
-#back-to-top:hover {
-    background-color: rgba(193, 199, 228, 0.582);
-}
 
 .footer{
     color: #000000;
     margin: 5rem 0rem;
 }
 
-.active-link{
-    padding: 1rem;
-}
+
 
 
 img.refresh-icon{
@@ -212,9 +166,7 @@ img.refresh-icon:hover {
     body{
         padding: 5rem;
     }
-    #back-to-top{
-        right: 20%;
-    }
+
 }
 
 @media screen and (max-width: 768px) {
@@ -230,4 +182,33 @@ img.refresh-icon:hover {
     body{
         padding: 2rem;
     }
+}
+
+/* ── Page transitions (SPA-style navigation) ───────────── */
+#page-content {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform, opacity;
+}
+
+/* Exit states — current page slides out */
+.page-exit-left {
+    transform: translateX(-40px) !important;
+    opacity: 0 !important;
+}
+
+.page-exit-right {
+    transform: translateX(40px) !important;
+    opacity: 0 !important;
+}
+
+/* Enter states — new page starts off-screen, then slides in */
+.page-enter-from-right {
+    transform: translateX(60px);
+    opacity: 0;
+}
+
+.page-enter-from-left {
+    transform: translateX(-60px);
+    opacity: 0;
 }

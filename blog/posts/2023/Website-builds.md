@@ -2,6 +2,9 @@
 title: "Website Builds"
 date: 2023-03-25
 category: web_design
+year: "2023"
+slug: website-builds
+permalink: "/blog/{{ year }}/{{ slug }}/"
 layout: blog-post.njk
 ---
 

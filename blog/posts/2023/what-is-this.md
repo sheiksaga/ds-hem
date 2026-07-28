@@ -2,6 +2,9 @@
 title: "What is this?"
 date: 2023-03-14
 category: general
+year: "2023"
+slug: what-is-this
+permalink: "/blog/{{ year }}/{{ slug }}/"
 layout: blog-post.njk
 ---
 

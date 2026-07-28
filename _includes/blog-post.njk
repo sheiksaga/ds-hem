@@ -8,6 +8,9 @@ nav: blog
 {% endblock %}
 
 {% block content %}
+{% set prev = collections.blogPosts | prevPost(page) %}
+{% set next = collections.blogPosts | nextPost(page) %}
+
 <article class="blog-post-article">
     <header class="blog-post-header">
         <p class="blog-post-date">{{ date | readableDate }}</p>
@@ -19,6 +22,35 @@ nav: blog
     <div class="blog-post-body">
         {{ content | safe }}
     </div>
+
+    {% if prev or next %}
+    <nav class="post-navigation">
+        {% if prev %}
+        <a href="{{ prev.url | url }}" class="nav-button prev-post">
+            <span class="nav-icon">←</span>
+            <span class="nav-text">
+                <span class="nav-label">Previous</span>
+                <span class="nav-title">{{ prev.data.title }}</span>
+            </span>
+        </a>
+        {% else %}
+        <div></div>
+        {% endif %}
+
+        {% if next %}
+        <a href="{{ next.url | url }}" class="nav-button next-post">
+            <span class="nav-text">
+                <span class="nav-label">Next</span>
+                <span class="nav-title">{{ next.data.title }}</span>
+            </span>
+            <span class="nav-icon">→</span>
+        </a>
+        {% else %}
+        <div></div>
+        {% endif %}
+    </nav>
+    {% endif %}
+
     <nav class="blog-post-back">
         <a href="{{ '/blog/' | url }}">← Back to Blog</a>
     </nav>

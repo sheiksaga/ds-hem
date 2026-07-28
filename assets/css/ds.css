@@ -1,7 +1,8 @@
 
 
 
-li{
+ul:not(.nav-links) li,
+ol:not(.nav-links) li {
     list-style-type: "// ";
     margin-left: 2rem;
 }

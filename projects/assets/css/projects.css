@@ -1,7 +1,6 @@
 /* ==============================================
-   Projects Page — Cards Deck
-   Retains the colorful retro-card aesthetic
-   while improving discoverability & interaction
+   Projects Page — Accordion Style (B&W)
+   Mirrors the accordion on the main page
    ============================================== */
 
 /* ---------- Intro / Hero ---------- */
@@ -14,6 +13,7 @@
   font-family: inherit;
   font-size: var(--font-size-xl);
   line-height: 1.3;
+  color: #000;
 }
 
 /* Subtitle line */
@@ -24,15 +24,16 @@
   font-size: var(--font-size-md);
   opacity: 0.65;
   font-weight: 400;
+  color: #000;
 }
 
 /* ---------- Skeleton / Loading ---------- */
 .projects-deck {
   position: relative;
   margin: 0;
-  min-height: 60vh;
-  padding: 3rem 4rem;
-  border: 2px solid #000000;
+  min-height: 20vh;
+  padding: 0;
+  border: none;
 }
 
 .skeleton-card {
@@ -40,15 +41,14 @@
   max-width: 700px;
   margin: 0 auto 1.5rem auto;
   padding: 3rem 4rem;
-  border-radius: 2px;
-  background: hsl(220, 20%, 92%);
+  border: 2px solid #000;
+  background: #fff;
 }
-
 
 .skeleton-line {
   height: 2rem;
   border-radius: 4px;
-  background: hsl(220, 15%, 85%);
+  background: #eee;
   margin-bottom: 1.2rem;
 }
 
@@ -61,13 +61,11 @@
   width: 35%;
 }
 
-
-
 /* ---------- Error / Empty State ---------- */
 .projects-deck .empty-state {
   text-align: center;
   padding: 4rem 2rem;
-  color: var(--font-light);
+  color: #000;
 }
 
 .projects-deck .empty-state .empty-icon {
@@ -81,80 +79,37 @@
   opacity: 0.7;
 }
 
-/* ---------- Project Card ---------- */
+/* ---------- Project Accordion Item ---------- */
 .project-card {
-  position: relative;
-  width: 100%;
-  max-width: 700px;
-  margin: 0 auto 0 auto;
-  padding: 3rem 4rem 2.5rem 4rem;
-  border-radius: 2px;
+  border: 2px solid #000;
+  margin-bottom: 0.5rem;
+  background: #fff;
   cursor: pointer;
-  color: inherit;
   user-select: none;
 }
 
-/* Stack cards so titles peek through */
-.project-card + .project-card {
-  margin-top: -3.2rem;
-}
-
-/* ===== Card colours (4-colour rotation) ===== */
-.project-card:nth-child(4n+1) {
-  background-color: hsl(79, 100%, 85%);
-  box-shadow:
-    inset 1px 1px hsl(79, 73%, 16%),
-    inset 2px 2px hsl(79, 73%, 16%),
-    inset 3px 3px hsl(79, 73%, 16%),
-    inset 4px 4px hsl(79, 73%, 16%),
-    inset 5px 5px hsl(79, 73%, 16%),
-    0px 8px 32px 0 hsla(79, 100%, 80%, 0.3);
-  color: hsl(84, 32%, 18%);
-}
-
-.project-card:nth-child(4n+2) {
-  background-color: hsl(255, 100%, 85%);
-  box-shadow:
-    inset 1px 1px hsl(255, 100%, 60%),
-    inset 2px 2px hsl(255, 100%, 60%),
-    inset 3px 3px hsl(255, 100%, 60%),
-    inset 4px 4px hsl(255, 100%, 60%),
-    inset 5px 5px hsl(255, 100%, 60%),
-    0px 8px 32px 0 hsla(255, 100%, 80%, 0.3);
-  color: hsl(255, 82%, 11%);
-}
-
-.project-card:nth-child(4n+3) {
-  background-color: hsl(324, 100%, 85%);
-  box-shadow:
-    inset 1px 1px hsl(324, 47%, 34%),
-    inset 2px 2px hsl(324, 47%, 34%),
-    inset 3px 3px hsl(324, 47%, 34%),
-    inset 4px 4px hsl(324, 47%, 34%),
-    inset 5px 5px hsl(324, 47%, 34%),
-    0px 8px 32px 0 hsla(324, 100%, 80%, 0.3);
-  color: hsl(323, 100%, 10%);
-}
-
-.project-card:nth-child(4n+4) {
-  background-color: hsl(26, 100%, 85%);
-  box-shadow:
-    inset 1px 1px hsl(26, 100%, 40%),
-    inset 2px 2px hsl(26, 100%, 40%),
-    inset 3px 3px hsl(26, 100%, 40%),
-    inset 4px 4px hsl(26, 100%, 40%),
-    inset 5px 5px hsl(26, 100%, 40%),
-    0px 8px 32px 0 hsla(26, 100%, 80%, 0.3);
-  color: hsl(25, 100%, 15%);
-}
-
-/* ---------- Card Header Row (title + meta + chevron) ---------- */
-.card-header {
+/* Accordion header row */
+.project-card .card-header {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  gap: 1.5rem;
+  align-items: center;
+  width: 100%;
+  padding: 1.25rem 1.5rem;
+  font: inherit;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #000;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.2s ease;
   pointer-events: none;
+  gap: 1rem;
+}
+
+.project-card:hover .card-header {
+  background: rgba(0,0,0,0.03);
 }
 
 .card-header-left {
@@ -162,12 +117,14 @@
   align-items: baseline;
   gap: 1.2rem;
   flex-wrap: wrap;
+  pointer-events: none;
 }
 
 /* Title */
 .project-card h3 {
   font-family: inherit;
   font-size: var(--font-size-lg);
+  font-weight: 600;
   margin: 0;
   pointer-events: none;
   line-height: 1.2;
@@ -188,49 +145,57 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: hsl(140, 60%, 40%);
-  box-shadow: 0 0 6px hsla(140, 60%, 40%, 0.6);
+  background: #000;
   flex-shrink: 0;
 }
 
 .card-status.wip {
-  background: hsl(40, 90%, 50%);
-  box-shadow: 0 0 6px hsla(40, 90%, 50%, 0.6);
+  background: #000;
+  opacity: 0.5;
 }
 
-/* Chevron — click affordance */
+/* Chevron / accordion icon */
 .card-chevron {
   display: inline-block;
-  font-size: 2rem;
-  line-height: 1;
-  opacity: 0.5;
+  width: 1rem;
+  height: 1rem;
   flex-shrink: 0;
+  transition: transform 0.3s ease;
+  font-size: 1.4rem;
+  line-height: 1;
+  font-weight: 300;
+  text-align: center;
 }
 
 .project-card.selected .card-chevron {
-  opacity: 0.85;
+  transform: rotate(45deg);
 }
 
-/* ---------- Expandable Body ---------- */
+/* ---------- Expandable Body (accordion panel) ---------- */
 .card-body {
   max-height: 0;
   overflow: hidden;
-  opacity: 0;
-  margin-top: 0;
+  transition: max-height 0.35s ease, padding 0.35s ease;
+  padding: 0 1.5rem;
+  color: #000;
+}
+
+.project-card.selected {
+  background: transparent;
 }
 
 .project-card.selected .card-body {
   max-height: 500px;
-  opacity: 1;
-  margin-top: 1.8rem;
+  padding: 0 1.5rem 1.25rem;
 }
 
 /* Tagline in body */
 .card-body .tagline {
   font-size: var(--font-size-md);
-  margin-bottom: 1rem;
+  margin: 1rem 0;
   line-height: 1.6;
   pointer-events: none;
+  color: #000;
 }
 
 /* Description in body */
@@ -240,6 +205,7 @@
   line-height: 1.7;
   margin-bottom: 1.6rem;
   pointer-events: none;
+  color: #000;
 }
 
 /* Tags row */
@@ -257,6 +223,7 @@
   border-radius: 3px;
   background: rgba(0, 0, 0, 0.08);
   pointer-events: none;
+  color: #000;
 }
 
 /* Visit link */
@@ -265,7 +232,7 @@
   align-items: center;
   gap: 0.5rem;
   font-size: var(--font-size-md);
-  color: inherit;
+  color: #000;
   text-decoration: none;
   font-weight: 700;
   pointer-events: auto;
@@ -279,18 +246,12 @@
   display: inline-block;
 }
 
-/* ---------- Hover / Focus / Selected ---------- */
-.project-card.selected {
-  z-index: 20;
-}
-
+/* ---------- Hover / Focus ---------- */
 .project-card:focus-visible {
-  outline: 3px solid var(--link-color);
+  outline: 3px solid #000;
   outline-offset: 4px;
   z-index: 15;
 }
-
-/* ---------- Scroll Entrance Animation ---------- */
 
 /* ---------- Mobile ---------- */
 @media screen and (max-width: 768px) {
@@ -300,15 +261,15 @@
   }
 
   .projects-deck {
-    padding: 2rem 1.5rem;
+    padding: 0;
   }
 
   .project-card {
-    padding: 2rem 1.5rem 1.8rem 1.5rem;
+    border: 2px solid #000;
   }
 
-  .project-card + .project-card {
-    margin-top: -2.5rem;
+  .project-card .card-header {
+    padding: 1rem 1.5rem;
   }
 
   .project-card h3 {
@@ -320,7 +281,7 @@
   }
 
   .card-chevron {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
   }
 
   .card-body .tagline {

@@ -2,6 +2,9 @@
 title: "As of 01 May"
 date: 2023-05-01
 category: web_design
+year: "2023"
+slug: as-of-01-may
+permalink: "/blog/{{ year }}/{{ slug }}/"
 layout: blog-post.njk
 ---
 

@@ -13,20 +13,6 @@ nav: blog
 <link rel="stylesheet" href="{{ '/blog/assets/css/blog.css' | url }}">
 {% endblock %}
 
-{% block head %}
-<!-- Markdown and YAML parsers (needed immediately for blog, no defer) -->
-<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
-{% endblock %}
-
-{% block logo %}
-<div class="blog-ref">
-    <a href="{{ '/' | url }}">
-        <img class="logo-header" src="{{ '/assets/img/design-saga-blue.svg' | url }}" alt="logo">
-    </a>
-</div>
-{% endblock %}
-
 {% block content %}
     <!-- hero -->
     <section class="intro" id="main-content">
@@ -55,15 +41,25 @@ nav: blog
         </li>
     </ol>
 
-    <!-- Dynamic blog containers -->
-    <div id="blog-index"></div>
-    <div id="post-content" style="display:none;">
-        <button id="back-to-blog" class="back-button">← Back to Blog</button>
-        <nav class="breadcrumbs" id="breadcrumbs"></nav>
-        <article id="post-article"></article>
+    {% set postsByYear = collections.blogPosts | groupByYear %}
+
+    {% for year, posts in postsByYear | dictsort | reverse %}
+    {% set yearPosts = posts | sort(attribute="date") | reverse %}
+    <div class="posts">
+        <h2>{{ year }}</h2>
+        <ul class="list-of-posts">
+        {% for post in yearPosts %}
+            {% set cat = post.data.category %}
+            {% set catClass = "sub-web" if cat == "web_design" else "sub-gen" %}
+            <li class="post" data-category="{{ cat }}">
+                <a href="{{ post.url | url }}">{{ post.data.title }}</a>
+                <span class="super">{{ post.date | shortDate }}</span>
+                <span class="{{ catClass }}">{{ cat | replace("_", " ") }}</span>
+            </li>
+        {% endfor %}
+        </ul>
     </div>
-    <div id="loading" class="loading-spinner" style="display:none;">Loading...</div>
-    <div id="error" class="error-message" style="display:none;"></div>
+    {% endfor %}
 {% endblock %}
 
 {% block footer %}
@@ -74,6 +70,4 @@ Sangeeth G, 2026
 {% block js %}
 <script src="{{ '/assets/js/main.js' | url }}"></script>
 <script src="{{ '/blog/assets/js/filter.js' | url }}"></script>
-<!-- markdown blog engine (must load after filter.js) -->
-<script src="{{ '/blog/assets/js/markdown-blog.js' | url }}"></script>
 {% endblock %}

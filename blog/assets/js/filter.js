@@ -3,7 +3,6 @@ function filterPosts() {
   const selectedCategory = document.querySelector('input[name="categories"]:checked');
   const postElements = document.querySelectorAll(".post");
 
-  // If no posts exist yet (blog not loaded), return
   if (!postElements || postElements.length === 0) {
     return;
   }
@@ -19,31 +18,23 @@ function filterPosts() {
       post.classList.remove('visible');
     }
   });
-
-  // No ScrollTrigger refresh needed
 }
 
-// Wait for DOM to be ready before accessing elements
+// Initialize when DOM is ready
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', function() {
-    // Add event listeners to the radio buttons
     const radioButtons = document.querySelectorAll('input[name="categories"]');
     radioButtons.forEach(radio => {
       radio.addEventListener("change", filterPosts);
     });
 
-    // Initially filter the posts (after blog index is built)
-    // Wait a bit for markdown-blog.js to finish loading
-    setTimeout(filterPosts, 100);
+    // Posts are server-rendered, filter immediately
+    filterPosts();
   });
 } else {
-  // DOM is already ready
-  // Add event listeners to the radio buttons
   const radioButtons = document.querySelectorAll('input[name="categories"]');
   radioButtons.forEach(radio => {
     radio.addEventListener("change", filterPosts);
   });
-
-  // Initially filter the posts (after blog index is built)
-  setTimeout(filterPosts, 100);
+  filterPosts();
 }

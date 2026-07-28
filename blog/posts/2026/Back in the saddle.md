@@ -2,6 +2,9 @@
 title: "Back in the saddle"
 date: 2026-01-10
 category: general
+year: "2026"
+slug: back-in-the-saddle
+permalink: "/blog/{{ year }}/{{ slug }}/"
 layout: blog-post.njk
 ---
 

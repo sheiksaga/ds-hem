@@ -35,7 +35,7 @@
   }
 
   /* ===================================================
-     Render Cards
+     Render Cards (Accordion Style)
      =================================================== */
   function renderCards(projects) {
     deck.innerHTML = '';
@@ -50,12 +50,12 @@
     projects.forEach(function(project, index) {
       var card = document.createElement('article');
       card.className = 'project-card';
-      card.setAttribute('tabindex', '0');
       card.setAttribute('role', 'button');
       card.setAttribute('aria-expanded', 'false');
       card.setAttribute('aria-label', project.title + ' — ' + project.tagline);
+      card.setAttribute('tabindex', '0');
 
-      // --- Header row ---
+      // --- Header row (accordion header) ---
       var header = document.createElement('div');
       header.className = 'card-header';
 
@@ -85,14 +85,14 @@
 
       header.appendChild(headerLeft);
 
-      // Chevron — click affordance
+      // Chevron (accordion icon — + that rotates to ×)
       var chevron = document.createElement('span');
       chevron.className = 'card-chevron';
       chevron.setAttribute('aria-hidden', 'true');
-      chevron.textContent = '▾';
+      chevron.textContent = '+';
       header.appendChild(chevron);
 
-      // --- Expandable body ---
+      // --- Accordion panel (expandable body) ---
       var body = document.createElement('div');
       body.className = 'card-body';
 
@@ -131,7 +131,7 @@
       card.appendChild(header);
       card.appendChild(body);
 
-      // --- Event listeners ---
+      // --- Event listeners (accordion behavior) ---
       card.addEventListener('click', function(e) {
         if (e.target.tagName === 'A') return; // let link clicks through
         toggleCard(index);
@@ -147,16 +147,12 @@
       deck.appendChild(card);
     });
 
-    // Auto-expand bottom-most card after a short delay
-    setTimeout(function() {
-      if (projects.length > 0 && selectedIndex === -1) {
-        toggleCard(projects.length - 1);
-      }
-    }, 500);
+    // All accordions start closed — user clicks to open
   }
 
   /* ===================================================
-     Toggle Card Expand / Collapse
+     Toggle Accordion (close siblings, toggle clicked)
+     Matches the accordion behavior in main.js
      =================================================== */
   function toggleCard(index) {
     var cards = deck.querySelectorAll('.project-card');
@@ -164,26 +160,24 @@
 
     var isCurrentlySelected = cards[index].classList.contains('selected');
 
-    // If clicking the already-selected card, collapse it
+    // Close all
+    cards.forEach(function(c, i) {
+      c.classList.remove('selected');
+      c.setAttribute('aria-expanded', 'false');
+    });
+
+    // If clicking the already-open one, just close it (no re-open)
     if (isCurrentlySelected) {
-      cards[index].classList.remove('selected');
-      cards[index].setAttribute('aria-expanded', 'false');
       selectedIndex = -1;
       return;
     }
 
-    // Collapse previously selected card
-    if (selectedIndex >= 0 && cards[selectedIndex]) {
-      cards[selectedIndex].classList.remove('selected');
-      cards[selectedIndex].setAttribute('aria-expanded', 'false');
-    }
-
-    // Expand clicked card
+    // Open clicked one
     cards[index].classList.add('selected');
     cards[index].setAttribute('aria-expanded', 'true');
     selectedIndex = index;
 
-    // Scroll card into view if partially hidden
+    // Scroll into view if partially hidden
     cards[index].scrollIntoView({ block: 'nearest' });
   }
 
