@@ -1,0 +1,20 @@
+[
+  {
+    "title": "MES",
+    "tagline": "A Windows launcher built for speed. Alt+Space, type, find anything instantly.",
+    "description": "MES is a lightweight app launcher for Windows inspired by Spotlight and Raycast. It indexes your apps and files so you can launch them in keystrokes — no mouse needed. Built with Python and a focus on sub-100ms response times.",
+    "url": "../blog/mes/index.html",
+    "year": "2026",
+    "tags": ["Tauri", "Windows", "Desktop"],
+    "status": "live"
+  },
+  {
+    "title": "ChatChat",
+    "tagline": "A no-build chat UI for local and cloud LLMs. Chat, story mode, streaming markdown — all in one tab.",
+    "description": "ChatChat is a single-file HTML chat interface that connects to any OpenAI-compatible endpoint. It supports chat history, story generation mode, streaming markdown rendering, and theme switching. Zero dependencies, zero build step — just open and chat.",
+    "url": "../blog/chatchat/index.html",
+    "year": "2026",
+    "tags": ["JavaScript", "LLM", "Web"],
+    "status": "live"
+  }
+]

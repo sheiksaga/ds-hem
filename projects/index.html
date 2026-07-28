@@ -9,21 +9,21 @@
     <meta name="msapplication-navbutton-color" content="#002f80">
     <meta name="apple-mobile-web-app-status-bar-style" content="#002f80">
     <!-- title -->
-    <title>Design Saga - Blog | Design Thoughts & Tutorials</title>
+    <title>Design Saga - Projects | Things I've Built</title>
     <!-- meta description for SEO -->
-    <meta name="description" content="Blog by Sangeeth Gandhi - Thoughts on web design, development, tutorials, and random musings about design, technology, and creative problem-solving.">
+    <meta name="description" content="Projects by Sangeeth Gandhi - MES Windows launcher, ChatChat LLM UI, and more.">
     <!-- Open Graph tags for social sharing -->
-    <meta property="og:title" content="Design Saga - Blog">
-    <meta property="og:description" content="Design thoughts, tutorials, and creative musings by Sangeeth Gandhi">
+    <meta property="og:title" content="Design Saga - Projects">
+    <meta property="og:description" content="Things I've built — MES, ChatChat, and more.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://designsaga.com/blog">
+    <meta property="og:url" content="https://designsaga.com/projects">
     <!-- favicon -->
     <link rel="icon" type="image/x-icon" href="../assets/img/favicon.ico">
     <!-- custom styles -->
     <!-- Load fonts directly -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Syne&family=Inter:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@700&family=Syne&display=swap" rel="stylesheet">
 
     <!-- Initialize theme immediately to prevent FOUC -->
     <script>
@@ -38,11 +38,7 @@
     </script>
     <!-- Load CSS files directly instead of via @import -->
     <link rel="stylesheet" href="../assets/css/main.css">
-    <link rel="stylesheet" href="./assets/css/filter.css">
-    <link rel="stylesheet" href="./assets/css/blog.css">
-    <!-- Markdown and YAML parsers (needed immediately for blog, no defer) -->
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+    <link rel="stylesheet" href="./assets/css/projects.css">
     <!-- GSAP for scroll animations -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
@@ -74,17 +70,15 @@
     <div class="scroll-progress"></div>
     <!-- header -->
     <header class="ds-header" id="header">
-            <div class="blog-ref">
-                <a href="./index.html">
-                    <img class="logo-header" src="../assets/img/design-saga-blue.svg" alt="logo">
-                </a>
-            </div>
+            <a href="../index.html">
+                <img class="logo-header" src="../assets/img/design-saga-blue.svg" alt="logo">
+            </a>
             <div class="menu">
             <ul class="nav-links">
                 <div class="nav-indicator"></div>
                 <li class="list-item"><a href="../index.html">HOME</a></li>
-                    <li class="list-item"><a href="../projects/index.html">PROJECTS</a></li>
-                    <li class="list-item"><a href="./index.html" class="active-link">BLOG</a></li>
+                    <li class="list-item"><a href="./index.html" class="active-link">PROJECTS</a></li>
+                    <li class="list-item"><a href="../blog/index.html">BLOG</a></li>
             </ul>
             <button class="theme-toggle" id="theme-toggle-btn" aria-label="Toggle dark mode">
                 <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -107,42 +101,14 @@
         </div>
     </header>
 
-    <!-- hero -->
-    <section class="intro" id="main-content">
-        You have found the blog. congratulations! <br>
-        Now, go read a post. 
+    <!-- intro -->
+    <section class="projects-intro" id="main-content">
+        Things I've built
+        <small>Side projects, experiments, etc etc.</small>
     </section>
 
-    <!-- filter -->
-    <input type="radio" id="all" name="categories" value="all" checked>
-    <input type="radio" id="web_design" name="categories" value="web_design">
-    <input type="radio" id="general" name="categories" value="general">
-
-    <ol class="filters">
-        <div class="filter-indicator"></div>
-        filters: &nbsp;
-        <li>
-            <label for="all">all</label>
-        </li>
-        /
-        <li>
-            <label for="web_design">web design</label>
-        </li>
-        /
-        <li>
-            <label for="general">general</label>
-        </li>
-    </ol>
-
-    <!-- Dynamic blog containers -->
-    <div id="blog-index"></div>
-    <div id="post-content" style="display:none;">
-        <button id="back-to-blog" class="back-button">← Back to Blog</button>
-        <nav class="breadcrumbs" id="breadcrumbs"></nav>
-        <article id="post-article"></article>
-    </div>
-    <div id="loading" class="loading-spinner" style="display:none;">Loading...</div>
-    <div id="error" class="error-message" style="display:none;"></div>
+    <!-- project cards deck -->
+    <div class="projects-deck"></div>
 
     <!-- back to top button -->
     <button id="back-to-top">↩︎</button>
@@ -150,22 +116,20 @@
     <!-- footer -->
     <footer class="footer">
         <div >
-            Built in GBG with VS Code and lots of Love <br>
-            Sangeeth G, 2026
+            Built in GBG with lots of Love <br>
+            Sangeeth G, 2026 <br> <br><br>
         </div>
     </footer>
 
-    <!-- js scripts (loaded at end for DOM ready access) -->
-    <script src="./assets/js/styles.js"></script>
-    <script src="./assets/js/filter.js"></script>
-    <!-- scroll animations -->
-    <script src="./assets/js/blog-scroll-animations.js"></script>
-    <!-- markdown blog engine (must load after filter.js) -->
-    <script src="./assets/js/markdown-blog.js"></script>
-    <!-- magnetic navigation -->
+    <!-- js scripts -->
+    <script src="../assets/js/styles.js"></script>
+    <!-- scroll animations (load before projects.js so GSAP+ScrollTrigger registered) -->
+    <script src="../assets/js/scroll-animations.js"></script>
+    <script src="./assets/js/projects.js"></script>
+    <!-- mouse-following gradient -->
+    <script src="../assets/js/gradient-mouse.js"></script>
+    <!-- Magnetic navigation (must load after header) -->
     <script src="../assets/js/nav-magnetic.js"></script>
-    <!-- magnetic filter hover effect -->
-    <script src="./assets/js/filter-magnetic.js"></script>
 
 </body>
 </html>
