@@ -29,23 +29,6 @@
    --color-text-muted: #c0c0c0;
 }
 
-[data-theme="dark"] {
-  --font-light: hsl(218, 100%, 95%);
-  --font-dark: hsl(211, 82%, 18%);
-  --bg-light: hsl(218, 58%, 20%);
-  --bg-dark: hsl(0, 0%, 100%);
-  --header-bg: #1f1f2e;
-  --header-border: #2a2a3a;
-  --hero-gradient-start: #ffffff;
-  --hero-gradient-end: #8ab4ff;
-  --h2-gradient-start: #f0f0ff;
-  --h2-gradient-end: #a0a0b0;
-  --like-gradient-start: #b0a0ff;
-  --like-gradient-end: #d0c0ff;
-  --footer-text: #c0c0c0;
-  --link-color: #6a8fff;
-}
-
 
 
 /* Skip navigation link for accessibility */
@@ -84,12 +67,6 @@ input:focus-visible {
     outline-offset: 2px;
 }
 
-[data-theme="dark"] a:focus-visible,
-[data-theme="dark"] button:focus-visible,
-[data-theme="dark"] input:focus-visible {
-    outline-color: #8ab4ff;
-}
-
 html{
    font-size: 62.5%;
 }
@@ -110,22 +87,6 @@ body {
    justify-content:center;
    line-height: 2.8rem;
 }
-
-[data-theme="dark"] body {
-   background-color: var(--bg-light);
-   color: var(--font-light);
-}
-
-a{
-    color: hsl(218, 100%, 20%);
-    text-decoration: none;
-}
-
-[data-theme="dark"] a {
-    color: #b0c0ff;
-}
-
-
 
 section {
     display: flexbox;
@@ -166,10 +127,6 @@ section {
     z-index: -1;
 }
 
-[data-theme="dark"] .nav-indicator {
-    background: hsl(218, 60%, 40%);
-}
-
 .list-item{
     display: inline-block;
     padding: 0rem;
@@ -180,75 +137,12 @@ section {
     padding: 1rem;
 }
 
-.theme-toggle {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0.5rem;
-    margin-left: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: hsl(218, 100%, 20%);
-    position: relative;
-}
-
-[data-theme="dark"] .theme-toggle {
-    color: #e0e0e0;
-}
-
-
-
-.theme-toggle svg {
-    display: block;
-}
-
-
-
-/* Moon stars effect */
-.theme-toggle .moon-icon {
-    display: none;
-}
-
-[data-theme="dark"] .theme-toggle .sun-icon {
-    display: none;
-}
-
-[data-theme="dark"] .theme-toggle .moon-icon {
-    display: block;
-}
-
-/* Star elements */
-.theme-toggle .star {
-    position: absolute;
-    font-size: 10px;
-    opacity: 0;
-    pointer-events: none;
-    color: #e0e0e0;
-    z-index: 10;
-}
-
-.theme-toggle .star-1 {
-    top: -2px;
-    right: -2px;
-}
-
-/* Show star in dark mode */
-[data-theme="dark"] .theme-toggle .star-1 {
-    opacity: 1;
-}
-
-/* Logo contrast in dark mode */
 .logo-header {
     width: 100%;
     max-width: 8rem;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-[data-theme="dark"] .logo-header {
-    filter: brightness(0) invert(1);
 }
 
 #back-to-top {
@@ -270,15 +164,6 @@ section {
 
 #back-to-top:hover {
     background-color: rgba(193, 199, 228, 0.582);
-}
-
-[data-theme="dark"] #back-to-top {
-    background-color: hsla(218, 58%, 20%, 0.37);
-    color: var(--font-light);
-}
-
-[data-theme="dark"] #back-to-top:hover {
-    background-color: hsla(218, 58%, 30%, 0.5);
 }
 
 .footer{

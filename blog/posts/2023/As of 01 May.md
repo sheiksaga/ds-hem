@@ -2,6 +2,7 @@
 title: "As of 01 May"
 date: 2023-05-01
 category: web_design
+layout: blog-post.njk
 ---
 
 There has been some changes to the site since I last wrote.

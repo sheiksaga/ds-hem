@@ -1,12 +1,3 @@
-// Theme management
-function toggleTheme() {
-  const currentTheme = document.documentElement.getAttribute('data-theme');
-  const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-
-  document.documentElement.setAttribute('data-theme', newTheme);
-  localStorage.setItem('theme', newTheme);
-}
-
 // Helper function to toggle back-to-top visibility
 function toggleBackToTopVisibility() {
   const backToTop = document.getElementById('back-to-top');
@@ -42,12 +33,6 @@ if (document.readyState === 'loading') {
 }
 
 function init() {
-  // Theme toggle functionality
-  const themeToggleBtn = document.getElementById('theme-toggle-btn');
-  if (themeToggleBtn) {
-    themeToggleBtn.addEventListener('click', toggleTheme);
-  }
-
   // Back to top functionality
   window.addEventListener('scroll', toggleBackToTopVisibility);
 

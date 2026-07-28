@@ -163,7 +163,8 @@ async function main() {
     // Create YAML frontmatter
     const frontmatter = `title: "${title}"
 date: ${date}
-category: ${category}`;
+category: ${category}
+layout: blog-post.njk`;
 
     // Create the markdown file
     createMarkdownFile(frontmatter, filepath);
@@ -208,7 +209,7 @@ category: ${category}`;
     console.log(`Your post is ready! Edit the file at:`);
     console.log(`  ${filepath}\n`);
     console.log(`After writing your content, the post will be available at:`);
-    console.log(`  #post/${year}/${slug}\n`);
+    console.log(`  /blog/${year}/${slug}/\n`);
 
     process.exit(0);
 }

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- support browser themeing -->
+    <meta name="theme-color" content="#002f80">
+    <meta name="msapplication-navbutton-color" content="#002f80">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#002f80">
+    <!-- title -->
+    <title>{{ title }}</title>
+    <!-- meta description for SEO -->
+    <meta name="description" content="{{ description or 'Design Saga by Sangeeth Gandhi' }}">
+    <!-- Open Graph tags for social sharing -->
+    <meta property="og:title" content="{{ ogTitle or title }}">
+    <meta property="og:description" content="{{ ogDescription or description or 'Design Saga by Sangeeth Gandhi' }}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ ogUrl or ('https://designsaga.com' + (page.url | url)) }}">
+    <!-- favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ '/assets/img/favicon.ico' | url }}">
+    <!-- custom styles -->
+    <!-- Load fonts directly -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@700&family=Syne&family=Inter:wght@400&display=swap" rel="stylesheet">
+
+    <!-- Load CSS files directly instead of via @import -->
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | url }}">
+    {% block css %}{% endblock %}
+    <!-- quicklinks -->
+    <script src="https://unpkg.com/quicklink@2.3.0/dist/quicklink.umd.js" defer></script>
+    <script>
+      // Only initialize Quicklink if NOT on file:// protocol
+      if (window.location.protocol !== 'file:') {
+        window.addEventListener('load', function() {
+          try {
+            if (typeof quicklink !== 'undefined') {
+              quicklink.listen();
+              console.log('Quicklink initialized');
+            }
+          } catch (error) {
+            console.warn('Quicklink failed to initialize:', error);
+          }
+        });
+      } else {
+        console.log('Quicklink disabled (file:// protocol detected)');
+      }
+    </script>
+    {% block head %}{% endblock %}
+</head>
+
+<body>
+    <!-- skip navigation link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <!-- scroll progress indicator -->
+    <div class="scroll-progress"></div>
+    <!-- header -->
+    <header class="ds-header" id="header">
+        {% block logo %}
+        <a href="{{ '/' | url }}">
+            <img class="logo-header" src="{{ '/assets/img/design-saga-blue.svg' | url }}" alt="logo">
+        </a>
+        {% endblock %}
+        <div class="menu">
+            <ul class="nav-links">
+                <div class="nav-indicator"></div>
+                <li class="list-item"><a href="{{ '/' | url }}"{% if nav == 'home' %} class="active-link"{% endif %}>HOME</a></li>
+                <li class="list-item"><a href="{{ '/projects/' | url }}"{% if nav == 'projects' %} class="active-link"{% endif %}>PROJECTS</a></li>
+                <li class="list-item"><a href="{{ '/blog/' | url }}"{% if nav == 'blog' %} class="active-link"{% endif %}>BLOG</a></li>
+            </ul>
+        </div>
+    </header>
+
+    {% block content %}{% endblock %}
+
+    <!-- back to top button -->
+    <button id="back-to-top">↩︎</button>
+
+    <!-- footer -->
+    <footer class="footer">
+        <div>
+            {% block footer %}
+            Built in GBG with lots of Love <br>
+            Sangeeth G, 2026
+            {% endblock %}
+        </div>
+    </footer>
+
+    {% block js %}{% endblock %}
+</body>
+</html>

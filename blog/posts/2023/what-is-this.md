@@ -2,6 +2,7 @@
 title: "What is this?"
 date: 2023-03-14
 category: general
+layout: blog-post.njk
 ---
 
 I have been meaning to write for a long time. Looking for the perfect excuse to sit down and write a couple of chapters of my best selling novel. I have this image of an idyllic cabin in the countryside, situated well over a lake, surrounded by a forest and me sitting in a room with with a window holding a freshly brewed cup of coffee writing. Also occasionally looking out.

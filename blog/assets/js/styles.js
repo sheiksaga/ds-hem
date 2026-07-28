@@ -1,12 +1,3 @@
-// Theme management
-function toggleTheme() {
-  const currentTheme = document.documentElement.getAttribute('data-theme');
-  const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-
-  document.documentElement.setAttribute('data-theme', newTheme);
-  localStorage.setItem('theme', newTheme);
-}
-
 // Initialize when DOM is ready
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', init);
@@ -15,12 +6,6 @@ if (document.readyState === 'loading') {
 }
 
 function init() {
-  // Theme toggle functionality
-  const themeToggleBtn = document.getElementById('theme-toggle-btn');
-  if (themeToggleBtn) {
-    themeToggleBtn.addEventListener('click', toggleTheme);
-  }
-
   // Back to top functionality
   const backToTop = document.getElementById('back-to-top');
   if (backToTop) {

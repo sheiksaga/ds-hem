@@ -1,0 +1,79 @@
+---
+title: "Design Saga - Blog | Design Thoughts & Tutorials"
+description: "Blog by Sangeeth Gandhi - Thoughts on web design, development, tutorials, and random musings about design, technology, and creative problem-solving."
+ogTitle: "Design Saga - Blog"
+ogDescription: "Design thoughts, tutorials, and creative musings by Sangeeth Gandhi"
+ogUrl: "https://designsaga.com/blog"
+nav: blog
+---
+{% extends "base.njk" %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ '/blog/assets/css/filter.css' | url }}">
+<link rel="stylesheet" href="{{ '/blog/assets/css/blog.css' | url }}">
+{% endblock %}
+
+{% block head %}
+<!-- Markdown and YAML parsers (needed immediately for blog, no defer) -->
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+{% endblock %}
+
+{% block logo %}
+<div class="blog-ref">
+    <a href="{{ '/blog/' | url }}">
+        <img class="logo-header" src="{{ '/assets/img/design-saga-blue.svg' | url }}" alt="logo">
+    </a>
+</div>
+{% endblock %}
+
+{% block content %}
+    <!-- hero -->
+    <section class="intro" id="main-content">
+        You have found the blog. congratulations! <br>
+        Now, go read a post. 
+    </section>
+
+    <!-- filter -->
+    <input type="radio" id="all" name="categories" value="all" checked>
+    <input type="radio" id="web_design" name="categories" value="web_design">
+    <input type="radio" id="general" name="categories" value="general">
+
+    <ol class="filters">
+        <div class="filter-indicator"></div>
+        filters: &nbsp;
+        <li>
+            <label for="all">all</label>
+        </li>
+        /
+        <li>
+            <label for="web_design">web design</label>
+        </li>
+        /
+        <li>
+            <label for="general">general</label>
+        </li>
+    </ol>
+
+    <!-- Dynamic blog containers -->
+    <div id="blog-index"></div>
+    <div id="post-content" style="display:none;">
+        <button id="back-to-blog" class="back-button">← Back to Blog</button>
+        <nav class="breadcrumbs" id="breadcrumbs"></nav>
+        <article id="post-article"></article>
+    </div>
+    <div id="loading" class="loading-spinner" style="display:none;">Loading...</div>
+    <div id="error" class="error-message" style="display:none;"></div>
+{% endblock %}
+
+{% block footer %}
+Built in GBG with VS Code and lots of Love <br>
+Sangeeth G, 2026
+{% endblock %}
+
+{% block js %}
+<script src="{{ '/blog/assets/js/styles.js' | url }}"></script>
+<script src="{{ '/blog/assets/js/filter.js' | url }}"></script>
+<!-- markdown blog engine (must load after filter.js) -->
+<script src="{{ '/blog/assets/js/markdown-blog.js' | url }}"></script>
+{% endblock %}

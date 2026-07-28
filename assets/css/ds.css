@@ -11,9 +11,6 @@
     z-index: 9999;
 }
 
-[data-theme="dark"] .scroll-progress {
-    background: linear-gradient(90deg, #ffffff, #8ab4ff);
-}
 
 li{
     list-style-type: "// ";
@@ -65,10 +62,6 @@ h3{
     max-width: 1024px;
 }
 
-[data-theme="dark"] .hero-text {
-    color: #ffffff;
-}
-
 .like-display{
     background: linear-gradient(90deg, var(--like-gradient-start) 0%, var(--like-gradient-end) 100%);
     background-clip: text;
@@ -87,16 +80,6 @@ h3{
 		-5px 5px hsl(218, 100%, 40%);
 }
 
-[data-theme="dark"] .box {
-    background-color: hsl(218, 60%, 30%);
-    box-shadow:
-        -1px 1px hsl(218, 60%, 20%),
-		-2px 2px hsl(218, 60%, 20%),
-		-3px 3px hsl(218, 60%, 20%),
-		-4px 4px hsl(218, 60%, 20%),
-		-5px 5px hsl(218, 60%, 20%);
-}
-
 .container1{
     background-color: hsl(79, 100%, 85%);
     padding: 5rem 10rem 5rem 5rem;
@@ -109,18 +92,6 @@ h3{
        inset 5px 5px hsl(79, 73%, 16%),
        0px 8px 32px 0 hsla(79, 100%, 80%, 0.3);
     color: hsl(84, 32%, 18%);
-}
-
-[data-theme="dark"] .container1 {
-    background-color: hsl(79, 60%, 25%);
-    box-shadow:
-       inset 1px 1px hsl(79, 60%, 15%),
-       inset 2px 2px hsl(79, 60%, 15%),
-       inset 3px 3px hsl(79, 60%, 15%),
-       inset 4px 4px hsl(79, 60%, 15%),
-       inset 5px 5px hsl(79, 60%, 15%),
-       0px 8px 32px 0 hsla(79, 60%, 40%, 0.3);
-    color: hsl(79, 50%, 85%);
 }
 .container2{
     background-color: hsl(255, 100%, 85%);
@@ -135,18 +106,6 @@ h3{
        0px 8px 32px 0 hsla(255, 100%, 80%, 0.3);
     color: hsl(255, 82%, 11%);
 }
-
-[data-theme="dark"] .container2 {
-    background-color: hsl(255, 60%, 25%);
-    box-shadow:
-       inset 1px 1px hsl(255, 60%, 15%),
-       inset 2px 2px hsl(255, 60%, 15%),
-       inset 3px 3px hsl(255, 60%, 15%),
-       inset 4px 4px hsl(255, 60%, 15%),
-       inset 5px 5px hsl(255, 60%, 15%),
-       0px 8px 32px 0 hsla(255, 60%, 40%, 0.3);
-    color: hsl(255, 50%, 85%);
-}
 .container3{
     background-color: hsl(324, 100%, 85%);
     padding: 5rem 10rem 5rem 5rem;
@@ -159,18 +118,6 @@ h3{
        inset 5px 5px hsl(324, 47%, 34%),
        0px 8px 32px 0 hsla(324, 100%, 80%, 0.3);
     color: hsl(323, 100%, 10%);
-}
-
-[data-theme="dark"] .container3 {
-    background-color: hsl(324, 60%, 25%);
-    box-shadow:
-       inset 1px 1px hsl(324, 60%, 15%),
-       inset 2px 2px hsl(324, 60%, 15%),
-       inset 3px 3px hsl(324, 60%, 15%),
-       inset 4px 4px hsl(324, 60%, 15%),
-       inset 5px 5px hsl(324, 60%, 15%),
-       0px 8px 32px 0 hsla(324, 60%, 40%, 0.3);
-    color: hsl(324, 50%, 85%);
 }
 .container4{
     background-color: hsl(26, 100%, 85%);
@@ -185,18 +132,6 @@ h3{
        0px 8px 32px 0 hsla(26, 100%, 80%, 0.3);
     color: hsl(25, 100%, 15%);
 }
-
-[data-theme="dark"] .container4 {
-    background-color: hsl(26, 60%, 25%);
-    box-shadow:
-       inset 1px 1px hsl(26, 60%, 15%),
-       inset 2px 2px hsl(26, 60%, 15%),
-       inset 3px 3px hsl(26, 60%, 15%),
-       inset 4px 4px hsl(26, 60%, 15%),
-       inset 5px 5px hsl(26, 60%, 15%),
-       0px 8px 32px 0 hsla(26, 60%, 40%, 0.3);
-    color: hsl(26, 50%, 85%);
-}
 .portfolio{
     background-color: hsl(218, 100%, 90%);
     padding: 5rem;
@@ -204,11 +139,6 @@ h3{
     border-top: 1rem ridge;
     border-bottom: 1rem ridge;
     border-color: hsla(218, 100%, 80%);
-}
-
-[data-theme="dark"] .portfolio {
-    background-color: hsl(218, 60%, 20%);
-    border-color: hsla(218, 60%, 40%);
 }
 
 .listspace{
@@ -223,10 +153,6 @@ h3{
         cursor: pointer;
         filter: brightness(0.3);
     }
-
-[data-theme="dark"] .refresh-icon {
-    filter: invert(1);
-}
 
 
 span.email b {

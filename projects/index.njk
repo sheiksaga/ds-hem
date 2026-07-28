@@ -1,0 +1,29 @@
+---
+title: "Design Saga - Projects | Things I've Built"
+description: "Projects by Sangeeth Gandhi - MES Windows launcher, ChatChat LLM UI, and more."
+ogTitle: "Design Saga - Projects"
+ogDescription: "Things I've built — MES, ChatChat, and more."
+ogUrl: "https://designsaga.com/projects"
+nav: projects
+---
+{% extends "base.njk" %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ '/projects/assets/css/projects.css' | url }}">
+{% endblock %}
+
+{% block content %}
+    <!-- intro -->
+    <section class="projects-intro" id="main-content">
+        Things I've built
+        <small>Side projects, experiments, etc etc.</small>
+    </section>
+
+    <!-- project cards deck -->
+    <div class="projects-deck"></div>
+{% endblock %}
+
+{% block js %}
+<script src="{{ '/assets/js/styles.js' | url }}"></script>
+<script src="{{ '/projects/assets/js/projects.js' | url }}"></script>
+{% endblock %}

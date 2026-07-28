@@ -2,6 +2,7 @@
 title: "Back in the saddle"
 date: 2026-01-10
 category: general
+layout: blog-post.njk
 ---
 
 Two years without updates. What?!

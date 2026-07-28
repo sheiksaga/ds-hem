@@ -1,0 +1,108 @@
+---
+title: "Design Saga - Conscious Design | Home"
+description: "Design Saga by Sangeeth Gandhi - Sustainable web design, UI/UX consulting, and thoughtful writing based in Gothenburg, Sweden. Specializing in performance-focused websites and holistic design solutions."
+ogTitle: "Design Saga - Conscious Design"
+ogDescription: "Sustainable web design and UI/UX consulting by Sangeeth Gandhi"
+ogUrl: "https://designsaga.com"
+nav: home
+---
+{% extends "base.njk" %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ '/assets/css/ds.css' | url }}">
+{% endblock %}
+
+{% block content %}
+    <!-- hero -->
+    <section class="hero" id="main-content">
+        <h1><span class="hi">Hi!</span>&emsp;&emsp;&emsp;
+        <span class="hero_emoji">^_^</span></h1> <br> <br>
+    <div class="hero-text">Welcome to my site. My name is Sangeeth and I spend time designing things. If you want to just chat about random things (such as <span class="like-display" id="likeDisplay"></span> <img src="./assets/img/refresh-line.svg" alt="refresh icon" class="refresh-icon">)
+        , or want to commision some design work, I'm your person.<br><br>
+        Right now, I work as an engineer at Volvo Trucks, based in Gothenburg, Sweden. <br><br>
+        Anyway, feel free to explore my site and see what I've been up to!
+    </div>
+    
+    </section>
+
+    <!-- projects highlight -->
+    <section>
+      <div class="box">
+            <h3>Projects</h3>
+          <p>
+            Some things I've made — from Windows launchers to chat UIs.
+            They keep me busy when I'm not at the office.
+          </p>
+          <p style="margin-top: 1.5rem;">
+            <a href="{{ '/projects/' | url }}" style="font-weight: bold;">See all projects →</a>
+          </p>
+        
+      </div>
+    </section>
+
+    <!-- services -->
+    <section>
+        <div class="box">
+            <h2>What I do.<span style="font-size: var(--font-size-sm); font-weight: normal; vertical-align: -1rem;"> When I'm not at the office.</span></h2>
+            <div class="container1">
+                <h3>Web design</h3><br>
+                <p>I make sustainable websites that consistently get the best page scores on google. Being platform agnostic, means I do equally as well on static sites from scratch as I do on webflow or wordpress.</p>
+            </div>
+            <div class="container2">
+                <h3>UI/UX</h3><br>
+                <p>Look. There is nothing more satisfying than a nicely made wireframe. The dream is design that just works™. :-3</p>
+            </div>
+            <div class="container3">
+                <h3>Consulting</h3><br>
+                <p>I love finding holistic solutions to things. Got issues that have you stumped? I'm your guy. I can also show you:
+                    <ul>
+                        <li><span class="listspace">The preferred method of getting out of a zoom call.</span></li>
+                        <li><span class="listspace">The wonders of modern search engines and AI.</span></li>
+                        <li><span class="listspace">Why you should not say chai tea. stop it.</span></li>
+                        <li><span class="listspace">The dangers of using comic sans.</span></li>
+                        <li><span class="listspace">The art of email design</span></li>
+                        <li><span class="listspace">List making.</span></li>
+                    </ul> 
+                </p>
+            </div>
+            <div class="container4">
+                <h3>Writing</h3><br>
+                <p>
+                    I (try to) blog (when possible). <br>
+                    I (try to) write short stories (when possible) too.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- places -->
+    <section>
+       <div class="box">
+        <h2>Places I can be found</h2>
+        <div class="container2">
+        <ul>
+            <li><span class="listspace">Instagram - <a href="https://www.instagram.com/sangeethg/" >SangeethG</a></span></li>
+            <li><span class="listspace">E-mail - <span class="protected-email" data-user="gandhi.sangeeth" data-domain="gmail.com"></span></span></li>
+            <li><span class="listspace">Linkedin - <a href="https://www.linkedin.com/in/sangeeth-gandhi/" rel="nofollow noopener">sangeeth-gandhi</a></span></li>
+            <li><span class="listspace">Phone - <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" >( ͡° ͜ʖ ͡°)</a></span></li>
+        </ul>
+        </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block js %}
+<script src="{{ '/assets/js/styles.js' | url }}"></script>
+<script src="{{ '/assets/js/ds.js' | url }}"></script>
+<!-- Email obfuscation script -->
+<script>
+    (function() {
+        document.querySelectorAll('.protected-email').forEach(function(el) {
+            var user = el.dataset.user;
+            var domain = el.dataset.domain;
+            var email = user + '@' + domain;
+            el.innerHTML = '<a href="mailto:' + email + '">' + email + '</a>';
+        });
+    })();
+</script>
+{% endblock %}

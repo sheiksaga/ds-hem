@@ -2,6 +2,7 @@
 title: "Website Builds"
 date: 2023-03-25
 category: web_design
+layout: blog-post.njk
 ---
 
 Hey there! In my last post, I mentioned that I was using [Publii](https://getpublii.com/)[^1] to publish my posts, storing them on [GitHub](https://github.com/) and deploying them with [Cloudflare Pages](https://www.cloudflare.com/). I had a few reasons for doing this:

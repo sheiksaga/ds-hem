@@ -5,6 +5,7 @@ category: web_design
 description: "A brief description of your post (optional)"
 tags: ["tag1", "tag2"]
 draft: false
+layout: blog-post.njk
 ---
 
 # Your Post Title

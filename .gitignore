@@ -2,3 +2,5 @@
 .vscode
 .future-enhancements.md
 docs/
+_site/
+node_modules/

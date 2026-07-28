@@ -10,10 +10,6 @@ input[type="radio"] {
     margin-bottom: 5rem;
 }
 
-[data-theme="dark"] .filters {
-    color: #ffffff;
-}
-
 .filters * {
     display: inline-block;
 }
@@ -25,10 +21,6 @@ input[type="radio"] {
     background: hsl(211, 83%, 90%);
     pointer-events: none;
     z-index: 0;
-}
-
-[data-theme="dark"] .filter-indicator {
-    background: hsl(211, 60%, 30%);
 }
 
 .filters li {
@@ -48,10 +40,6 @@ input[type="radio"] {
 /* Remove hover background since indicator handles it */
 .filters label:hover {
     color: hsl(211, 83%, 5%);
-}
-
-[data-theme="dark"] .filters label:hover {
-    color: #ffffff;
 }
 
 .posts .post {
@@ -74,13 +62,6 @@ input[type="radio"] {
 [value="web_design"]:checked ~ .filters [for="web_design"],
 [value="general"]:checked ~ .filters [for="general"] {
     color: hsl(211, 83%, 5%);
-    font-weight: 500;
-}
-
-[data-theme="dark"] [value="all"]:checked ~ .filters [for="all"],
-[data-theme="dark"] [value="web_design"]:checked ~ .filters [for="web_design"],
-[data-theme="dark"] [value="general"]:checked ~ .filters [for="general"] {
-    color: #ffffff;
     font-weight: 500;
 }
 
