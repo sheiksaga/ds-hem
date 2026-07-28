@@ -18,7 +18,7 @@ input[type="radio"] {
 .filter-indicator {
     position: absolute;
     height: 100%;
-    background: hsl(211, 83%, 90%);
+    background: #ffffff;
     pointer-events: none;
     z-index: 0;
 }
@@ -39,7 +39,7 @@ input[type="radio"] {
 
 /* Remove hover background since indicator handles it */
 .filters label:hover {
-    color: hsl(211, 83%, 5%);
+    color: #000000;
 }
 
 .posts .post {
@@ -61,7 +61,7 @@ input[type="radio"] {
 [value="all"]:checked ~ .filters [for="all"],
 [value="web_design"]:checked ~ .filters [for="web_design"],
 [value="general"]:checked ~ .filters [for="general"] {
-    color: hsl(211, 83%, 5%);
+    color: #000000;
     font-weight: 500;
 }
 

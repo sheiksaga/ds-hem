@@ -1,59 +1,33 @@
 
 
-/* Scroll Progress Indicator */
-.scroll-progress {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 0%;
-    height: 3px;
-    background: linear-gradient(90deg, var(--hero-gradient-start), var(--hero-gradient-end));
-    z-index: 9999;
-}
-
 
 li{
     list-style-type: "// ";
     margin-left: 2rem;
 }
 
-h1{
-    font-family: 'Overpass', Arial, Helvetica, sans-serif;
-}
-
 h2{
-    background: linear-gradient(90deg, var(--h2-gradient-start) 0%, var(--h2-gradient-end) 100%);
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-family: 'Overpass', Arial, Helvetica, sans-serif;
-}
-
-h3{
-    font-family: 'Overpass', Arial, Helvetica, sans-serif;
+    color: #000000;
 }
 
 .hero{
     min-height: 20vh;
     margin-top: 8rem;
     padding-right: 5rem;
-    margin-bottom: 10rem;
+    margin-bottom: 8rem;
     padding-top: 3rem;
-    max-width: 1024px;
+    max-width: 980px;
 }
 
 .hero_emoji{
     font-size: var(--font-size-xxl);
     margin-left: -1rem;
-    background: linear-gradient(90deg, var(--hero-gradient-start) 0%, var(--hero-gradient-end) 100%);
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #000000;
 }
 
 .hi{
-    font-size: 72px;
-    background: linear-gradient(90deg, var(--hero-gradient-start) 0%, var(--hero-gradient-end) 100%);
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    font-size: var(--font-size-xxl);
+    color: #000000;
     max-width: 1024px;
 }
 
@@ -63,95 +37,139 @@ h3{
 }
 
 .like-display{
-    background: linear-gradient(90deg, var(--like-gradient-start) 0%, var(--like-gradient-end) 100%);
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #000000;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 6' width='40' height='6'%3E%3Cpath d='M0 3 Q5 0 10 3 Q15 6 20 3 Q25 0 30 3 Q35 6 40 3' fill='none' stroke='%23008000' stroke-width='1.2'/%3E%3C/svg%3E");
+    background-repeat: repeat-x;
+    background-position: left bottom;
+    padding-bottom: 0.15em;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
 }
 
-.box{
-    background-color: hsl(218, 100%, 70%);
-    padding: 5rem;
-    margin-bottom: 10rem;
-    box-shadow:
-        -1px 1px hsl(218, 100%, 40%),
-		-2px 2px hsl(218, 100%, 40%),
-		-3px 3px hsl(218, 100%, 40%),
-		-4px 4px hsl(218, 100%, 40%),
-		-5px 5px hsl(218, 100%, 40%);
+.like-display:hover {
+    animation: wave-flow 0.8s linear infinite;
 }
 
-.container1{
-    background-color: hsl(79, 100%, 85%);
-    padding: 5rem 10rem 5rem 5rem;
-    margin-top: 5rem;
-    box-shadow:
-       inset 1px 1px hsl(79, 73%, 16%),
-       inset 2px 2px hsl(79, 73%, 16%),
-       inset 3px 3px hsl(79, 73%, 16%),
-       inset 4px 4px hsl(79, 73%, 16%),
-       inset 5px 5px hsl(79, 73%, 16%),
-       0px 8px 32px 0 hsla(79, 100%, 80%, 0.3);
-    color: hsl(84, 32%, 18%);
-}
-.container2{
-    background-color: hsl(255, 100%, 85%);
-    padding: 5rem 10rem 5rem 5rem;
-    margin-top: 5rem;
-    box-shadow:
-       inset 1px 1px hsl(255, 100%, 60%),
-       inset 2px 2px hsl(255, 100%, 60%),
-       inset 3px 3px hsl(255, 100%, 60%),
-       inset 4px 4px hsl(255, 100%, 60%),
-       inset 5px 5px hsl(255, 100%, 60%),
-       0px 8px 32px 0 hsla(255, 100%, 80%, 0.3);
-    color: hsl(255, 82%, 11%);
-}
-.container3{
-    background-color: hsl(324, 100%, 85%);
-    padding: 5rem 10rem 5rem 5rem;
-    margin-top: 5rem;
-    box-shadow:
-       inset 1px 1px hsl(324, 47%, 34%),
-       inset 2px 2px hsl(324, 47%, 34%),
-       inset 3px 3px hsl(324, 47%, 34%),
-       inset 4px 4px hsl(324, 47%, 34%),
-       inset 5px 5px hsl(324, 47%, 34%),
-       0px 8px 32px 0 hsla(324, 100%, 80%, 0.3);
-    color: hsl(323, 100%, 10%);
-}
-.container4{
-    background-color: hsl(26, 100%, 85%);
-    padding: 5rem 10rem 5rem 5rem;
-    margin-top: 5rem;
-    box-shadow:
-       inset 1px 1px hsl(26, 100%, 40%),
-       inset 2px 2px hsl(26, 100%, 40%),
-       inset 3px 3px hsl(26, 100%, 40%),
-       inset 4px 4px hsl(26, 100%, 40%),
-       inset 5px 5px hsl(26, 100%, 40%),
-       0px 8px 32px 0 hsla(26, 100%, 80%, 0.3);
-    color: hsl(25, 100%, 15%);
-}
-.portfolio{
-    background-color: hsl(218, 100%, 90%);
-    padding: 5rem;
-    margin-top: 5rem;
-    border-top: 1rem ridge;
-    border-bottom: 1rem ridge;
-    border-color: hsla(218, 100%, 80%);
+@keyframes wave-flow {
+    from { background-position-x: 0; }
+    to { background-position-x: 40px; }
 }
 
 .listspace{
     padding-left: 2rem;
 }
 
+/* ── Section boxes ──────────────────────────── */
+.box {
+    border: 2px solid #000000;
+    padding: 4rem;
+    margin-bottom: 0;
+}
+
+.container1, .container2, .container3, .container4 {
+    padding: 3rem 4rem 3rem 3rem;
+    margin-top: 2rem;
+    color: #000000;
+}
+
+.container1 { background-color: rgba(255, 0, 0, 0.06); }
+.container2 { background-color: rgba(0, 128, 0, 0.06); }
+.container3 { background-color: rgba(255, 255, 0, 0.12); }
+.container4 { background-color: rgba(0, 0, 0, 0.03); }
+
+/* ── Accordion ──────────────────────────── */
+.accordion {
+    margin-top: 2rem;
+}
+
+.accordion-item {
+    border: 2px solid #000;
+    margin-bottom: 0.5rem;
+    background: #fff;
+}
+
+.accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1.25rem 1.5rem;
+    font: inherit;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #000;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    transition: background 0.2s ease;
+}
+
+.accordion-header:hover {
+    background: rgba(0,0,0,0.03);
+}
+
+.accordion-icon {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.accordion-icon::before {
+    content: "+";
+    display: block;
+    font-size: 1.4rem;
+    line-height: 1;
+    font-weight: 300;
+}
+
+.accordion-header[aria-expanded="true"] .accordion-icon {
+    transform: rotate(45deg);
+}
+
+.accordion-panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.35s ease;
+    padding: 0 1.5rem;
+    color: #000;
+}
+
+.accordion-panel p,
+.accordion-panel ul {
+    margin: 1rem 0;
+}
+
+.accordion-panel ul {
+    padding-left: 2rem;
+}
+
+.accordion-panel li {
+    margin-left: 0;
+}
+
+.accordion-panel li .listspace {
+    padding-left: 1rem;
+}
+
+.accordion-panel.open {
+    max-height: 600px;
+    padding: 0 1.5rem 1.25rem;
+}
+
 .refresh-icon{
         height: 1.5rem;
         width: 1.5rem;
-        background: url("../img/refresh.svg");
-        vertical-align: -0.25rem;
         cursor: pointer;
         filter: brightness(0.3);
+        transition: transform 0.4s ease;
+    }
+
+    .refresh-icon:hover {
+        transform: rotate(180deg);
     }
 
 
@@ -175,15 +193,14 @@ span.email b {
         padding-right: 1rem;
         max-width: 768px;
     }
-    .box{
-        padding: 1.5rem;
-        padding-top: 4rem;
+    .box {
+        padding: 2rem;
+    }
+    .container1, .container2, .container3, .container4{
+        padding: 2rem 1.5rem;
     }
     h2{
         padding-right: 7rem;
-    }
-    .container1, .container2, .container3, .container4{
-        padding: 5rem 1rem 2rem 2rem;
     }
     .bullets{
         margin-left: 4.5rem;

@@ -1,9 +1,9 @@
 ---
-title: "Design Saga - Blog | Design Thoughts & Tutorials"
-description: "Blog by Sangeeth Gandhi - Thoughts on web design, development, tutorials, and random musings about design, technology, and creative problem-solving."
-ogTitle: "Design Saga - Blog"
-ogDescription: "Design thoughts, tutorials, and creative musings by Sangeeth Gandhi"
-ogUrl: "https://designsaga.com/blog"
+title: "Sangeeth's Personal Blog"
+description: "Blog by Sangeeth Gandhi - Thoughts, every sometimes."
+ogTitle: "Personal Blog"
+ogDescription: "Stuff and thoughts by me"
+ogUrl: "https://ds-hem.pages.dev/blog"
 nav: blog
 ---
 {% extends "base.njk" %}
@@ -21,7 +21,7 @@ nav: blog
 
 {% block logo %}
 <div class="blog-ref">
-    <a href="{{ '/blog/' | url }}">
+    <a href="{{ '/' | url }}">
         <img class="logo-header" src="{{ '/assets/img/design-saga-blue.svg' | url }}" alt="logo">
     </a>
 </div>
@@ -72,7 +72,7 @@ Sangeeth G, 2026
 {% endblock %}
 
 {% block js %}
-<script src="{{ '/blog/assets/js/styles.js' | url }}"></script>
+<script src="{{ '/assets/js/main.js' | url }}"></script>
 <script src="{{ '/blog/assets/js/filter.js' | url }}"></script>
 <!-- markdown blog engine (must load after filter.js) -->
 <script src="{{ '/blog/assets/js/markdown-blog.js' | url }}"></script>

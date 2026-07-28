@@ -5,10 +5,11 @@
     left: 0;
     width: 0%;
     height: 3px;
-    background: linear-gradient(90deg, var(--hero-gradient-start), var(--hero-gradient-end));
+    background: #ff0000;
     z-index: 9999;
 }
-
+
+
 
 h1{
     padding-top: 1rem;
@@ -25,7 +26,6 @@ h3{
 
 p{
     padding-bottom: 1rem;
-    font-family: Inter;
     letter-spacing: .03em;
 }
 
@@ -35,10 +35,11 @@ p{
 }
 
 body ul li a{
-    color: var(--color-primary-light);
+    color: #000000;
     font-weight:normal ;
 }
-
+
+
 
 ul {
     list-style-type: "// ";
@@ -52,7 +53,8 @@ ul {
     margin-bottom: 2rem;
     font-size: x-large;
 }
-
+
+
 
 /* list styling */
 .f2023{
@@ -60,9 +62,10 @@ ul {
 }
 a.f2023{
     position: relative;
-    color: var(--color-primary-light);
+    color: #000000;
 }
-
+
+
 
 li.nobullet{
     list-style: none;  
@@ -74,10 +77,11 @@ li.nobullet{
     display: inline-block;
     margin-right: 1rem;
     vertical-align: middle;
-    color:hsl(218, 100%, 30%);
+    color: #000000;
     text-decoration: none;
   }
-
+
+
 .blog-ref img {
     display: inline-block;
     vertical-align: middle;
@@ -111,18 +115,20 @@ li.nobullet{
     display: inline-block;
     background: none;
     text-decoration: none;
-    font-family: 'Syne', Arial, Helvetica, sans-serif;
-    color: hsl(218, 100%, 40%);
+    font-family: inherit;
+    color: #000000;
     font-size: 1.25rem;
     cursor: help;
     padding: 0 0.2em;
 }
-
+
+
 
 #post-article sup[id^="fnref"] a:hover {
-    color: hsl(218, 100%, 60%);
+    color: #000000;
 }
-
+
+
 
 /* Footnote tooltip content */
 #post-article sup[id^="fnref"] a::after {
@@ -131,8 +137,8 @@ li.nobullet{
     bottom: 100%;
     left: 50%;
     transform: translateX(-50%) translateY(-8px);
-    background: hsl(218, 100%, 95%);
-    color: hsl(0, 0%, 10%);
+    background: #ffffff;
+    color: #000000;
     padding: 0.75rem 1rem;
     border-radius: 6px;
     font-size: 1.3rem;
@@ -143,11 +149,12 @@ li.nobullet{
     opacity: 0;
     visibility: hidden;
     z-index: 1000;
-    font-family: 'Inter', Arial, sans-serif;
+    font-family: inherit;
     line-height: 1.4;
     pointer-events: none;
 }
-
+
+
 
 /* Show tooltip on hover */
 #post-article sup[id^="fnref"] a:hover::after {
@@ -161,7 +168,8 @@ li.nobullet{
     padding-top: 2rem;
     border-top: 1px solid hsl(0, 0%, 85%);
 }
-
+
+
 
 #post-article .footnotes ol {
     padding-left: 1.5rem;
@@ -172,9 +180,10 @@ li.nobullet{
     margin-bottom: 0.75rem;
     line-height: 1.6;
     font-size: 1.5rem;
-    color: hsl(0, 0%, 30%);
+    color: #000000;
 }
-
+
+
 
 #post-article .footnotes li p {
     margin: 0;
@@ -184,12 +193,13 @@ li.nobullet{
 /* Footnote back reference */
 #post-article .footnote-backref {
     text-decoration: none;
-    color: hsl(218, 100%, 50%);
+    color: #000000;
     font-size: 0.85em;
     margin-left: 0.5em;
     opacity: 0.7;
 }
-
+
+
 
 #post-article .footnote-backref:hover {
     opacity: 1;
@@ -200,15 +210,16 @@ li.nobullet{
 
 body p a{
     text-decoration: underline;
-    color:hsl(216, 100%,10%);
+    color: #000000;
     }
-
+
+
 
 a#fnref1,a#fnref2,a#fnref3,a#fnref4,a#fnref5{
     background: none;
     text-decoration: none;
-    font-family: 'Syne', Arial, Helvetica, sans-serif;
-    color: hsl(216, 100%,10%);
+    font-family: inherit;
+    color: #000000;
 }
 
 
@@ -217,29 +228,32 @@ a#fnref1,a#fnref2,a#fnref3,a#fnref4,a#fnref5{
     vertical-align: 1rem;
     font-size: small;
     margin-left: 2rem;
-    color: hsl(0, 0%, 40%);
+    color: #000000;
 }
-
+
+
 
 .sub-web{
     vertical-align: -1rem;
     font-size: small;
     margin-left: -6rem;
     background-color: hsl(135, 100%, 95%);
-    color: hsl(135, 100%, 25%);
+    color: #000000;
     padding: 0.25rem;
 }
-
+
+
 
 .sub-gen{
     vertical-align: -1rem;
     font-size: small;
     margin-left: -6rem;
     background-color: hsl(44, 100%, 95%);
-    color: hsl(44, 100%, 20%);
+    color: #000000;
     padding: 0.25rem;
 }
-
+
+
 
 .second{
     margin-left: 0.5rem;
@@ -249,17 +263,19 @@ a#fnref1,a#fnref2,a#fnref3,a#fnref4,a#fnref5{
     font-family: inherit;
     border: none;
     background-color: hsl(239, 80%, 90%);
-    color: hsl(239, 100%, 10%);
+    color: #000000;
     padding: 0.25rem 1rem;
 }
-
+
+
 
 .selected{
     background-color: hsl(239, 100%, 65%);
-    color: hsl(239, 100%, 95%);
+    color: #000000;
     box-shadow: inset 0rem 0rem 0rem 0.15rem  black;
 }
-
+
+
 
 .filter{
     padding-bottom: 2rem;
@@ -267,7 +283,7 @@ a#fnref1,a#fnref2,a#fnref3,a#fnref4,a#fnref5{
 
 /* code */
 pre code {
-	color: hsl(0, 0%, 50%);
+	color: #000000;
 	tab-size: 4;
 }
 
@@ -276,17 +292,19 @@ code {
 	font-size: 1em;
 	line-height: 1.357em;
 }
-
+
+
 
 pre {
 	background-color: hsl(0, 0%, 79%);
-    color: hsl(0, 0%, 0%);
+    color: #000000;
     padding: 2rem;
     overflow: auto;
     margin: 2rem 0rem;
     white-space: pre-wrap;
 }
-
+
+
 
 /* ========== MARKDOWN CONTENT STYLING ========== */
 
@@ -308,40 +326,42 @@ pre {
 }
 
 #post-article h1 {
-    font-size: 2.5rem;
     margin-bottom: 1rem;
-    color: hsl(218, 100%, 15%);
+    color: #000000;
 }
-
+
+
 
 #post-article h2 {
-    font-size: 2rem;
     margin-top: 2rem;
     margin-bottom: 1rem;
-    color: var(--color-primary-light);
+    color: #000000;
     background: none;
 }
-
+
+
 
 #post-article h3 {
-    font-size: 1.5rem;
     margin-top: 1.5rem;
     margin-bottom: 0.75rem;
-    color: hsl(218, 100%, 25%);
+    color: #000000;
 }
-
+
+
 
 #post-article p {
     margin-bottom: 1.5rem;
-    line-height: 1.8;
-    color: hsl(0, 0%, 15%);
+    line-height: inherit;
+    color: #000000;
 }
-
+
+
 
 #post-article li {
-    color: hsl(0, 0%, 15%);
+    color: #000000;
 }
-
+
+
 
 #post-article code {
     background: rgba(0,0,0,0.05);
@@ -349,9 +369,10 @@ pre {
     border-radius: 3px;
     font-family: monospace;
     font-size: 0.9em;
-    color: hsl(0, 0%, 20%);
+    color: #000000;
 }
-
+
+
 
 #post-article pre {
     background: rgba(0,0,0,0.05);
@@ -359,9 +380,10 @@ pre {
     border-radius: 5px;
     overflow-x: auto;
     margin-bottom: 1.5rem;
-    color: hsl(0, 0%, 20%);
+    color: #000000;
 }
-
+
+
 
 #post-article pre code {
     background: none;
@@ -370,9 +392,10 @@ pre {
 
 #post-article strong {
     font-weight: 700;
-    color: var(--color-primary-light);
+    color: #000000;
 }
-
+
+
 
 #post-article em {
     font-style: italic;
@@ -391,39 +414,44 @@ pre {
 }
 
 #post-article blockquote {
-    border-left: 4px solid hsl(218, 100%, 50%);
+    border-left: 4px solid #000000;
     padding-left: 1rem;
     margin: 1.5rem 0;
     font-style: italic;
-    color: hsl(0, 0%, 30%);
+    color: #000000;
 }
-
+
+
 
 #post-article a {
-    color: hsl(218, 100%, 35%);
+    color: #000000;
     text-decoration: underline;
 }
 
 #post-article a:hover {
-    color: hsl(218, 100%, 50%);
+    color: #000000;
 }
-
-
+
+
+
+
 
 #post-article hr {
     border: none;
     border-top: 2px solid hsl(0, 0%, 90%);
     margin: 2rem 0;
 }
-
+
+
 
 /* Post meta info */
 .post-meta {
     margin-bottom: 2rem;
-    color: hsl(0, 0%, 60%);
+    color: #000000;
     font-size: 1.1rem;
 }
-
+
+
 
 .post-date,
 .post-category {
@@ -432,12 +460,12 @@ pre {
 
 /* Back button */
 .back-button {
-    background: hsl(218, 100%, 92%);
+    background: #ffffff;
     border: none;
     font-size: 1.5rem;
     font-weight: 400;
     cursor: pointer;
-    color: var(--color-primary-light);
+    color: #000000;
     padding: 0.9rem 1.3rem;
     margin-top: 2rem;
     margin-bottom: 1.5rem;
@@ -448,44 +476,51 @@ pre {
 }
 
 .back-button:hover {
-    background: hsl(218, 100%, 65%);
-    color: hsl(218, 100%, 95%);
+    background: #000000;
+    color: #ffffff;
 }
-
-
+
+
+
+
 
 /* Breadcrumbs */
 .breadcrumbs {
     font-size: 1rem;
-    color: hsl(0, 0%, 50%);
+    color: #000000;
     margin-bottom: 2rem;
     padding-left: 0.5rem;
 }
 
 .breadcrumbs a {
-    color: hsl(218, 100%, 40%);
+    color: #000000;
     text-decoration: none;
 }
 
 .breadcrumbs a:hover {
-    color: hsl(218, 100%, 60%);
+    color: #000000;
     text-decoration: underline;
 }
 
 .breadcrumb-separator {
     margin: 0 0.5rem;
-    color: hsl(0, 0%, 60%);
+    color: #000000;
 }
 
 .breadcrumb-current {
-    color: hsl(0, 0%, 40%);
+    color: #000000;
     font-weight: 500;
 }
-
-
-
-
-
+
+
+
+
+
+
+
+
+
+
 
 /* Blog index transitions */
 #blog-index {
@@ -512,14 +547,15 @@ pre {
     border-top: 2px solid hsl(0, 0%, 90%);
     gap: 1rem;
 }
-
+
+
 
 .nav-button {
-    background: hsl(218, 100%, 92%);
+    background: #ffffff;
     font-size: 1.1rem;
     font-weight: 600;
     cursor: pointer;
-    color: var(--color-primary-light);
+    color: #000000;
     padding: 0.8rem 1.2rem;
     display: inline-flex;
     align-items: center;
@@ -532,11 +568,13 @@ pre {
 }
 
 .nav-button:hover {
-    background: hsl(218, 100%, 65%);
-    color: hsl(218, 100%, 95%);
+    background: #000000;
+    color: #ffffff;
 }
-
-
+
+
+
+
 
 .nav-button:disabled {
     opacity: 0.3;
@@ -586,18 +624,20 @@ pre {
     font-size: 1.5rem;
     color: var(--font-light);
 }
-
+
+
 
 /* Error message */
 .error-message {
     background: #ffdddd;
-    color: #cc0000;
+    color: #000000;
     padding: 1rem;
     border-radius: 5px;
     margin: 2rem 0;
     font-family: var(--font-family);
 }
-
+
+
 
 /* Mobile responsive adjustments */
 @media (max-width: 768px) {

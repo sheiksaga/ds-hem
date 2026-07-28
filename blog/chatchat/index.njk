@@ -1,0 +1,133 @@
+---
+title: "ChatChat — Open AI Chat Client | Design Saga"
+description: "ChatChat — a single-page, no-build chat UI for OpenAI-compatible APIs. Chat with local LLMs via LM Studio or cloud models via NanoGPT. Features streaming, markdown, story mode with CYOA/Roleplay/GM styles, and full import/export."
+ogTitle: "ChatChat — Open AI Chat Client"
+ogDescription: "A no-build chat UI for local and cloud LLMs. Chat, story mode, streaming, markdown."
+ogUrl: "https://ds-hem.pages.dev/blog/chatchat/"
+nav: blog
+---
+{% extends "base.njk" %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ '/blog/assets/css/blog.css' | url }}">
+<style>
+  #post-article figure.shot { margin: 2rem 0; }
+  #post-article figure.shot img {
+    margin: 0 auto; display: block;
+    width: 100%; max-width: var(--shot-w, 860px);
+    box-shadow: 0 10px 34px rgba(0, 0, 0, 0.22);
+    border-radius: 8px;
+  }
+  #post-article figure.shot figcaption {
+    margin-top: 0.8rem; text-align: center; font-style: italic;
+    font-size: var(--font-size-sm); opacity: 0.72;
+  }
+  #post-article .shot-grid {
+    display: grid; gap: 2rem; margin: 2rem 0;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  #post-article .shot-grid figure.shot { margin: 0; }
+  #post-article .shot-grid figure.shot img { max-width: 100%; }
+</style>
+{% endblock %}
+
+{% block content %}
+<div id="post-content">
+    <article id="post-article" class="fade-in" style="opacity:1" >
+        <h1 id="main-content">ChatChat — Open AI Chat Client</h1>
+
+        <p>A no-build, single-page chat interface for OpenAI-compatible chat completion APIs. Point it at <a href="https://lmstudio.ai/" rel="noopener">LM Studio</a> running locally or a cloud provider, and you're chatting in seconds.</p>
+
+        <p>No bundler. No package manager. No backend. Just HTML, CSS, and JS — open <code>index.html</code> and go.</p>
+
+        <figure class="shot">
+            <img src="img/hero-full.png" width="1280" height="800" loading="lazy"
+                 alt="ChatChat hero screen — dark themed landing page with an orb, mode pills (Chat / Story), prompt starter chips, and the hero input box.">
+            <figcaption>Open, type, send. That's it.</figcaption>
+        </figure>
+
+        <h2>What it is</h2>
+        <p>ChatChat is a chat UI I built because LM Studio's built-in interface is fine, but I wanted something with a bit more personality — a story mode for interactive fiction, better markdown rendering, import/export, configurable sampling parameters, and the ability to switch between a local model and a cloud provider without reloading.</p>
+
+        <p>It's all client-side. Your chats, your config, your API keys — everything stays in your browser's <code>localStorage</code>. Nothing is sent anywhere except the messages you explicitly send to the API endpoint you configure.</p>
+
+        <h2>What it does</h2>
+        <ul>
+            <li><strong>Chat mode</strong> — freeform conversation with any OpenAI-compatible API. System prompt, temperature, repetition penalty — all configurable.</li>
+            <li><strong>Story mode</strong> — three styles of interactive fiction:
+                <ul>
+                    <li><strong>Adventure (CYOA)</strong> — second-person narration, every reply ends with 2-3 numbered choices.</li>
+                    <li><strong>Roleplay</strong> — the AI plays your lead character and NPCs; you direct the story or speak in character.</li>
+                    <li><strong>Game Master</strong> — the AI runs the scene like a tabletop GM, narrating outcomes for what you attempt.</li>
+                </ul>
+            </li>
+            <li><strong>Streaming</strong> — responses appear token-by-token as they're generated, rendered at ~30fps to avoid layout thrash.</li>
+            <li><strong>Markdown rendering</strong> — assistant responses render markdown with syntax-highlighted code blocks, powered by <code>marked</code> + <code>DOMPurify</code> + <code>highlight.js</code>.</li>
+            <li><strong>Regeneration</strong> — cycle through alternate responses for any message without losing the originals.</li>
+            <li><strong>Compression</strong> — older turns can be summarized into a single message to keep context under control.</li>
+            <li><strong>Provider switching</strong> — toggle between <strong>Local</strong> (LM Studio at <code>localhost:1234</code>) and <strong>NanoGPT</strong> (cloud) without reloading.</li>
+            <li><strong>Import / Export</strong> — export all your chats as JSON, or import them back. Story configs export as JSON or plain text.</li>
+        </ul>
+
+        <div class="shot-grid">
+            <figure class="shot">
+                <img src="img/hero.png" width="1280" height="800" loading="lazy"
+                     alt="ChatChat hero screen showing the orb, mode pills, and prompt chips.">
+                <figcaption>The landing screen — pick a mode, click a starter, or just type.</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="img/hero-input.png" width="1280" height="800" loading="lazy"
+                     alt="ChatChat with text typed in the hero input box.">
+                <figcaption>Type anything in the hero input.</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="img/chat-message.png" width="1280" height="800" loading="lazy"
+                     alt="ChatChat chat view with a message composed in the input bar.">
+                <figcaption>Chat view — the input bar slides in when you start a conversation.</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="img/story-mode.png" width="1280" height="800" loading="lazy"
+                     alt="ChatChat story mode configuration — scene, characters, tags, first prompt.">
+                <figcaption>Story mode — set the scene, add characters, pick a style, define the first prompt.</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="img/config-panel.png" width="1280" height="800" loading="lazy"
+                     alt="ChatChat configuration panel with temperature slider, rep penalty, system prompt, and keyboard shortcuts.">
+                <figcaption>Configuration — temperature, repetition penalty, system prompt, appearance, and shortcuts.</figcaption>
+            </figure>
+        </div>
+
+        <h2>Running it</h2>
+        <p>
+            Just open <code>index.html</code> in a browser, or serve the directory statically:
+            <pre><code>python3 -m http.server</code></pre>
+            For the default "Local" provider, <a href="https://lmstudio.ai/" rel="noopener">LM Studio</a> needs to be running at <code>http://localhost:1234</code> with a model loaded.
+        </p>
+
+        <h2>Tech stack</h2>
+        <ul>
+            <li>Zero build tools — plain HTML, CSS, and vanilla JS.</li>
+            <li>CDN-loaded: <code>marked</code> (markdown parsing), <code>DOMPurify</code> (sanitization), <code>highlight.js</code> (syntax highlighting).</li>
+            <li>Everything persists to <code>localStorage</code> — chats, settings, generation history, story configs.</li>
+            <li>Provider abstraction: <code>local</code> (LM Studio) and <code>nanogpt</code> (cloud) registered in <code>state.js</code>.</li>
+            <li>Two conversation modes with their own system prompt builders: <code>chat</code> (freeform) and <code>story</code> (CYOA / roleplay / GM).</li>
+            <li>Streaming via raw SSE parsing — no SDK, no dependencies.</li>
+        </ul>
+
+        <h2>Want to check it out?</h2>
+        <p>
+            It's open source. Check the repo on
+            <a href="https://github.com/sheiksaga/chatchat" target="_blank" style="color: inherit; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px;">GitHub</a>.
+        </p>
+
+        <h2>AI Disclaimer</h2>
+        <p>I have used AI to assist in the development of this project.</p>
+
+        <br><br><br>
+    </article>
+</div>
+{% endblock %}
+
+{% block js %}
+<script src="{{ '/assets/js/main.js' | url }}"></script>
+{% endblock %}

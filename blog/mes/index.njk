@@ -1,0 +1,118 @@
+---
+title: "MES - My Everything Search | Design Saga"
+description: "MES (My Everything Search) - a small Windows launcher by Sangeeth Gandhi. Alt+Space to find any file on your PC instantly, with a calculator, weather, currency conversion and an optional on-device AI built in."
+ogTitle: "MES - My Everything Search"
+ogDescription: "A small Windows launcher. Alt+Space, type, done."
+ogUrl: "https://ds-hem.pages.dev/blog/mes/"
+nav: blog
+---
+{% extends "base.njk" %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ '/blog/assets/css/blog.css' | url }}">
+<style>
+  #post-article figure.shot { margin: 2rem 0; }
+  #post-article figure.shot img {
+    margin: 0 auto; display: block;
+    width: 100%; max-width: var(--shot-w, 690px);
+    box-shadow: 0 10px 34px rgba(0, 0, 0, 0.22);
+  }
+  #post-article figure.shot figcaption {
+    margin-top: 0.8rem; text-align: center; font-style: italic;
+    font-size: var(--font-size-sm); opacity: 0.72;
+  }
+  #post-article .shot-grid {
+    display: grid; gap: 2rem; margin: 2rem 0;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  #post-article .shot-grid figure.shot { margin: 0; }
+</style>
+{% endblock %}
+
+{% block content %}
+<div id="post-content">
+    <article id="post-article" class="fade-in" style="opacity:1" >
+        <h1 id="main-content">MES — My Everything Search</h1>
+
+        <p>A Windows thing has been made (for me, maybe for you). It's a launcher to search for stuff on your PC.
+        You press <strong>Alt + Space</strong>, type, and it finds files before
+        you finish typing. There may be bugs.</p>
+
+        <p>Why? Why not?
+        <a href="https://www.voidtools.com/" rel="noopener">Everything</a> (the search engine
+        MES is built on) is absurdly fast, but I wanted some extra tricks ontop.</p>
+
+        <p>I am aware other launchers exist, but this one is mine.</p>
+
+        <figure class="shot">
+            <img src="img/search.png" width="690" height="720" loading="lazy"
+                 alt="MES searching for &quot;report&quot; — matching apps listed at the top, files with their paths, sizes and dates below.">
+            <figcaption>Alt + Space, type, donezo.</figcaption>
+        </figure>
+
+        <h2>What it does</h2>
+        <ul>
+            <li>Type anything → instant file search. Thanks once again to <a href="https://www.voidtools.com/" rel="noopener">Everything</a> by David Carpenter.</li>
+            <li><code>= 15/100 * 340</code> → inline calculator, Enter to copy.</li>
+            <li><code>w</code> or <code>w Gothenburg -3day</code> → weather, very nice. (WIP, there are bugs yet) (from <a href="https://wttr.in/" rel="noopener">wttr.in</a>)</li>
+            <li><code>fx 100 USD EUR</code> → currency conversion with live ECB rates. (from <a href="https://frankfurter.dev/" rel="noopener">frankfurter.app</a>)</li>
+            <li><code>r steam</code> → find and launch installed apps.</li>
+            <li><code>c</code> or <code>/clip</code> (or just press ↓ on an empty box) → your Windows
+                clipboard history. Enter to paste it straight back where you were, Delete to forget it.</li>
+            <li><code>/largest</code> → the 50 biggest files hogging your disk.</li>
+            <li><code>/ai find invoices from last month</code> → plain-English file search,
+                running entirely on your own machine. If you don't like AI that's fine. It never activates unless you explicitly install it</li>
+        </ul>
+
+        <p>There's also a plugin system (using Javascript) to add your own
+        <code>/command</code>.</p>
+
+        <div class="shot-grid">
+            <figure class="shot">
+                <img src="img/calculator.png" width="690" height="155" loading="lazy"
+                     alt="MES calculator: = 15/100 * 340 evaluates to 51.">
+                <figcaption><code>=</code> — a calculator that follows you around.</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="img/currency.png" width="690" height="155" loading="lazy"
+                     alt="MES currency conversion: 100 USD equals 87.78 EUR at live ECB rates.">
+                <figcaption><code>fx</code> — live currency conversion.</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="img/weather.png" width="690" height="155" loading="lazy"
+                     alt="MES weather: 17 degrees and sunny in Sundbyberg, Sweden.">
+                <figcaption><code>w</code> — weather, wherever you are.</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="img/clipboard.png" width="690" height="512" loading="lazy"
+                     alt="MES clipboard history showing recently copied snippets of text.">
+                <figcaption><code>/clip</code> — everything you've copied.</figcaption>
+            </figure>
+            <figure class="shot">
+                <img src="img/largest.png" width="690" height="540" loading="lazy"
+                     alt="MES /largest listing the biggest files on disk, from hiberfil.sys at 12.7 GB down.">
+                <figcaption><code>/largest</code> — find what's eating your disk.</figcaption>
+            </figure>
+        </div>
+
+        <h2>What it doesn't do</h2>
+        <p>It doesn't do a lot of things.</p>
+
+        <h2>Want to try it out?</h2>
+        <p>
+        You can get it on <a href="https://ko-fi.com/s/dda0664511" target="_blank" style="color: inherit; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px;">Ko-fi (Pay What You Want)</a>.
+        <br>
+        Alternatively, just grab it from the <a href="https://github.com/sheiksaga/MES-releases" target="_blank" style="color: inherit; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px;">Github releases directly</a>.
+        </p>
+
+        <h2>AI Disclaimer</h2>
+        <p>I have used AI to assist in the development of this project.</p>
+
+        <br><br><br>
+    </article>
+</div>
+{% endblock %}
+
+{% block js %}
+<script src="{{ '/assets/js/main.js' | url }}"></script>
+{% endblock %}

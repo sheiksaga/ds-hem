@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- support browser themeing -->
-    <meta name="theme-color" content="#002f80">
-    <meta name="msapplication-navbutton-color" content="#002f80">
-    <meta name="apple-mobile-web-app-status-bar-style" content="#002f80">
+    <meta name="theme-color" content="#ff0000">
+    <meta name="msapplication-navbutton-color" content="#ff0000">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#ff0000">
     <!-- title -->
     <title>{{ title }}</title>
     <!-- meta description for SEO -->
@@ -20,11 +20,6 @@
     <!-- favicon -->
     <link rel="icon" type="image/x-icon" href="{{ '/assets/img/favicon.ico' | url }}">
     <!-- custom styles -->
-    <!-- Load fonts directly -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@700&family=Syne&family=Inter:wght@400&display=swap" rel="stylesheet">
-
     <!-- Load CSS files directly instead of via @import -->
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | url }}">
     {% block css %}{% endblock %}
@@ -53,8 +48,6 @@
 <body>
     <!-- skip navigation link for accessibility -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
-    <!-- scroll progress indicator -->
-    <div class="scroll-progress"></div>
     <!-- header -->
     <header class="ds-header" id="header">
         {% block logo %}
@@ -81,8 +74,8 @@
     <footer class="footer">
         <div>
             {% block footer %}
-            Built in GBG with lots of Love <br>
-            Sangeeth G, 2026
+            Built in GBG <br>
+            Sangeeth, 2026
             {% endblock %}
         </div>
     </footer>
