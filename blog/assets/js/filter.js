@@ -20,10 +20,7 @@ function filterPosts() {
     }
   });
 
-  // Refresh ScrollTrigger to update scroll progress bar for new page height
-  if (typeof ScrollTrigger !== 'undefined') {
-    ScrollTrigger.refresh();
-  }
+  // No ScrollTrigger refresh needed
 }
 
 // Wait for DOM to be ready before accessing elements

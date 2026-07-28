@@ -26,7 +26,6 @@ function init() {
   if (backToTop) {
     backToTop.style.display = 'block';
     backToTop.style.opacity = '0';
-    backToTop.style.transition = 'opacity 0.3s ease-in-out';
 
     // Toggle visibility on scroll
     window.addEventListener('scroll', function() {
@@ -37,9 +36,9 @@ function init() {
       }
     });
 
-    // Smooth scroll to top on click
+    // Scroll to top on click
     backToTop.addEventListener('click', function() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.scrollTo({ top: 0 });
     });
   }
 }

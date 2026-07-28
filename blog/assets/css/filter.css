@@ -25,7 +25,6 @@ input[type="radio"] {
     background: hsl(211, 83%, 90%);
     pointer-events: none;
     z-index: 0;
-    transition: background 0.3s ease;
 }
 
 [data-theme="dark"] .filter-indicator {
@@ -42,7 +41,6 @@ input[type="radio"] {
     margin-bottom: 0.25rem;
     line-height: normal;
     cursor: pointer;
-    transition: all 0.3s;
     position: relative;
     display: inline-block;
 }

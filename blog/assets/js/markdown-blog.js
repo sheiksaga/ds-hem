@@ -384,19 +384,9 @@
             breadcrumbsEl.style.display = 'block';
         }
 
-        // Update DOM with animation
+        // Update DOM
         if (postArticle) {
-            // Start with fade-in state
-            postArticle.classList.add('fade-in');
             postArticle.innerHTML = html;
-
-            // Trigger reflow
-            void postArticle.offsetWidth;
-
-            // Remove fade-in class to trigger animation
-            requestAnimationFrame(() => {
-                postArticle.classList.remove('fade-in');
-            });
 
             // Setup footnote tooltips
             setupFootnoteTooltips();
@@ -412,12 +402,7 @@
             blogIndex.classList.add('hidden');
         }
 
-        // Refresh ScrollTrigger to update scroll progress bar for new content height
-        if (typeof ScrollTrigger !== 'undefined') {
-            ScrollTrigger.refresh();
-        }
-
-        // Hide intro and filters when viewing a post
+        hideLoading();
         if (introSection) {
             introSection.style.display = 'none';
             introSection.classList.add('hidden');
@@ -432,7 +417,7 @@
             input.classList.add('hidden');
         });
 
-        hideLoading();
+
 
         // Scroll to top
         window.scrollTo(0, 0);
@@ -470,18 +455,8 @@
             postContent.classList.add('hidden');
         }
         if (blogIndex) {
-            // Start with fade-in state
-            blogIndex.classList.add('fade-in');
-
-            // Show the index
             blogIndex.style.display = 'block';
             blogIndex.classList.remove('hidden');
-
-            // Trigger reflow and remove fade-in class
-            void blogIndex.offsetWidth;
-            requestAnimationFrame(() => {
-                blogIndex.classList.remove('fade-in');
-            });
         }
 
         // Hide breadcrumbs
@@ -504,11 +479,6 @@
             input.style.display = '';
             input.classList.remove('hidden');
         });
-
-        // Refresh ScrollTrigger to update scroll progress bar for index page height
-        if (typeof ScrollTrigger !== 'undefined') {
-            ScrollTrigger.refresh();
-        }
 
         hideLoading();
     }

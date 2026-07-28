@@ -7,7 +7,6 @@
     height: 3px;
     background: linear-gradient(90deg, var(--hero-gradient-start), var(--hero-gradient-end));
     z-index: 9999;
-    transition: width 0.1s ease-out;
 }
 
 [data-theme="dark"] .scroll-progress {
@@ -132,7 +131,6 @@ li.nobullet{
     font-size: 1.25rem;
     cursor: help;
     padding: 0 0.2em;
-    transition: all 0.2s ease;
 }
 
 [data-theme="dark"] #post-article sup[id^="fnref"] a {
@@ -165,7 +163,6 @@ li.nobullet{
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     opacity: 0;
     visibility: hidden;
-    transition: all 0.2s ease;
     z-index: 1000;
     font-family: 'Inter', Arial, sans-serif;
     line-height: 1.4;
@@ -183,7 +180,6 @@ li.nobullet{
 #post-article sup[id^="fnref"] a:hover::after {
     opacity: 1;
     visibility: visible;
-    transform: translateX(-50%) translateY(-4px);
 }
 
 /* Footnote section at bottom */
@@ -225,7 +221,6 @@ li.nobullet{
     font-size: 0.85em;
     margin-left: 0.5em;
     opacity: 0.7;
-    transition: opacity 0.2s ease;
 }
 
 [data-theme="dark"] #post-article .footnote-backref {
@@ -242,7 +237,6 @@ li.nobullet{
 body p a{
     text-decoration: underline;
     color:hsl(216, 100%,10%);
-    transition: color 275ms ease;
     }
 
 [data-theme="dark"] body p a {
@@ -379,7 +373,6 @@ pre {
     max-width: 100%;
     padding: 2rem 0;
     opacity: 1;
-    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 #post-article.fade-out {
@@ -518,7 +511,6 @@ pre {
 #post-article a {
     color: hsl(218, 100%, 35%);
     text-decoration: underline;
-    transition: color 0.3s ease;
 }
 
 #post-article a:hover {
@@ -574,7 +566,6 @@ pre {
     align-items: center;
     gap: 0.75rem;
     font-family: var(--font-family);
-    transition: all 0.3s ease-in-out;
 }
 
 .back-button:hover {
@@ -605,7 +596,6 @@ pre {
 .breadcrumbs a {
     color: hsl(218, 100%, 40%);
     text-decoration: none;
-    transition: color 0.3s ease;
 }
 
 .breadcrumbs a:hover {
@@ -646,7 +636,6 @@ pre {
 /* Blog index transitions */
 #blog-index {
     opacity: 1;
-    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 #blog-index.fade-out {
@@ -685,7 +674,6 @@ pre {
     align-items: center;
     gap: 0.5rem;
     font-family: var(--font-family);
-    transition: all 0.3s ease-in-out;
     text-decoration: none;
     flex: 1;
     justify-content: center;

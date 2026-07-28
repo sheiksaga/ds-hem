@@ -49,7 +49,7 @@
 
     projects.forEach(function(project, index) {
       var card = document.createElement('article');
-      card.className = 'project-card card-entering';
+      card.className = 'project-card';
       card.setAttribute('tabindex', '0');
       card.setAttribute('role', 'button');
       card.setAttribute('aria-expanded', 'false');
@@ -147,11 +147,6 @@
       deck.appendChild(card);
     });
 
-    // Trigger entrance animations
-    requestAnimationFrame(function() {
-      animateCardsIn();
-    });
-
     // Auto-expand bottom-most card after a short delay
     setTimeout(function() {
       if (projects.length > 0 && selectedIndex === -1) {
@@ -188,59 +183,8 @@
     cards[index].setAttribute('aria-expanded', 'true');
     selectedIndex = index;
 
-    // Subtle GSAP nudge if available
-    if (typeof gsap !== 'undefined') {
-      gsap.fromTo(cards[index],
-        { y: -2 },
-        { y: -6, duration: 0.35, ease: 'power2.out' }
-      );
-    }
-
     // Scroll card into view if partially hidden
-    cards[index].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-  }
-
-  /* ===================================================
-     Scroll-Triggered Entrance Animations
-     =================================================== */
-  function animateCardsIn() {
-    var cards = deck.querySelectorAll('.project-card');
-    if (!cards.length) return;
-
-    // If GSAP + ScrollTrigger available, use them
-    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
-      try {
-        gsap.registerPlugin(ScrollTrigger);
-
-        cards.forEach(function(card, i) {
-          gsap.fromTo(card,
-            { opacity: 0, y: 40 },
-            {
-              opacity: 1,
-              y: 0,
-              duration: 0.6,
-              delay: i * 0.08,
-              ease: 'power3.out',
-              scrollTrigger: {
-                trigger: card,
-                start: 'top 85%',
-                toggleActions: 'play none none none'
-              }
-            }
-          );
-        });
-        return;
-      } catch (e) {
-        // Fall through to CSS-based entrance
-      }
-    }
-
-    // CSS-based fallback: add .card-visible after a frame
-    cards.forEach(function(card, i) {
-      setTimeout(function() {
-        card.classList.add('card-visible');
-      }, i * 80);
-    });
+    cards[index].scrollIntoView({ block: 'nearest' });
   }
 
   /* ===================================================

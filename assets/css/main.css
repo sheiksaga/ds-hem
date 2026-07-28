@@ -60,7 +60,6 @@
     z-index: 1000;
     font-size: var(--font-size-xsm);
     font-weight: bold;
-    transition: top 0.3s;
 }
 
 .skip-link:focus {
@@ -74,9 +73,7 @@
    margin: 0;
 }
 
-/* Add transitions only to elements that need them */
 a, button {
-   transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
 /* Visible focus indicators for accessibility */
@@ -95,7 +92,6 @@ input:focus-visible {
 
 html{
    font-size: 62.5%;
-   scroll-behavior: smooth;
 }
 
 /* Page transition animations handled by GSAP */
@@ -106,7 +102,6 @@ body {
    color: var(--font-light);
    line-height: 1.5;
    overflow-x: hidden;
-   transition: background-color 0.25s;
    margin: auto;
    max-width: 1024px;
    word-break: break-word;
@@ -169,7 +164,6 @@ section {
     background: hsl(195, 53%, 79%);
     pointer-events: none;
     z-index: -1;
-    transition: background 0.3s ease;
 }
 
 [data-theme="dark"] .nav-indicator {
@@ -196,7 +190,6 @@ section {
     align-items: center;
     justify-content: center;
     color: hsl(218, 100%, 20%);
-    transition: transform 0.3s ease-in-out;
     position: relative;
 }
 
@@ -204,27 +197,13 @@ section {
     color: #e0e0e0;
 }
 
-.theme-toggle:hover {
-    transform: scale(1.1);
-}
+
 
 .theme-toggle svg {
     display: block;
 }
 
-/* Sun spinning animation */
-.theme-toggle:hover .sun-icon {
-    animation: spin 1s linear infinite;
-}
 
-@keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
 
 /* Moon stars effect */
 .theme-toggle .moon-icon {
@@ -245,7 +224,6 @@ section {
     font-size: 10px;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.3s ease;
     color: #e0e0e0;
     z-index: 10;
 }
@@ -255,19 +233,9 @@ section {
     right: -2px;
 }
 
-/* Show star in dark mode and continuously rotate */
+/* Show star in dark mode */
 [data-theme="dark"] .theme-toggle .star-1 {
     opacity: 1;
-    animation: rotate-star 1s linear infinite;
-}
-
-@keyframes rotate-star {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
 }
 
 /* Logo contrast in dark mode */
@@ -277,7 +245,6 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: filter 0.3s ease;
 }
 
 [data-theme="dark"] .logo-header {
@@ -299,7 +266,6 @@ section {
     padding: 1rem 2rem;
     backdrop-filter: blur(16.5px);
      -webkit-backdrop-filter: blur(16.5px);
-    transition: .3s ease-in-out;
 }
 
 #back-to-top:hover {
@@ -332,7 +298,6 @@ img.refresh-icon{
     width: 1.5rem;
     background: url("/assets/img/refresh.svg");
     vertical-align: -0.25rem;
-    animation: rotate 5000ms 5 linear;
     cursor: pointer;
 }
 
