@@ -5,7 +5,12 @@
   "main": "index.js",
   "scripts": {
     "build": "npx @11ty/eleventy",
-    "start": "npx @11ty/eleventy --serve"
+    "start": "npx @11ty/eleventy --serve",
+    "test": "node tools/playwright-test.js --config tests/playwright.config.js",
+    "test:visual": "node tools/playwright-test.js tests/visual.spec.js --config tests/playwright.config.js",
+    "test:functional": "node tools/playwright-test.js tests/functional.spec.js --config tests/playwright.config.js",
+    "test:update": "node tools/playwright-test.js --update-snapshots --config tests/playwright.config.js",
+    "test:ui": "node tools/playwright-test.js --ui --config tests/playwright.config.js"
   },
   "repository": {
     "type": "git",
@@ -20,12 +25,14 @@
   },
   "homepage": "https://github.com/sheiksaga/ds-hem#readme",
   "devDependencies": {
-    "@11ty/eleventy": "^3.1.6"
+    "@11ty/eleventy": "^3.1.2",
+    "cross-env": "^10.1.0"
   },
   "dependencies": {
     "gsap": "^3.15.0",
     "markdown-it": "^14.3.0",
     "markdown-it-anchor": "^9.2.1",
-    "markdown-it-footnote": "^4.0.0"
+    "markdown-it-footnote": "^4.0.0",
+    "playwright": "^1.62.0"
   }
 }

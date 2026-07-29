@@ -180,6 +180,9 @@
           // Update document title
           document.title = doc.title;
 
+          // Swap page-specific CSS before content renders
+          updatePageCSS(doc);
+
           // Update URL (unless already set by popstate)
           if (!isPopState) {
             history.pushState({ path: path }, "", path);
@@ -237,6 +240,41 @@
           navigationState.isNavigating = false;
         });
     }, 200); // match the CSS transition duration
+  }
+
+  // ── Swap page-specific CSS during SPA navigation ──────
+  function updatePageCSS(doc) {
+    // Collect hrefs from new doc's stylesheets
+    var newLinks = doc.querySelectorAll('link[rel="stylesheet"]');
+    var newHrefs = {};
+    for (var i = 0; i < newLinks.length; i++) {
+      newHrefs[newLinks[i].getAttribute('href')] = true;
+    }
+
+    // Remove stylesheets not in the new doc
+    var currentLinks = document.querySelectorAll('link[rel="stylesheet"]');
+    for (var j = 0; j < currentLinks.length; j++) {
+      if (!newHrefs[currentLinks[j].getAttribute('href')]) {
+        currentLinks[j].remove();
+      }
+    }
+
+    // Add new stylesheets not already present
+    var existingHrefs = {};
+    var remaining = document.querySelectorAll('link[rel="stylesheet"]');
+    for (var k = 0; k < remaining.length; k++) {
+      existingHrefs[remaining[k].getAttribute('href')] = true;
+    }
+
+    for (var m = 0; m < newLinks.length; m++) {
+      var href = newLinks[m].getAttribute('href');
+      if (!existingHrefs[href]) {
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = href;
+        document.head.appendChild(link);
+      }
+    }
   }
 
   function updateActiveNav(doc) {

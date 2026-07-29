@@ -4,3 +4,9 @@
 docs/
 _site/
 node_modules/
+
+# Playwright test artifacts
+tests/test-results/
+tests/playwright-report/
+**/__snapshots__/*-diff.png
+**/__snapshots__/*-actual.png
