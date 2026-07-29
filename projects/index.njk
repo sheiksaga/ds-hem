@@ -9,13 +9,13 @@ nav: projects
 {% extends "base.njk" %}
 
 {% block css %}
-<link rel="stylesheet" href="{{ '/projects/assets/css/projects.css' | url }}">
+<link rel="stylesheet" href="{{ '/src/css/projects.css' | url }}">
 {% endblock %}
 
 {% block content %}
     <!-- intro -->
     <section class="projects-intro" id="main-content">
-        Things I've built
+        <h2>Things I've built</h2>
         <small>Side projects, experiments, etc etc.</small>
     </section>
 
@@ -24,6 +24,5 @@ nav: projects
 {% endblock %}
 
 {% block js %}
-<script src="{{ '/assets/js/main.js' | url }}"></script>
-<script src="{{ '/projects/assets/js/projects.js' | url }}"></script>
+<script src="{{ '/src/js/projects.js' | url }}"></script>
 {% endblock %}

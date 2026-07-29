@@ -22,7 +22,7 @@ Another reason I'm starting this up is as a way to document my projects and the 
 
 Right now, I'm hosting this page via Cloudflare, with the files on GitHub, and using Publii to build the static site. As of when this post is published (which is 14-03-2023) here's what it looks like:
 
-![](/blog/assets/img/2023/homepage_140323.png)
+![](/src/img/blog/2023/homepage_140323.png)
 
 Thanks for reading. ❤️
 

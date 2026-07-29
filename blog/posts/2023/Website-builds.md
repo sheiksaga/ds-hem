@@ -21,7 +21,7 @@ So I decided to start over from scratch. I got [VS Code](https://code.visualstud
 
 As of 25/03/2023, here's where things stand:
 
-![](/blog/assets/img/2023/homepage_140323.png)
+![](/src/img/blog/2023/homepage_140323.png)
 
 There are still a few things missing (like the dark mode toggle not working quite right) and some other fixes I need to make. But for the most part, everything is working great.
 

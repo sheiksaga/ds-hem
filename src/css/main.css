@@ -1,3 +1,10 @@
+/* =============================================================
+   main.css — Site-wide styles
+   Layout, header, footer, nav, typography, CSS custom properties,
+   accessibility (skip-link, focus rings), SPA page transitions.
+   Loaded on EVERY page via _includes/base.njk.
+   ============================================================= */
+
 :root{
    --font-light: #000000;
    --font-dark: #ffffff;
@@ -122,6 +129,11 @@ section {
     padding-bottom: 4rem;
 }
 
+ul {
+    padding-left: 0;
+    padding-inline-start: 0;
+}
+
 .menu{
     text-transform: uppercase;
 }
@@ -151,7 +163,7 @@ section {
 img.refresh-icon{
     height: 1.5rem;
     width: 1.5rem;
-    background: url("/assets/img/refresh.svg");
+    background: url("/src/img/refresh.svg");
     vertical-align: -0.25rem;
     cursor: pointer;
     transition: transform 0.4s ease;

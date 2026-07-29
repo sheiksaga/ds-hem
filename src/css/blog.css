@@ -1,3 +1,11 @@
+/* =============================================================
+   blog.css — Blog listing + post page styles
+   Markdown-rendered content (#post-article, .blog-post-body),
+   code blocks & inline code, footnote tooltips, prev/next
+   post navigation, scroll progress bar, intro section.
+   Loaded via blog/index.njk and blog-post.njk.
+   ============================================================= */
+
 /* Scroll Progress Indicator */
 .scroll-progress {
     position: fixed;

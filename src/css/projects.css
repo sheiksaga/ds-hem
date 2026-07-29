@@ -1,7 +1,9 @@
-/* ==============================================
-   Projects Page — Accordion Style (B&W)
-   Mirrors the accordion on the main page
-   ============================================== */
+/* =============================================================
+   projects.css — Projects listing page styles
+   Project accordion cards (.project-card), skeleton loading state,
+   empty state, card header/body/tags, mobile responsive.
+   Loaded via projects/index.njk.
+   ============================================================= */
 
 /* ---------- Intro / Hero ---------- */
 .projects-intro {
@@ -12,7 +14,9 @@
   min-height: 10vh;
   font-family: inherit;
   font-size: var(--font-size-xl);
-  line-height: 1.3;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
   color: #000;
 }
 
@@ -233,8 +237,6 @@
   gap: 0.5rem;
   font-size: var(--font-size-md);
   color: #000;
-  text-decoration: none;
-  font-weight: 700;
   pointer-events: auto;
 }
 

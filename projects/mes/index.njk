@@ -3,13 +3,13 @@ title: "MES - My Everything Search | Design Saga"
 description: "MES (My Everything Search) - a small Windows launcher by Sangeeth Gandhi. Alt+Space to find any file on your PC instantly, with a calculator, weather, currency conversion and an optional on-device AI built in."
 ogTitle: "MES - My Everything Search"
 ogDescription: "A small Windows launcher. Alt+Space, type, done."
-ogUrl: "https://ds-hem.pages.dev/blog/mes/"
+ogUrl: "https://ds-hem.pages.dev/projects/mes/"
 nav: blog
 ---
 {% extends "base.njk" %}
 
 {% block css %}
-<link rel="stylesheet" href="{{ '/blog/assets/css/blog.css' | url }}">
+<link rel="stylesheet" href="{{ '/src/css/blog.css' | url }}">
 <style>
   #post-article figure.shot { margin: 2rem 0; }
   #post-article figure.shot img {
@@ -45,7 +45,7 @@ nav: blog
         <p>I am aware other launchers exist, but this one is mine.</p>
 
         <figure class="shot">
-            <img src="img/search.png" width="690" height="720" loading="lazy"
+            <img src="{{ '/src/img/projects/mes/search.png' | url }}" width="690" height="720" loading="lazy"
                  alt="MES searching for &quot;report&quot; — matching apps listed at the top, files with their paths, sizes and dates below.">
             <figcaption>Alt + Space, type, donezo.</figcaption>
         </figure>
@@ -69,27 +69,27 @@ nav: blog
 
         <div class="shot-grid">
             <figure class="shot">
-                <img src="img/calculator.png" width="690" height="155" loading="lazy"
+                <img src="{{ '/src/img/projects/mes/calculator.png' | url }}" width="690" height="155" loading="lazy"
                      alt="MES calculator: = 15/100 * 340 evaluates to 51.">
                 <figcaption><code>=</code> — a calculator that follows you around.</figcaption>
             </figure>
             <figure class="shot">
-                <img src="img/currency.png" width="690" height="155" loading="lazy"
+                <img src="{{ '/src/img/projects/mes/currency.png' | url }}" width="690" height="155" loading="lazy"
                      alt="MES currency conversion: 100 USD equals 87.78 EUR at live ECB rates.">
                 <figcaption><code>fx</code> — live currency conversion.</figcaption>
             </figure>
             <figure class="shot">
-                <img src="img/weather.png" width="690" height="155" loading="lazy"
+                <img src="{{ '/src/img/projects/mes/weather.png' | url }}" width="690" height="155" loading="lazy"
                      alt="MES weather: 17 degrees and sunny in Sundbyberg, Sweden.">
                 <figcaption><code>w</code> — weather, wherever you are.</figcaption>
             </figure>
             <figure class="shot">
-                <img src="img/clipboard.png" width="690" height="512" loading="lazy"
+                <img src="{{ '/src/img/projects/mes/clipboard.png' | url }}" width="690" height="512" loading="lazy"
                      alt="MES clipboard history showing recently copied snippets of text.">
                 <figcaption><code>/clip</code> — everything you've copied.</figcaption>
             </figure>
             <figure class="shot">
-                <img src="img/largest.png" width="690" height="540" loading="lazy"
+                <img src="{{ '/src/img/projects/mes/largest.png' | url }}" width="690" height="540" loading="lazy"
                      alt="MES /largest listing the biggest files on disk, from hiberfil.sys at 12.7 GB down.">
                 <figcaption><code>/largest</code> — find what's eating your disk.</figcaption>
             </figure>
@@ -113,6 +113,4 @@ nav: blog
 </div>
 {% endblock %}
 
-{% block js %}
-<script src="{{ '/assets/js/main.js' | url }}"></script>
-{% endblock %}
+{% block js %}{% endblock %}

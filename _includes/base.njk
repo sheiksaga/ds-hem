@@ -18,32 +18,24 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ ogUrl or ('https://designsaga.com' + (page.url | url)) }}">
     <!-- favicon -->
-    <link rel="icon" type="image/x-icon" href="{{ '/assets/img/favicon.ico' | url }}">
-    <!-- custom styles -->
-    <!-- Load CSS files directly instead of via @import -->
-    <link rel="stylesheet" href="{{ '/assets/css/main.css' | url }}">
-    <link rel="stylesheet" href="{{ '/assets/css/ds.css' | url }}">
-    <link rel="stylesheet" href="{{ '/projects/assets/css/projects.css' | url }}">
-    <link rel="stylesheet" href="{{ '/blog/assets/css/blog.css' | url }}">
-    <link rel="stylesheet" href="{{ '/blog/assets/css/filter.css' | url }}">
+    <link rel="icon" type="image/x-icon" href="{{ '/src/img/favicon.ico' | url }}">
+    <!-- Base styles (loaded on every page) -->
+    <link rel="stylesheet" href="{{ '/src/css/main.css' | url }}">
     {% block css %}{% endblock %}
-    <!-- quicklinks -->
-    <script src="https://unpkg.com/quicklink@2.3.0/dist/quicklink.umd.js" defer></script>
+    <!-- quicklinks (dynamic load — skipped on file://) -->
     <script>
-      // Only initialize Quicklink if NOT on file:// protocol
       if (window.location.protocol !== 'file:') {
+        var ql = document.createElement('script');
+        ql.src = 'https://unpkg.com/quicklink@2.3.0/dist/quicklink.umd.js';
+        ql.defer = true;
+        document.head.appendChild(ql);
         window.addEventListener('load', function() {
           try {
             if (typeof quicklink !== 'undefined') {
               quicklink.listen();
-              console.log('Quicklink initialized');
             }
-          } catch (error) {
-            console.warn('Quicklink failed to initialize:', error);
-          }
+          } catch (e) {}
         });
-      } else {
-        console.log('Quicklink disabled (file:// protocol detected)');
       }
     </script>
     {% block head %}{% endblock %}
@@ -53,10 +45,10 @@
     <!-- skip navigation link for accessibility -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
     <!-- header -->
-    <header class="ds-header" id="header">
+    <header class="ds-header" id="header" data-component="site-header">
         {% block logo %}
         <a href="{{ '/' | url }}">
-            <img class="logo-header" src="{{ '/assets/img/design-saga-blue.svg' | url }}" alt="logo">
+            <img class="logo-header" src="{{ '/src/img/design-saga-blue.svg' | url }}" alt="logo">
         </a>
         {% endblock %}
         <div class="menu">
@@ -74,7 +66,7 @@
     <!-- back to top button -->
 
     <!-- footer -->
-    <footer class="footer">
+    <footer class="footer" data-component="site-footer">
         <div>
             {% block footer %}
             Built in GBG <br>
@@ -84,6 +76,8 @@
     </footer>
     </div>
 
+    <!-- Shared scripts (loaded on every page) -->
+    <script src="{{ '/src/js/main.js' | url }}"></script>
     {% block js %}{% endblock %}
 </body>
 </html>

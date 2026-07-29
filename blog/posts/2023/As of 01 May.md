@@ -97,13 +97,13 @@ $(".list-of-posts li").show();
 ### animations
 The refresh toggle button is actually good code. because it works.
 ```
-<img src="/assets/img/refresh-line.svg" alt="refresh icon" class="refresh-icon" onclick="location.reload()">
+<img src="/src/img/refresh-line.svg" alt="refresh icon" class="refresh-icon" onclick="location.reload()">
 ```
 ```
 .refresh-icon{
         height: 1.5rem;
         width: 1.5rem;
-        background: url("/assets/img/refresh.svg");
+        background: url("/src/img/refresh.svg");
         vertical-align: -0.25rem;
         animation: rotate 5000ms 5 linear;
         cursor: pointer;

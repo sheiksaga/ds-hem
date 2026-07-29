@@ -1,3 +1,10 @@
+/* =============================================================
+   filter.css — Blog category filter styles
+   Radio-button tab UI for filtering posts by category
+   (all / web_design / general). CSS-only visibility toggling.
+   Loaded via blog/index.njk.
+   ============================================================= */
+
 input[type="radio"] {
     display: none;
   }

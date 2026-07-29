@@ -4,14 +4,14 @@ nav: blog
 {% extends "base.njk" %}
 
 {% block css %}
-<link rel="stylesheet" href="{{ '/blog/assets/css/blog.css' | url }}">
+<link rel="stylesheet" href="{{ '/src/css/blog.css' | url }}">
 {% endblock %}
 
 {% block content %}
 {% set prev = collections.blogPosts | prevPost(page) %}
 {% set next = collections.blogPosts | nextPost(page) %}
 
-<article class="blog-post-article">
+<article class="blog-post-article" data-component="blog-post">
     <header class="blog-post-header">
         <p class="blog-post-date">{{ date | readableDate }}</p>
         <h1>{{ title }}</h1>
@@ -57,6 +57,4 @@ nav: blog
 </article>
 {% endblock %}
 
-{% block js %}
-<script src="{{ '/assets/js/main.js' | url }}"></script>
-{% endblock %}
+{% block js %}{% endblock %}

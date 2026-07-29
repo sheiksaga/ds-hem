@@ -1,5 +1,9 @@
-
-
+/* =============================================================
+   ds.css — Homepage-specific styles
+   Hero section, "What I do" accordion, section boxes (.box),
+   list styling (// bullets), like-display animation.
+   Loaded via index.njk (homepage only).
+   ============================================================= */
 
 ul:not(.nav-links) li,
 ol:not(.nav-links) li {
@@ -58,7 +62,6 @@ h2{
 }
 
 .listspace{
-    padding-left: 2rem;
 }
 
 /* ── Section boxes ──────────────────────────── */
@@ -75,7 +78,19 @@ h2{
 }
 
 .container1 { background-color: rgba(255, 0, 0, 0.06); }
-.container2 { background-color: rgba(0, 128, 0, 0.06); }
+.container2 {
+    background-color: rgba(0, 128, 0, 0.06);
+}
+
+.container2 ul {
+    white-space: nowrap;
+    padding: 0;
+    margin: 0;
+    font-size: clamp(0.9rem, 3.5vw, 1.6rem);
+}
+
+.container2 .listspace {
+}
 .container3 { background-color: rgba(255, 255, 0, 0.12); }
 .container4 { background-color: rgba(0, 0, 0, 0.03); }
 
@@ -97,8 +112,6 @@ h2{
     width: 100%;
     padding: 1.25rem 1.5rem;
     font: inherit;
-    font-size: 1.25rem;
-    font-weight: 600;
     color: #000;
     background: transparent;
     border: none;
@@ -109,6 +122,49 @@ h2{
 
 .accordion-header:hover {
     background: rgba(0,0,0,0.03);
+}
+
+/* ── Label cross-fade ─── */
+.accordion-label {
+    position: relative;
+    display: inline-block;
+}
+
+.accordion-label .caps,
+.accordion-label .normal {
+    display: block;
+    transition: opacity 0.3s ease, font-size 0.3s ease, letter-spacing 0.3s ease;
+}
+
+/* Collapsed: show caps, hide normal */
+.accordion-label .caps {
+    font-size: 1.35rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    opacity: 1;
+}
+
+.accordion-label .normal {
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-transform: none;
+    letter-spacing: normal;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Expanded: hide caps, show normal */
+.accordion-header[aria-expanded="true"] .accordion-label .caps {
+    opacity: 0;
+    font-size: 1.25rem;
+    letter-spacing: normal;
+}
+
+.accordion-header[aria-expanded="true"] .accordion-label .normal {
+    opacity: 1;
 }
 
 .accordion-icon {
