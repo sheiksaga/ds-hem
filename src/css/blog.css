@@ -24,6 +24,26 @@ h1{
     padding-bottom: 2rem;
 }
 
+/* ── Blog post category pill ── */
+.blog-post-category {
+    display: inline-block;
+    background: hsl(0, 0%, 93%);
+    color: #000000;
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 0.25em 0.8em;
+    border-radius: 100px;
+    text-transform: capitalize;
+    letter-spacing: 0.02em;
+    margin-top: -0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Tighten heading→category gap */
+.blog-post-header h1 {
+    padding-bottom: 0.25rem;
+}
+
 h2{
     padding: 2rem 0rem;
 }
@@ -105,7 +125,6 @@ li.nobullet{
 }
 .footnotes{
     padding-top: 0rem;
-    margin-left: 2rem;
     font-size: var(--font-size-sm);
 }
 
@@ -172,12 +191,19 @@ li.nobullet{
     visibility: visible;
 }
 
-/* Footnote section at bottom */
+/* ── Footnote section ── */
 .blog-post-body .footnotes,
 #post-article .footnotes {
-    margin-top: 3rem;
-    padding-top: 2rem;
+    margin-top: 0;
+    padding-top: 1.5rem;
     border-top: 1px solid hsl(0, 0%, 85%);
+}
+
+/* Override global .footnotes margin-left */
+.blog-post-body .footnotes,
+#post-article .footnotes {
+    margin-left: 0;
+    margin-bottom: 0;
 }
 
 
@@ -219,6 +245,18 @@ li.nobullet{
 .blog-post-body .footnote-backref:hover,
 #post-article .footnote-backref:hover {
     opacity: 1;
+}
+
+/* ── Footnote target highlight (smooth scroll + fade) ── */
+:target.footnote-item,
+:target.footnote-ref {
+    animation: fn-highlight 1.8s ease forwards;
+    border-radius: 3px;
+}
+@keyframes fn-highlight {
+    0%   { background: hsl(55, 100%, 85%); }
+    60%  { background: hsl(55, 100%, 85%); }
+    100% { background: transparent; }
 }
 .posts {
     padding-bottom: 0rem;

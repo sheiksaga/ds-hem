@@ -1,27 +1,22 @@
-const markdownIt = require("markdown-it");
 const markdownItFootnote = require("markdown-it-footnote");
 const markdownItAnchor = require("markdown-it-anchor");
 
 module.exports = function(eleventyConfig) {
-  // --- Markdown configuration (with footnote & heading anchor support) ---
-  const md = markdownIt({
-    html: true,
-    breaks: false,
-    linkify: true,
-  })
-    .use(markdownItFootnote)
-    .use(markdownItAnchor, {
+  // --- Markdown: extend Eleventy's built-in markdown-it with plugins ---
+  eleventyConfig.amendLibrary("md", function(mdLib) {
+    mdLib.use(markdownItFootnote);
+    mdLib.use(markdownItAnchor, {
       level: [1, 2, 3, 4, 5, 6],
-      // Match the old client-side slug style: lowercase, strip special chars, spaces→hyphens
-      slugify: s => s
-        .toLowerCase()
-        .replace(/[^\w\s-]/g, "")
-        .replace(/\s+/g, "-")
-        .replace(/-+/g, "-"),
+      slugify: function(s) {
+        return s
+          .toLowerCase()
+          .replace(/[^\w\s-]/g, "")
+          .replace(/\s+/g, "-")
+          .replace(/-+/g, "-");
+      },
       permalink: markdownItAnchor.permalink.headerLink(),
     });
-
-  eleventyConfig.setLibrary("md", md);
+  });
 
   // --- Filters ---
   eleventyConfig.addFilter("readableDate", function(date) {
