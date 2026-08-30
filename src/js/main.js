@@ -78,16 +78,64 @@
       "creating a very good pun",
     ];
 
-    function pick() {
-      el.textContent = likes[Math.floor(Math.random() * likes.length)];
-    }
-
-    pick();
-
     // Avoid duplicate listeners
     var newEl = el.cloneNode(true);
     el.parentNode.replaceChild(newEl, el);
-    newEl.addEventListener("click", pick);
+
+    // Cycle through likes on click; start at a random entry.
+    // Sequential advance so a click never repeats the current item.
+    var index = Math.floor(Math.random() * likes.length);
+
+    // Render as per-word spans so each word can translate (inline-block),
+    // while the outer .like-display stays inline and wraps between words.
+    function renderWords(text) {
+      newEl.textContent = "";
+      text.split(" ").forEach(function (word, i) {
+        if (i > 0) newEl.appendChild(document.createTextNode(" "));
+        var s = document.createElement("span");
+        s.className = "like-word";
+        s.style.setProperty("--i", i);
+        s.textContent = word;
+        newEl.appendChild(s);
+      });
+    }
+
+    renderWords(likes[index]);
+
+    var swapping = false;
+
+    function advance() {
+      index = (index + 1) % likes.length;
+      renderWords(likes[index]);
+    }
+
+    newEl.addEventListener("click", function () {
+      if (swapping) return; // ignore clicks mid slide-out
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        advance();
+        return;
+      }
+      swapping = true;
+      newEl.classList.remove("swap-in");
+      newEl.classList.add("swap-out");
+    });
+
+    // Swap text when the LAST word finishes sliding out, then stagger
+    // the new words in. (animationName check skips the hover wave-flow.)
+    newEl.addEventListener("animationend", function (e) {
+      var isWord = e.target && e.target.classList &&
+        e.target.classList.contains("like-word");
+      if (!isWord || e.target !== newEl.lastElementChild) return;
+
+      if (e.animationName === "like-word-out") {
+        advance();
+        newEl.classList.remove("swap-out");
+        newEl.classList.add("swap-in");
+        swapping = false; // new text is in — clicks register again
+      } else if (e.animationName === "like-word-in") {
+        newEl.classList.remove("swap-in");
+      }
+    });
   }
 
   // ── SPA Page Transitions ──────────────────────────────────

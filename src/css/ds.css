@@ -61,6 +61,40 @@ h2{
     to { background-position-x: 40px; }
 }
 
+/* Click-to-cycle slide (initLikeFacts in main.js):
+   each word is an inline-block span (wrapping still happens between
+   words); old words stagger-slide up + out, new words rise in.
+   The squiggle underline stays put as an anchor. */
+.like-word {
+    display: inline-block;
+}
+
+.like-display.swap-out .like-word {
+    animation: like-word-out 150ms ease-in both;
+    animation-delay: calc(var(--i) * 30ms);
+}
+
+.like-display.swap-in .like-word {
+    animation: like-word-in 240ms ease-out both;
+    animation-delay: calc(var(--i) * 30ms);
+}
+
+@keyframes like-word-out {
+    to { opacity: 0; transform: translateY(-0.35em); }
+}
+
+@keyframes like-word-in {
+    from { opacity: 0; transform: translateY(0.35em); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .like-display.swap-out .like-word,
+    .like-display.swap-in .like-word {
+        animation: none;
+    }
+}
+
 .listspace{
 }
 

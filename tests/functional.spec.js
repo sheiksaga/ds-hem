@@ -9,13 +9,32 @@ test.describe('homepage', () => {
     await page.goto('/');
   });
 
-  test('like fact is populated by JS and clickable', async ({ page }) => {
+  test('like fact is populated by JS and cycles on click', async ({ page }) => {
     const likeEl = page.locator('#likeDisplay');
-    await expect(likeEl).not.toBeEmpty({ timeout: 5000 });
-    // With Math.random mocked to 0, click always picks the same item.
-    // But we verify click doesn't throw and element stays populated.
-    await likeEl.click();
-    await expect(likeEl).not.toBeEmpty();
+    const likes = [
+      'the jabberwocky',
+      'something about LLMs',
+      'a good book',
+      'why tea is superior to coffee on a hot day',
+      'rains are a good thing when warm, actually',
+      'a crackling fireplace',
+      'the fact that nothing beats a good home-cooked meal',
+      'the smell of old books',
+      'the buzz of a sleeping city',
+      'why runny egg yolks are better',
+      'creating a very good pun',
+    ];
+
+    // Math.random mocked to 0 → initial pick is likes[0]
+    await expect(likeEl).toHaveText(likes[0], { timeout: 5000 });
+
+    // Each click fades out and swaps to the next like. toHaveText waits
+    // through the fade animation, pacing clicks so none land mid-fade.
+    // 11 clicks wrap around the full list back to likes[0].
+    for (let i = 1; i <= likes.length; i++) {
+      await likeEl.click();
+      await expect(likeEl).toHaveText(likes[i % likes.length]);
+    }
   });
 
   test('services accordion opens and closes', async ({ page }) => {
