@@ -31,11 +31,16 @@
   color: #000;
 }
 
+/* Second section on the page — tight gap below the projects deck */
+.client-work-intro {
+  margin-top: 2rem;
+}
+
 /* ---------- Skeleton / Loading ---------- */
 .projects-deck {
   position: relative;
   margin: 0;
-  min-height: 20vh;
+  min-height: 0;
   padding: 0;
   border: none;
 }
@@ -156,6 +161,18 @@
 .card-status.wip {
   background: #000;
   opacity: 0.5;
+}
+
+/* Scope / role badge (client cards) */
+.card-scope {
+  font-family: var(--font-family);
+  font-size: var(--font-size-xsm);
+  font-weight: 400;
+  opacity: 0.7;
+  white-space: nowrap;
+  background: rgba(0, 0, 0, 0.08);
+  border-radius: 3px;
+  padding: 0.1rem 0.7rem;
 }
 
 /* Chevron / accordion icon */
