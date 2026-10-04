@@ -16,7 +16,7 @@
     <meta property="og:title" content="{{ ogTitle or title }}">
     <meta property="og:description" content="{{ ogDescription or description or 'Design Saga by Sangeeth Gandhi' }}">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="{{ ogUrl or ('https://designsaga.com' + (page.url | url)) }}">
+    <meta property="og:url" content="{{ site.url }}{{ page.url | url }}">
     <!-- favicon -->
     <link rel="icon" type="image/x-icon" href="{{ '/src/img/favicon.ico' | url }}">
     <!-- Base styles (loaded on every page) -->

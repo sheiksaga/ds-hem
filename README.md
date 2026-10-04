@@ -6,7 +6,7 @@ Personal site by Sangeeth Gandhi. Built with [Eleventy](https://www.11ty.dev/) (
 
 ```bash
 npm install
-npm start        # dev server with hot reload at http://localhost:8080
+npm start        # dev server with hot reload at http://localhost:8081
 npm run build    # production build → _site/
 ```
 
@@ -35,6 +35,9 @@ index.njk           # Homepage
 blog/               # Blog posts & listing
 projects/           # Projects page (JSON-driven)
 tools/              # Utility scripts
+_data/site.json     # Site-wide data (canonical URL)
+sitemap.xml.njk     # Generated sitemap
+robots.txt.njk      # Generated robots.txt
 ```
 
 ## Conventions
@@ -49,5 +52,7 @@ tools/              # Utility scripts
 
 - Input: `.` (project root)
 - Output: `_site/`
-- Passthrough copy: `src/` assets, `robots.txt`, `sitemap.xml`, `.nojekyll`
+- Passthrough copy: `src/` assets, `.nojekyll`
+- Generated: `sitemap.xml` (all HTML pages; `lastmod` for dated posts) and `robots.txt`, via `sitemap.xml.njk` / `robots.txt.njk`
+- Canonical URL: `_data/site.json` (`site.url`) is the single source of truth for sitemap, robots, and `og:url`
 - Markdown: Nunjucks engine, with footnote & heading-anchor plugins

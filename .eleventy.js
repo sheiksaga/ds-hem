@@ -34,10 +34,7 @@ module.exports = function(eleventyConfig) {
 
   // --- Passthrough copy (static assets, standalone pages) ---
   eleventyConfig.addPassthroughCopy("src");
-  // chatchat and mes are now under projects/
   eleventyConfig.addPassthroughCopy("blog/posts/index.html");
-  eleventyConfig.addPassthroughCopy("robots.txt");
-  eleventyConfig.addPassthroughCopy("sitemap.xml");
   eleventyConfig.addPassthroughCopy(".nojekyll");
 
   // --- Blog posts collection ---
@@ -67,6 +64,22 @@ module.exports = function(eleventyConfig) {
       groups[year].push(post);
     });
     return groups;
+  });
+
+  // --- Sitemap entries: HTML pages only, lastmod for dated posts ---
+  eleventyConfig.addFilter("sitemapPages", function(collection, blogPosts) {
+    const postUrls = new Set((blogPosts || []).map(function(p) { return p.url; }));
+    return collection
+      .filter(function(p) {
+        return p.outputPath && p.outputPath.endsWith(".html");
+      })
+      .sort(function(a, b) { return a.url < b.url ? -1 : a.url > b.url ? 1 : 0; })
+      .map(function(p) {
+        return {
+          url: p.url,
+          lastmod: postUrls.has(p.url) ? p.date.toISOString().slice(0, 10) : null,
+        };
+      });
   });
 
   return {

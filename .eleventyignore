@@ -4,5 +4,6 @@ tools/
 blog/template.md
 blog/posts/index.html
 README.md
+STRUCTURE.md
 .editorconfig
 test-results/

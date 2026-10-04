@@ -52,7 +52,10 @@ projects/mes/index.njk             MES detail page
 | File | Purpose |
 |------|---------|
 | `.eleventy.js` | Eleventy config: Markdown-it, collections, filters, passthrough copy |
-| `package.json` | Dependencies: @11ty/eleventy, markdown-it, gsap |
+| `package.json` | Dependencies: @11ty/eleventy, markdown-it |
+| `_data/site.json` | Canonical site URL (`site.url`) used by sitemap, robots, `og:url` |
+| `sitemap.xml.njk` | Generated `sitemap.xml` from `collections.all` (HTML pages only) |
+| `robots.txt.njk` | Generated `robots.txt`, points at the sitemap |
 | `_includes/base.njk` | Master layout shell (head, header, nav, footer) |
 | `_includes/blog-post.njk` | Blog post wrapper with prev/next navigation |
 | `blog/template.md` | Template for new blog posts |
