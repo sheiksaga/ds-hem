@@ -1,3 +1,4 @@
+.DS_Store
 .claude
 .vscode
 .future-enhancements.md
@@ -11,3 +12,8 @@ tests/playwright-report/
 **/__snapshots__/*-diff.png
 **/__snapshots__/*-actual.png
 test-results/
+
+# Visual baselines are platform-specific (font rendering differs per OS), so
+# each machine keeps its own. Regenerate with `npm run test:update` — the
+# spec is committed, the reference images are not.
+tests/visual.spec.js-snapshots/

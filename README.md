@@ -64,3 +64,22 @@ robots.txt.njk      # Generated robots.txt
 - Generated: `sitemap.xml` (all HTML pages; `lastmod` for dated posts) and `robots.txt`, via `sitemap.xml.njk` / `robots.txt.njk`
 - Canonical URL: `_data/site.json` (`site.url`) is the single source of truth for sitemap, robots, and `og:url`
 - Markdown: Nunjucks engine, with footnote & heading-anchor plugins
+
+## Tests
+
+Playwright covers functional behaviour and visual regressions. The test config
+serves the built site on port 8090.
+
+```bash
+npm test                 # everything
+npm run test:functional  # behaviour
+npm run test:visual      # pixel comparison against local baselines
+npm run test:update      # regenerate visual baselines
+npm run test:ui          # interactive runner
+```
+
+Visual baselines live in `tests/visual.spec.js-snapshots/` and are **not
+committed** — they're tied to the OS that generated them (font rendering
+differs per platform), so each machine keeps its own. Run `npm run test:update`
+one time after a fresh clone; until then the visual tests have no reference
+image and will fail.
