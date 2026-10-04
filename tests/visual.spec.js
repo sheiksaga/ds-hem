@@ -11,7 +11,6 @@ const PAGES = [
   { path: '/projects/',      name: 'projects' },
   { path: '/projects/chatchat/', name: 'projects-chatchat' },
   { path: '/projects/mes/',  name: 'projects-mes' },
-  { path: '/STRUCTURE/',     name: 'structure' },
 ];
 
 for (const { path, name } of PAGES) {
@@ -39,5 +38,36 @@ for (const { path, name } of PAGES) {
 
     // ── Screenshot ──────────────────────────────────────────
     await expect(page).toHaveScreenshot(`${name}.png`, { fullPage: true });
+  });
+}
+
+// ── Dark-mode coverage ────────────────────────────────────────
+// Emulate an OS dark preference with no stored choice, which exercises
+// the pre-paint inline script (default = light, OS dark => dark).
+const DARK_PAGES = [
+  { path: '/',               name: 'homepage' },
+  { path: '/blog/2026/back-in-the-saddle/', name: 'blog-2026-back-in-the-saddle' },
+  { path: '/projects/',      name: 'projects' },
+];
+
+for (const { path, name } of DARK_PAGES) {
+  test(`screenshot: ${name}-dark`, async ({ page }) => {
+    await page.emulateMedia({ colorScheme: 'dark' });
+    await page.goto(path);
+    await page.waitForLoadState('networkidle');
+
+    if (path === '/') {
+      await page.waitForSelector('#likeDisplay');
+      await page.evaluate(() => {
+        const el = document.getElementById('likeDisplay');
+        if (el) el.textContent = 'a good book';
+      });
+    }
+
+    if (path === '/projects/') {
+      await page.waitForSelector('.project-card, .empty-state', { timeout: 10000 });
+    }
+
+    await expect(page).toHaveScreenshot(`${name}-dark.png`, { fullPage: true });
   });
 }

@@ -25,7 +25,7 @@ input[type="radio"] {
 .filter-indicator {
     position: absolute;
     height: 100%;
-    background: #ffffff;
+    background: var(--surface-raised);
     pointer-events: none;
     z-index: 0;
 }
@@ -46,7 +46,7 @@ input[type="radio"] {
 
 /* Remove hover background since indicator handles it */
 .filters label:hover {
-    color: #000000;
+    color: var(--ink);
 }
 
 .posts .post {
@@ -71,7 +71,7 @@ input[type="radio"] {
 [value="all"]:checked ~ .filters [for="all"],
 [value="web_design"]:checked ~ .filters [for="web_design"],
 [value="general"]:checked ~ .filters [for="general"] {
-    color: #000000;
+    color: var(--ink);
     font-weight: 500;
 }
 

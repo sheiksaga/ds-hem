@@ -5,9 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- support browser themeing -->
-    <meta name="theme-color" content="#ff0000">
-    <meta name="msapplication-navbutton-color" content="#ff0000">
-    <meta name="apple-mobile-web-app-status-bar-style" content="#ff0000">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="msapplication-navbutton-color" content="#ffffff">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="color-scheme" content="light dark">
+    <!-- set the theme before first paint to avoid a flash of the wrong colours -->
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem('ds-theme');
+          if (t !== 'light' && t !== 'dark') {
+            t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          }
+          document.documentElement.setAttribute('data-theme', t);
+        } catch (e) {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      })();
+    </script>
     <!-- title -->
     <title>{{ title }}</title>
     <!-- meta description for SEO -->
@@ -21,6 +36,7 @@
     <link rel="icon" type="image/x-icon" href="{{ '/src/img/favicon.ico' | url }}">
     <!-- Base styles (loaded on every page) -->
     <link rel="stylesheet" href="{{ '/src/css/main.css' | url }}">
+    <link rel="stylesheet" href="{{ '/src/css/theme.css' | url }}">
     {% block css %}{% endblock %}
     <!-- quicklinks (dynamic load — skipped on file://) -->
     <script>
@@ -44,6 +60,10 @@
 <body>
     <!-- skip navigation link for accessibility -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
+    <!-- theme toggle: peeking sphere, top-right -->
+    <button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to dark theme">
+        <span class="theme-toggle__sphere" aria-hidden="true"></span>
+    </button>
     <!-- header -->
     <header class="ds-header" id="header" data-component="site-header">
         {% block logo %}
@@ -78,6 +98,7 @@
 
     <!-- Shared scripts (loaded on every page) -->
     <script src="{{ '/src/js/main.js' | url }}"></script>
+    <script src="{{ '/src/js/theme.js' | url }}"></script>
     {% block js %}{% endblock %}
 </body>
 </html>

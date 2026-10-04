@@ -17,7 +17,7 @@
   font-weight: 600;
   letter-spacing: -0.01em;
   line-height: 1.25;
-  color: #000;
+  color: var(--ink);
 }
 
 /* Subtitle line */
@@ -28,7 +28,7 @@
   font-size: var(--font-size-md);
   opacity: 0.65;
   font-weight: 400;
-  color: #000;
+  color: var(--ink);
 }
 
 /* Second section on the page — tight gap below the projects deck */
@@ -50,14 +50,14 @@
   max-width: 700px;
   margin: 0 auto 1.5rem auto;
   padding: 3rem 4rem;
-  border: 2px solid #000;
-  background: #fff;
+  border: 2px solid var(--rule);
+  background: var(--surface);
 }
 
 .skeleton-line {
   height: 2rem;
   border-radius: 4px;
-  background: #eee;
+  background: var(--skeleton);
   margin-bottom: 1.2rem;
 }
 
@@ -74,7 +74,7 @@
 .projects-deck .empty-state {
   text-align: center;
   padding: 4rem 2rem;
-  color: #000;
+  color: var(--ink);
 }
 
 .projects-deck .empty-state .empty-icon {
@@ -90,9 +90,9 @@
 
 /* ---------- Project Accordion Item ---------- */
 .project-card {
-  border: 2px solid #000;
+  border: 2px solid var(--rule);
   margin-bottom: 0.5rem;
-  background: #fff;
+  background: var(--surface);
   cursor: pointer;
   user-select: none;
 }
@@ -107,7 +107,7 @@
   font: inherit;
   font-size: 1.25rem;
   font-weight: 600;
-  color: #000;
+  color: var(--ink);
   background: transparent;
   border: none;
   cursor: pointer;
@@ -118,7 +118,7 @@
 }
 
 .project-card:hover .card-header {
-  background: rgba(0,0,0,0.03);
+  background: var(--tint-neutral);
 }
 
 .card-header-left {
@@ -154,12 +154,12 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #000;
+  background: var(--inverse-bg);
   flex-shrink: 0;
 }
 
 .card-status.wip {
-  background: #000;
+  background: var(--inverse-bg);
   opacity: 0.5;
 }
 
@@ -170,7 +170,7 @@
   font-weight: 400;
   opacity: 0.7;
   white-space: nowrap;
-  background: rgba(0, 0, 0, 0.08);
+  background: var(--surface-sunken-strong);
   border-radius: 3px;
   padding: 0.1rem 0.7rem;
 }
@@ -198,7 +198,7 @@
   overflow: hidden;
   transition: max-height 0.35s ease, padding 0.35s ease;
   padding: 0 1.5rem;
-  color: #000;
+  color: var(--ink);
 }
 
 .project-card.selected {
@@ -216,7 +216,7 @@
   margin: 1rem 0;
   line-height: 1.6;
   pointer-events: none;
-  color: #000;
+  color: var(--ink);
 }
 
 /* Description in body */
@@ -226,7 +226,7 @@
   line-height: 1.7;
   margin-bottom: 1.6rem;
   pointer-events: none;
-  color: #000;
+  color: var(--ink);
 }
 
 /* Tags row */
@@ -242,9 +242,9 @@
   padding: 0.3rem 1rem;
   font-size: var(--font-size-xsm);
   border-radius: 3px;
-  background: rgba(0, 0, 0, 0.08);
+  background: var(--surface-sunken-strong);
   pointer-events: none;
-  color: #000;
+  color: var(--ink);
 }
 
 /* Visit link */
@@ -253,7 +253,7 @@
   align-items: center;
   gap: 0.5rem;
   font-size: var(--font-size-md);
-  color: #000;
+  color: var(--ink);
   pointer-events: auto;
 }
 
@@ -267,7 +267,7 @@
 
 /* ---------- Hover / Focus ---------- */
 .project-card:focus-visible {
-  outline: 3px solid #000;
+  outline: 3px solid var(--rule);
   outline-offset: 4px;
   z-index: 15;
 }
@@ -284,7 +284,7 @@
   }
 
   .project-card {
-    border: 2px solid #000;
+    border: 2px solid var(--rule);
   }
 
   .project-card .card-header {

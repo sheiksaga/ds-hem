@@ -25,10 +25,12 @@ src/
     blog.css        #   Blog posts & listing: footnotes, nav, code blocks
     filter.css      #   Blog category filter (radio-based)
     projects.css    #   Project cards accordion
+    theme.css       #   Dark-mode toggle: peeking sphere, cursor ring, bleed
   js/               # All scripts
     main.js         #   Shared: accordion, SPA transitions, like-facts
     filter.js       #   Blog category filter
     projects.js     #   Project cards renderer
+    theme.js        #   Dark-mode toggle: persistence + reveal
   img/              # All images
     blog/           #   Blog-specific images (2023/)
 index.njk           # Homepage
@@ -47,6 +49,12 @@ robots.txt.njk      # Generated robots.txt
 - **Templates**: Nunjucks (`.njk`). Extend `base.njk`, fill `content` block. Use `_includes/` partials for reusable components.
 - **Blog posts**: Markdown files in `blog/posts/`. Frontmatter fields: `title`, `date`, `description`, `category` (`web_design` or `general`), `nav: blog`.
 - **Projects**: Data in `projects/projects.json`. Each entry: `title`, `tagline`, `description`, `url`, `year`, `tags[]`, `status` (`live`|`wip`).
+
+## Theming (dark mode)
+
+- **Tokens**: `main.css` defines semantic colour tokens (`--paper`, `--ink`, `--surface`, `--rule`, `--accent`, …) for light mode and overrides them under `html[data-theme="dark"]`. Component CSS references tokens, never raw colours.
+- **Default**: light. A pre-paint inline script in `base.njk` reads `localStorage['ds-theme']`, falls back to `prefers-color-scheme`, and sets `data-theme` on `<html>` before first paint (no flash). An explicit toggle is remembered and wins.
+- **Toggle**: a peeking sphere pinned to the top-right (`theme.css` + `theme.js`). Hover slides it out and shows a custom cursor ring; click runs a circular "bleed" via the View Transitions API (instant fallback; disabled under `prefers-reduced-motion`). Touch devices show the sphere fully and "pop" it on tap.
 
 ## Eleventy config
 

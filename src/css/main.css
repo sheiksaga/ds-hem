@@ -6,10 +6,51 @@
    ============================================================= */
 
 :root{
-   --font-light: #000000;
-   --font-dark: #ffffff;
-   --bg-light: #ffffff;
-   --bg-dark: #000000;
+   color-scheme: light;
+
+   /* ── Semantic theme tokens (light) ─────────────────────── */
+   --paper: #ffffff;
+   --ink: #000000;
+   --surface: #ffffff;
+   --surface-raised: #ffffff;
+   --surface-sunken: rgba(0, 0, 0, 0.05);
+   --surface-sunken-strong: rgba(0, 0, 0, 0.08);
+   --tint-neutral: rgba(0, 0, 0, 0.03);
+   --chip-bg: hsl(0, 0%, 93%);
+   --code-bg: hsl(0, 0%, 79%);
+   --rule: #000000;
+   --rule-soft: hsl(0, 0%, 90%);
+   --rule-faint: hsl(0, 0%, 85%);
+   --inverse-bg: #000000;
+   --inverse-ink: #ffffff;
+   --shadow: rgba(0, 0, 0, 0.15);
+   --skeleton: #eeeeee;
+   --accent: #ffff00;
+   --progress: #ff0000;
+   --danger-bg: #ffdddd;
+   --danger-ink: #000000;
+   --highlight-bg: hsl(55, 100%, 85%);
+   --badge-green-bg: hsl(135, 100%, 95%);
+   --badge-amber-bg: hsl(44, 100%, 95%);
+   --badge-blue-bg: hsl(239, 80%, 90%);
+   --badge-blue-active: hsl(239, 100%, 65%);
+   --tint-red: rgba(255, 0, 0, 0.06);
+   --tint-green: rgba(0, 128, 0, 0.06);
+   --tint-yellow: rgba(255, 255, 0, 0.12);
+
+   /* ── Legacy aliases (existing rules keep working) ──────── */
+   --font-light: var(--ink);
+   --bg-light: var(--paper);
+   --header-bg: var(--surface);
+   --header-border: var(--rule);
+   --footer-text: var(--ink);
+   --link-color: var(--ink);
+   --color-primary-light: var(--ink);
+   --color-primary-dark: var(--accent);
+   --color-border-light: var(--rule);
+   --color-text-muted: var(--ink);
+
+   /* ── Type & spacing ────────────────────────────────────── */
    --font-size-xsm: 1.2rem;
    --font-size-sm: 1.4rem;
    --font-size-md: 1.6rem;
@@ -20,14 +61,39 @@
    --margin-sm: 2rem;
    --margin-md: 3rem;
    --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-   --header-bg: #ffffff;
-   --header-border: #000000;
-   --footer-text: #000000;
-   --link-color: #000000;
-   --color-primary-light: #000000;
-   --color-primary-dark: #ffff00;
-   --color-border-light: #000000;
-   --color-text-muted: #000000;
+}
+
+/* ── Dark theme ───────────────────────────────────────────── */
+html[data-theme="dark"]{
+   color-scheme: dark;
+   --paper: #000000;
+   --ink: #ffffff;
+   --surface: #000000;
+   --surface-raised: #141414;
+   --surface-sunken: rgba(255, 255, 255, 0.07);
+   --surface-sunken-strong: rgba(255, 255, 255, 0.12);
+   --tint-neutral: rgba(255, 255, 255, 0.06);
+   --chip-bg: rgba(255, 255, 255, 0.09);
+   --code-bg: rgba(255, 255, 255, 0.16);
+   --rule: #ffffff;
+   --rule-soft: rgba(255, 255, 255, 0.16);
+   --rule-faint: rgba(255, 255, 255, 0.13);
+   --inverse-bg: #ffffff;
+   --inverse-ink: #000000;
+   --shadow: rgba(255, 255, 255, 0.12);
+   --skeleton: #1a1a1a;
+   --accent: #ffff00;
+   --progress: #ff4136;
+   --danger-bg: #3a1414;
+   --danger-ink: #ffffff;
+   --highlight-bg: hsl(55, 55%, 24%);
+   --badge-green-bg: hsl(135, 45%, 16%);
+   --badge-amber-bg: hsl(44, 65%, 16%);
+   --badge-blue-bg: hsl(239, 45%, 22%);
+   --badge-blue-active: hsl(239, 90%, 66%);
+   --tint-red: rgba(255, 0, 0, 0.16);
+   --tint-green: rgba(0, 220, 90, 0.16);
+   --tint-yellow: rgba(255, 255, 0, 0.16);
 }
 
 
@@ -38,7 +104,7 @@
     top: -40px;
     left: 0;
     background: var(--link-color);
-    color: white;
+    color: var(--inverse-ink);
     padding: 8px 16px;
     text-decoration: none;
     z-index: 1000;
@@ -149,7 +215,7 @@ ul {
 .nav-links a {
     position: relative;
     display: inline-block;
-    color: #000;
+    color: var(--ink);
     text-decoration: none;
 }
 
@@ -190,7 +256,7 @@ ul {
 
 
 .footer{
-    color: #000000;
+    color: var(--ink);
     margin: 5rem 0rem;
 }
 

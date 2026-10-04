@@ -33,17 +33,19 @@ projects/mes/index.njk             MES detail page
 
 | File | Scope | Key selectors |
 |------|-------|---------------|
-| `src/css/main.css` | Site-wide: layout, header, footer, nav, typography, CSS vars, SPA transitions | `.ds-header`, `.footer`, `:root`, `#page-content` |
+| `src/css/main.css` | Site-wide: layout, header, footer, nav, typography, **theme tokens** (`:root` light + `html[data-theme="dark"]` overrides), SPA transitions | `.ds-header`, `.footer`, `:root`, `html[data-theme="dark"]`, `#page-content` |
 | `src/css/ds.css` | Homepage: hero, accordion, section boxes, list styling | `.hero`, `.accordion-*`, `.box`, `.hi` |
 | `src/css/blog.css` | Blog listing + post pages: markdown content, code blocks, footnotes, prev/next nav, scroll progress | `.blog-post-article`, `#post-article`, `.post-navigation` |
 | `src/css/projects.css` | Projects listing: accordion cards, skeleton loader | `.projects-deck`, `.project-card`, `.card-*` |
 | `src/css/filter.css` | Blog category filter (radio-button tabs) | `.filters`, `input[type="radio"]`, `.post` |
+| `src/css/theme.css` | Dark-mode toggle chrome: peeking sphere, custom cursor ring, pop + bleed/View Transition styles | `.theme-toggle*`, `.theme-cursor*` |
 
 ## JS responsibility
 
 | File | Scope | Key functions |
 |------|-------|---------------|
-| `src/js/main.js` | Site-wide: accordion toggle, theme toggle, page transitions (SPA nav), email obfuscation, "like" randomizer | accordion, theme, SPA navigation |
+| `src/js/main.js` | Site-wide: accordion toggle, page transitions (SPA nav), email obfuscation, "like" randomizer | accordion, SPA navigation |
+| `src/js/theme.js` | Site-wide: dark-mode toggle — persistence, custom cursor ring, View Transition bleed | theme init, bleed reveal |
 | `src/js/filter.js` | Blog listing: category filter radio buttons + URL hash sync | filter posts by category |
 | `src/js/projects.js` | Projects listing: fetch JSON, render accordion cards client-side | fetch + render project cards |
 
@@ -67,6 +69,7 @@ projects/mes/index.njk             MES detail page
 - Class prefix `ds-` → Design Saga brand (e.g. `.ds-header`)
 - Class prefix `blog-` → blog-specific
 - Class prefix `card-` → project cards
+- Class prefix `theme-` → dark-mode toggle (e.g. `.theme-toggle`, `.theme-cursor`)
 - ID `#post-article` → markdown-rendered article content
 - ID `#main-content` → skip-link target on every page
 
