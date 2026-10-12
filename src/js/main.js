@@ -353,8 +353,12 @@
     scripts.forEach(function (oldScript) {
       var src = oldScript.getAttribute("src");
 
-      // Skip main.js — already loaded globally and handles re-init
-      if (src && src.indexOf("main.js") !== -1) return;
+      // Skip scripts loaded globally on every page via base.njk.
+      // main.js handles its own re-init; theme.js must only bind once,
+      // otherwise each SPA navigation stacks another toggle listener and
+      // the second startViewTransition aborts the first — killing the bleed.
+      if (src && (src.indexOf("main.js") !== -1 ||
+                  src.indexOf("theme.js") !== -1)) return;
 
       // Skip CDN utility libs if their global is already loaded
       if (src && src.indexOf("cdn.jsdelivr.net") !== -1) {
