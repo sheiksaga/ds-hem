@@ -7,12 +7,16 @@
 
 /* ── The peeking sphere ────────────────────────────────────── */
 .theme-toggle {
+    /* Sphere diameter scales with the viewport so it stays prominent on
+       large (e.g. 1440p) desktop displays; narrow/touch rules override. */
+    --theme-sphere: clamp(88px, 5.5vw, 132px);
+    --theme-tuck: calc(var(--theme-sphere) * 0.42);
     position: fixed;
     top: 0;
     right: 0;
     z-index: 950;
-    width: 88px;
-    height: 88px;
+    width: calc(var(--theme-sphere) + 10px);
+    height: calc(var(--theme-sphere) + 10px);
     padding: 0;
     border: 0;
     background: transparent;
@@ -23,10 +27,10 @@
 
 .theme-toggle__sphere {
     position: absolute;
-    top: -34px;                       /* tucked into the corner... */
-    right: -34px;
-    width: 78px;
-    height: 78px;
+    top: calc(-1 * var(--theme-tuck));  /* tucked into the corner... */
+    right: calc(-1 * var(--theme-tuck));
+    width: var(--theme-sphere);
+    height: var(--theme-sphere);
     border-radius: 50%;
     background: var(--ink);           /* black on light, white on dark */
     box-shadow: 0 6px 22px var(--shadow);
@@ -38,7 +42,8 @@
 /* ...slides out when the pointer is over the toggle / keyboard focus */
 .theme-toggle.is-expanded .theme-toggle__sphere,
 .theme-toggle:focus-visible .theme-toggle__sphere {
-    transform: translate(-30px, 30px);
+    transform: translate(calc(var(--theme-tuck) * -0.9),
+                         calc(var(--theme-tuck) * 0.9));
 }
 
 .theme-toggle:focus-visible {
@@ -76,15 +81,7 @@
 /* ── Narrow screens: shrink the toggle so its hit area clears the nav ─ */
 @media (max-width: 1024px) {
     .theme-toggle {
-        width: 64px;
-        height: 64px;
-    }
-
-    .theme-toggle__sphere {
-        top: -22px;
-        right: -22px;
-        width: 56px;
-        height: 56px;
+        --theme-sphere: 56px;
     }
 }
 
@@ -93,15 +90,13 @@
     .theme-cursor { display: none; }
 
     .theme-toggle {
-        width: 60px;
-        height: 60px;
+        --theme-sphere: 48px;
     }
 
+    /* Touch devices get the sphere fully visible in the corner (no peek). */
     .theme-toggle__sphere {
         top: 8px;
         right: 8px;
-        width: 48px;
-        height: 48px;
     }
 }
 
