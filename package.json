@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "npx @11ty/eleventy",
-    "start": "npx @11ty/eleventy --serve --port=8081",
+    "start": "npx @11ty/eleventy --serve --port=1313",
     "test": "playwright test --config tests/playwright.config.js",
     "test:visual": "playwright test tests/visual.spec.js --config tests/playwright.config.js",
     "test:functional": "playwright test tests/functional.spec.js --config tests/playwright.config.js",

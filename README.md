@@ -6,7 +6,7 @@ Personal site by Sangeeth Gandhi. Built with [Eleventy](https://www.11ty.dev/) (
 
 ```bash
 npm install
-npm start        # dev server with hot reload at http://localhost:8081
+npm start        # dev server with hot reload at http://localhost:1313
 npm run build    # production build → _site/
 ```
 
